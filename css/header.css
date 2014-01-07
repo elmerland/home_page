@@ -8,21 +8,21 @@ body {
 
 /* Create styling for top banner */
 
-header {
+#pageHeader {
 	background-color: #ffffff;
 }
 
-header  div {
+#pageHeader  div {
 	width: 760px;
 	margin: 0 auto;
 }
 
-header img {
+#pageHeader img {
 	float: left;
 	padding: 20px 0px 0px 20px;
 }
 
-header h1 {
+#pageHeader h1 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	padding: 50px 20px 0px 20px;
 	font-size: 5em;
@@ -31,7 +31,7 @@ header h1 {
 	margin: 0;
 }
 
-header h2 {
+#pageHeader h2 {
 	padding: 0px 0px 20px 80px;
 	margin: 0px 0px 0px 0px;
 	clear: both;
@@ -39,24 +39,23 @@ header h2 {
 
 /* Create styling for navigation bar */
 
-nav {
+#pageNav {
 	background-color: #005680;
 	height: 50px;
 }
 
-nav ul {
+#pageNav ul {
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
 	text-align: center;
 }
 
-nav ul li {
+#pageNav ul li {
 	display: inline;
-	vertical-align: center;
 }
 
-nav ul li a {
+#pageNav ul li a {
 	text-decoration: none;
 	font-size: 2em;
 	color: #ffffff;
@@ -65,7 +64,7 @@ nav ul li a {
 	margin: 0 10px;
 }
 
-ul li a:hover
+#pageNav ul li a:hover
 {
 color: #ffffff;
 background-color: #003C59;
