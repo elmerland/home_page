@@ -1,16 +1,26 @@
 @charset "UTF-8";
 
 /* Create styling for main div */
+html, body {
+	height: 100%;
+}
 
 #main {
 	width:980px;
-	margin: 0 auto;
+	margin-left: -490px;
+	background-color: #FFFFFF;
+	
+	position: absolute;
+	top: 250px;
+	left: 50%;
+	height: 100%;
 }
 
 /* Create styling for main section */
 
 #main section {
 	width: 700px;
+	height: 100%;
 	margin: 0 auto 0 0;
 	float: left;
 }
@@ -19,11 +29,21 @@
 
 #main aside {
 	width: 280px;
+	height: 100%;
 	margin: 0 0 0 auto;
 	float: left;
-	background-color: #444444;
+	background-color: #D3DCF2;
 }
 
 #main aside h3 {
 	text-align: center;
+	color: #48577D;
+}
+
+#main aside li , #main aside a{
+	color: #48577D;
+}
+
+#main aside li {
+	padding: 10px 0 0 0;
 }

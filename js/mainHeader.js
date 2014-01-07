@@ -12,7 +12,7 @@ function addPageHeader() {
 	var figure = document.createElement("figure");
 	
 	var image = document.createElement("img");
-	image.src = "../_images/logo_600.png";
+	image.src = "_images/logo_600.png";
 	image.width = "100";
 	image.height = "100";
 	
@@ -41,21 +41,21 @@ function addPageNav() {
 	
 	var homeLink = document.createElement("a");
 	homeLink.title = "Home";
-	homeLink.href = "../index.html";
+	homeLink.href = "/index.html";
 	homeLink.innerHTML = "Home";
 	
 	var about = document.createElement("li");
 	
 	var aboutLink = document.createElement("a");
 	aboutLink.title = "About";
-	aboutLink.href = "../about.html";
+	aboutLink.href = "/about.html";
 	aboutLink.innerHTML = "About";
 	
 	var resume = document.createElement("li");
 	
 	var resumeLink = document.createElement("a");
 	resumeLink.title = "Resume";
-	resumeLink.href = "../resume.html";
+	resumeLink.href = "/resume.html";
 	resumeLink.innerHTML = "R&eacute;sum&eacute;";
 	
 	home.appendChild(homeLink);

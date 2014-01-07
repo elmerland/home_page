@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
-body {
+html, body {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 12pt;
 	margin: 0;
+	padding: 0;
 }
 
 /* Create styling for top banner */
@@ -14,6 +15,7 @@ body {
 
 #pageHeader  div {
 	width: 760px;
+	height: 200px;
 	margin: 0 auto;
 }
 
@@ -29,18 +31,20 @@ body {
 	line-height: 80px;
 	float: left;
 	margin: 0;
+	color: #43464D;
 }
 
 #pageHeader h2 {
 	padding: 0px 0px 20px 80px;
 	margin: 0px 0px 0px 0px;
 	clear: both;
+	color: #43464D;
 }
 
 /* Create styling for navigation bar */
 
 #pageNav {
-	background-color: #005680;
+	background-color: #48577D;
 	height: 50px;
 }
 
@@ -57,15 +61,19 @@ body {
 
 #pageNav ul li a {
 	text-decoration: none;
-	font-size: 2em;
-	color: #ffffff;
+	font-size: 2em;	
 	line-height: 50px;
 	padding: 5px 10px 5px 10px;
 	margin: 0 10px;
+	color: #FFFFFF;
 }
 
 #pageNav ul li a:hover
 {
-color: #ffffff;
-background-color: #003C59;
+color: #48577D;
+background-color: #D3DCF2;
+}
+
+#pageNav {
+	
 }
