@@ -70,10 +70,6 @@ html, body {
 
 #pageNav ul li a:hover
 {
-color: #48577D;
-background-color: #D3DCF2;
-}
-
-#pageNav {
-	
+	color: #48577D;
+	background-color: #D3DCF2;
 }

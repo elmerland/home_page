@@ -5,33 +5,42 @@ html, body {
 	height: 100%;
 }
 
+body {
+	background: #FFFFFF url(../_images/background.jpg) repeat-y 50% 250px;
+}
+
 #main {
 	width:980px;
 	margin-left: -490px;
-	background-color: #FFFFFF;
-	
 	position: absolute;
 	top: 250px;
 	left: 50%;
-	height: 100%;
+	bottom: 0%;
+	
+	background-color: #FFFFFF;
 }
 
 /* Create styling for main section */
 
 #main section {
 	width: 700px;
-	height: 100%;
-	margin: 0 auto 0 0;
-	float: left;
+	position: absolute;
+	left: 0%;
+	min-height: 100% !important;
+	height: auto;
+	
+	background-color: #FFFFFF;
 }
 
 /* Create styling for aside */
 
 #main aside {
 	width: 280px;
-	height: 100%;
-	margin: 0 0 0 auto;
-	float: left;
+	position: absolute;
+	right: 0%;
+	min-height: 100% !important;
+	height: auto;
+	
 	background-color: #D3DCF2;
 }
 

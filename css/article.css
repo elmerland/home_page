@@ -1,45 +1,46 @@
 @charset "UTF-8";
 
 /* Create style for article header */
-article header {
+article.main header {
 	text-align: center;
 }
 
-article header h1 {
+article.main header h1 {
 	margin-bottom: 10px;
+	font-size: 3em;
 }
 
-article header p {
+article.main header p {
 	margin-top: 10px;
 }
 
 /* Create style for article outline */
 
-article #outline {
+article.main #outline {
 	width: 980px;
 	margin: 0 auto;
 }
 
 /* Create style for article content */
 
-article #content{
+article.main #content{
 	width: 980px;
 	margin: 0 auto;
 }
 
-article #content p {
+article.main #content p {
 	text-align: justify;
 }
 
 /* Create style for article footer */
 
-article footer {
+article.main footer {
 	border-top: 5px solid #43464D;
 	text-align: center;
 	padding: 20px 0 0 0;
 	margin: 0 0 20px 0;
 }
 
-article footer p {
+article.main footer p {
 	margin: 0;
 }
