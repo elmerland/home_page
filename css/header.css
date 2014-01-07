@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12pt;
+	margin: 0;
+}
+
+/* Create styling for top banner */
+
+header {
+	background-color: #ffffff;
+}
+
+header  div {
+	width: 760px;
+	margin: 0 auto;
+}
+
+header img {
+	float: left;
+	padding: 20px 0px 0px 20px;
+}
+
+header h1 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding: 50px 20px 0px 20px;
+	font-size: 5em;
+	line-height: 80px;
+	float: left;
+	margin: 0;
+}
+
+header h2 {
+	padding: 0px 0px 20px 80px;
+	margin: 0px 0px 0px 0px;
+	clear: both;
+}
+
+/* Create styling for navigation bar */
+
+nav {
+	background-color: #005680;
+	height: 50px;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline;
+	vertical-align: center;
+}
+
+nav ul li a {
+	text-decoration: none;
+	font-size: 2em;
+	color: #ffffff;
+	line-height: 50px;
+	padding: 5px 10px 5px 10px;
+	margin: 0 10px;
+}
+
+ul li a:hover
+{
+color: #ffffff;
+background-color: #003C59;
+}
