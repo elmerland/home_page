@@ -70,3 +70,10 @@ ul li a:hover
 color: #ffffff;
 background-color: #003C59;
 }
+
+/* Create styling for main div */
+
+#main {
+	width:980px;
+	margin: 0 auto;
+}
