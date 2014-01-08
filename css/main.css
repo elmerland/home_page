@@ -49,10 +49,31 @@ body {
 	color: #48577D;
 }
 
-#main aside li , #main aside a{
-	color: #48577D;
+#main aside ul {
+	padding: 0 0 0 30px;
 }
 
 #main aside li {
-	padding: 10px 0 0 0;
+	padding: 15px 0 0 0;
+}
+
+#main aside li, #main aside a{
+	color: #48577D;
+}
+
+#main aside a {
+	margin: 5px 0;
+	padding: 5px 10px;
+	position: relative;
+	left: -10px;
+	-webkit-border-radius: 25px 25px 0 25px;
+	-moz-border-radius: 25px 25px 0 25px;
+	border-radius: 25px 25px 0 25px;
+	
+	transition: background 0.5s ease-in-out;
+}
+
+#main aside a:hover{
+	color: #FFFFFF;
+	background-color: #48577D;
 }

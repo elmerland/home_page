@@ -14,7 +14,7 @@ html, body {
 }
 
 #pageHeader  div {
-	width: 760px;
+	width: 770px;
 	height: 200px;
 	margin: 0 auto;
 }
@@ -26,19 +26,24 @@ html, body {
 
 #pageHeader h1 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding: 60px 20px 0px 20px;
+	padding: 76px 20px 0px 20px;
 	font-size: 5em;
-	line-height: 80px;
+	line-height: 55px;
 	float: left;
 	margin: 0;
 	color: #43464D;
 }
 
 #pageHeader h2 {
-	padding: 0px 0px 0px 80px;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 121px;
+	padding: 15px 10px 15px 20px;
 	clear: both;
-	color: #43464D;
+	color: #FFFFFF;
+	
+	background-color: #F3A11E;
+	-webkit-border-radius: 0 25px 25px 25px;
+	-moz-border-radius: 0 25px 25px 25px;
+	border-radius: 0 25px 25px 25px;
 }
 
 /* Create styling for navigation bar */
@@ -64,15 +69,14 @@ html, body {
 	font-size: 2em;	
 	line-height: 50px;
 	padding: 5px 10px 6px 10px;
-	margin: 0 10px;
+	margin: 0 30px;
 	color: #FFFFFF;
+	
+	transition: background 0.2s ease-in-out;
 }
 
 #pageNav ul li a:hover
 {
 	color: #48577D;
 	background-color: #D3DCF2;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
 }

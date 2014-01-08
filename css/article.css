@@ -75,9 +75,9 @@ article.excerpt {
 	padding: 10px;
 	margin: 5px;
 	border: 2px solid #43464D;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
+	-webkit-border-radius: 0 25px 25px 25px;
+	-moz-border-radius: 0 25px 25px 25px;
+	border-radius: 0 25px 25px 25px;
 }
 
 article.excerpt p {
@@ -86,19 +86,29 @@ article.excerpt p {
 
 article.excerpt h3 a{
 	text-decoration: none;
-	color: #43464D;
-	font-size: 2em;
-	padding: 5px;
+	color: #FFFFFF;
+	background-color: #43464D;
+	font-size: 1.2em;
+	padding: 10px 20px;
+	position: relative;
+	left: -10px;
+	-webkit-border-radius: 0 25px 25px 0;
+	-moz-border-radius: 0 25px 25px 0;
+	border-radius: 0 25px 25px 0;
+	
+	transition: background 0.3s ease-in-out;
 }
 
 article.excerpt h3 a:hover {
 	color: #FFFFFF;
-	background-color: #43464D;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
+	background-color: #F3A11E;
 }
 
 article.excerpt footer {
 	font-size: .8em;
+	
+}
+
+article.excerpt footer p {
+	text-align: right;
 }
