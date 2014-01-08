@@ -1,11 +1,16 @@
 @charset "UTF-8";
 
+article h1, article h2, article h3, article h4, article h5, article h6{
+	color: #43464D;
+}
+
 /* Create style for article header */
 article.main header {
 	text-align: center;
 }
 
 article.main header h1 {
+	margin-top: 20px;
 	margin-bottom: 10px;
 	font-size: 3em;
 }
@@ -21,6 +26,14 @@ article.main #outline {
 	margin: 0 auto;
 }
 
+article.main #outline h2 {
+	margin: 0;
+}
+
+article.main #outline ul {
+	margin: 10px auto;
+}
+
 /* Create style for article content */
 
 article.main #content{
@@ -30,6 +43,15 @@ article.main #content{
 
 article.main #content p {
 	text-align: justify;
+}
+
+article.main h2, article.main h3{
+	display: inline-block;
+}
+
+article.main a.toTop {
+	margin: 0 0 0 40px;
+	font-size: .8em;
 }
 
 /* Create style for article footer */
@@ -43,4 +65,26 @@ article.main footer {
 
 article.main footer p {
 	margin: 0;
+}
+
+/****************************************/
+
+/* Create style for article excertp */
+
+article.excerpt {
+	border-bottom: 4px solid #43464D;
+}
+
+article.excerpt h3 a{
+	text-decoration: none;
+	color: #43464D;
+	font-size: 2em;
+}
+
+article.excerpt h3 a:hover {
+	color: #8A2725;
+}
+
+article.excerpt footer {
+	font-size: .8em;
 }
