@@ -1,0 +1,1 @@
+[04-Jan-2014 23:24:54 UTC] PHP Warning:  opendir(/home4/learncod/public_html/wp-content/uploads/backwpup-0e7690-temp/): failed to open dir: No such file or directory in /home4/learncod/public_html/wp-content/plugins/backwpup/inc/class-job.php on line 1977
