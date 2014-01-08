@@ -72,17 +72,31 @@ article.main footer p {
 /* Create style for article excertp */
 
 article.excerpt {
-	border-bottom: 4px solid #43464D;
+	padding: 10px;
+	margin: 5px;
+	border: 2px solid #43464D;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+article.excerpt p {
+	text-align: justify;
 }
 
 article.excerpt h3 a{
 	text-decoration: none;
 	color: #43464D;
 	font-size: 2em;
+	padding: 5px;
 }
 
 article.excerpt h3 a:hover {
-	color: #8A2725;
+	color: #FFFFFF;
+	background-color: #43464D;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 }
 
 article.excerpt footer {
