@@ -46,15 +46,17 @@ body {
 
 #main aside h3 {
 	text-align: center;
+	margin: 10px 0 10px 0 ;
 	color: #48577D;
 }
 
 #main aside ul {
+	margin: 5px 0 0 0;
 	padding: 0 0 0 30px;
 }
 
 #main aside li {
-	padding: 15px 0 0 0;
+	padding: 0 0 10px 0;
 }
 
 #main aside li, #main aside a{

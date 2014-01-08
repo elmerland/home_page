@@ -5,6 +5,7 @@ window.onload = function () {
 }
 
 function backToTopAnimation() {
+	$(".toTop").hide();
 	$(window).scroll(function() {
 		if($(this).scrollTop() > 250) {
 		    $('.toTop').fadeIn();
@@ -71,14 +72,14 @@ function addPageNav() {
 	
 	var aboutLink = document.createElement("a");
 	aboutLink.title = "About";
-	aboutLink.href = "../about.html";
+	aboutLink.href = "../pages/about.html";
 	aboutLink.innerHTML = "About";
 	
 	var resume = document.createElement("li");
 	
 	var resumeLink = document.createElement("a");
 	resumeLink.title = "Resume";
-	resumeLink.href = "../resume.html";
+	resumeLink.href = "../pages/resume.html";
 	resumeLink.innerHTML = "R&eacute;sum&eacute;";
 	
 	home.appendChild(homeLink);
