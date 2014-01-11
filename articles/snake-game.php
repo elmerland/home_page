@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/code.css" />
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
 	<script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script language="javascript" type="text/javascript" src="../js/articleHeader.js"></script>
+	<script language="javascript" type="text/javascript" src="../js/article.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -28,10 +28,12 @@
 		include("../php/nav.php");
 	?>
 	<article class="main">
+		
 		<header>
 			<h1>Creating a little Snake game</h1>
 			<p><time pubdate datetime="2014-01-04">Created on: January 04, 2014</time></p>
 		</header>
+		
 		<div id="outline">
 			<h2>Article Outline</h2>
 			<ul>
