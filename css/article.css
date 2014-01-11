@@ -106,9 +106,10 @@ article.excerpt h3 a:hover {
 
 article.excerpt footer {
 	font-size: .8em;
-	
+	text-align: right;
 }
 
 article.excerpt footer p {
 	text-align: right;
+	width: 300px;
 }
