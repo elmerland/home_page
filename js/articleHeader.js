@@ -1,8 +1,8 @@
-window.onload = function () {
+$(document).ready(function () {
 	addPageNav();
 	addPageHeader();
 	backToTopAnimation();
-}
+});
 
 function backToTopAnimation() {
 	$(".toTop").hide();

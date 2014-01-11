@@ -1,7 +1,7 @@
-window.onload = function () {
+$(document).ready(function () {
 	addPageNav();
 	addPageHeader();
-}
+});
 
 function addPageHeader() {
 	var pageHeader = document.createElement("header");
