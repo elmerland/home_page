@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-	background: #FFFFFF url(../_images/background.jpg) repeat-y 50% 250px;
+	background: #FFFFFF
 }
 
 #main {
@@ -41,13 +41,12 @@ body {
 	min-height: 100% !important;
 	height: auto;
 	
-	background-color: #D3DCF2;
+	background-color: #43464D;
 }
 
 #main aside h3 {
 	text-align: center;
-	margin: 10px 0 10px 0 ;
-	color: #48577D;
+	margin: 10px 0 10px 0;
 }
 
 #main aside ul {
@@ -59,23 +58,22 @@ body {
 	padding: 0 0 10px 0;
 }
 
-#main aside li, #main aside a{
-	color: #48577D;
+#main aside h3, #main aside li, #main aside a{
+	color: #FFFFFF;
 }
 
 #main aside a {
 	margin: 5px 0;
-	padding: 5px 10px;
+	padding: 5px 10px 5px 30px;
 	position: relative;
-	left: -10px;
-	-webkit-border-radius: 25px 25px 0 25px;
-	-moz-border-radius: 25px 25px 0 25px;
-	border-radius: 25px 25px 0 25px;
+	left: -30px;
+	-webkit-border-radius: 0 25px 25px 0;
+	-moz-border-radius: 0 25px 25px 0;
+	border-radius: 0 25px 25px 0;
 	
-	transition: background 0.5s ease-in-out;
+	transition: background 0.2s ease-in-out;
 }
 
 #main aside a:hover{
-	color: #FFFFFF;
-	background-color: #48577D;
+	background-color: #F3A11E;
 }
