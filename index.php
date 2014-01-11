@@ -22,7 +22,6 @@
 </head>
 <body>
 	<?php
-		echo("Hello world!");
 		include("php/header.php"); 
 		include("php/nav.php");
 	?>
