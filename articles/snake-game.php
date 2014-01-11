@@ -6,6 +6,7 @@
 	<link rel="icon" type="image/png" href="../_images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="../css/header.css" />
+	<link rel="stylesheet" type="text/css" href="../css/nav.css" />
 	<link rel="stylesheet" type="text/css" href="../css/article.css" />
 	<link rel="stylesheet" type="text/css" href="../css/code.css" />
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
