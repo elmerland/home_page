@@ -30,7 +30,7 @@
 			<article class="excerpt">
 				<header>
 					<h3>
-						<a title="Creating a Dynamically Sized Table with JavaScript" href="articles/dynamic-table.html" target="_blank" rel="alternate">
+						<a title="Creating a Dynamically Sized Table with JavaScript" href="articles/dynamic-table.php" target="_blank" rel="alternate">
 							Creating a Dynamically Sized Table with JavaScript
 						</a>
 					</h3>
@@ -48,7 +48,7 @@
 			<article class="excerpt">
 				<header>
 					<h3>
-						<a title="Creating a little snake game" href="articles/snake-game.html" target="_blank" rel="alternate">
+						<a title="Creating a little snake game" href="articles/snake-game.php" target="_blank" rel="alternate">
 							Creating a Little Snake Game
 						</a>
 					</h3>
