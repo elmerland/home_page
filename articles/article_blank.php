@@ -21,7 +21,11 @@
 
 	</script>
 </head>
-<body id="start">
+<body>
+	<?php
+		include("../php/header.php"); 
+		include("../php/nav.php");
+	?>
 	<article class="main">
 		
 		<header>
@@ -48,46 +52,46 @@
 		<div id="content">
 			
 			<h2 id="theProject">The Project</h2>
-			<span><a class="toTop" href="#start">Back to top</a></span>
+			<span><a class="toTop" href="#">Back to top</a></span>
 		
 			<p>
 			</p>
 	
 			<h2 id="theFinalResult">The Final Result</h2>
-			<span><a class="toTop" href="#start">Back to top</a></span>
+			<span><a class="toTop" href="#">Back to top</a></span>
 	
 			<p>
 			</p>
 		
 			<h2 id="theCode">The Code</h2>
-			<span><a class="toTop" href="#start">Back to top</a></span>
+			<span><a class="toTop" href="#">Back to top</a></span>
 	
 			<p>
 			</p>
 	
 			<h2 id="theMakingOf">The Making Of</h2>
-			<span><a class="toTop" href="#start">Back to top</a></span><br>
+			<span><a class="toTop" href="#">Back to top</a></span><br>
 	
 			<h3 id="step1">Step 1</h3>
-			<span><a class="toTop" href="#start">Back to top</a></span>
+			<span><a class="toTop" href="#">Back to top</a></span>
 	
 			<p>
 			</p>
 	
 			<h3 id="step2">Step 2</h3>
-			<span><a class="toTop" href="#start">Back to top</a></span>
+			<span><a class="toTop" href="#">Back to top</a></span>
 	
 			<p>
 			</p>
 	
 			<h2 id="conclusion">Conclusion</h2>
-			<span><a class="toTop" href="#start">Back to top</a></span>
+			<span><a class="toTop" href="#">Back to top</a></span>
 	
 			<p>
 			</p>
 	
 			<h2 id="notes">Notes</h2>
-			<span><a class="toTop" href="#start">Back to top</a></span>
+			<span><a class="toTop" href="#">Back to top</a></span>
 	
 			<p>
 			</p>
