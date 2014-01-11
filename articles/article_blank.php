@@ -23,8 +23,8 @@
 </head>
 <body>
 	<?php
-		include("../php/header.php"); 
-		include("../php/nav.php");
+		include("../php/articleHeader.php"); 
+		include("../php/articleNav.php");
 	?>
 	<article class="main">
 		
