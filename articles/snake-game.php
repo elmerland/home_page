@@ -24,8 +24,8 @@
 </head>
 <body>
 	<?php
-		include("../php/articleHeader.php"); 
-		include("../php/articleNav.php");
+		include("../php/header.php"); 
+		include("../php/nav.php");
 	?>
 	<article class="main">
 		

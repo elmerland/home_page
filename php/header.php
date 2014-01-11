@@ -1,9 +1,9 @@
 <header id="pageHeader">
 	<div>
 		<figure>
-			<img src="_images/logo_600.png" width="100" height="100">
+			<img src="http://learncodeart.com/_images/logo_600.png" width="150" height="150">
 		</figure>
 		<h1>Learn Code Art</h1>
-		<h2>Learning, coding, and hoping some of it is art</h2>
+		<h2>The do it yourself site for enthusiastic programmers</h2>
 	</div>
 </header>
