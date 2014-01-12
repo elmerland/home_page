@@ -13,16 +13,6 @@
 	?>
 	<article class="main">
 		
-		<div id="outline">
-			<section>
-				<h2>Outline</h2>
-				<ul>
-					<li><a href="#highRes">High Resolution Version</a></li>
-					<li><a href="#lowRed">Low Resolution Version</a></li>
-				</ul>
-			</section>
-		</div>
-		
 		<header>
 			<h1>My R&eacute;sum&eacute;</h1>
 			<p><time pubdate datetime="2014-01-08">Created on: January 8, 2014</time></p>

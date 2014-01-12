@@ -16,7 +16,7 @@
 		
 		<div id="outline">
 			<section>
-				<h2>Article Outline</h2>
+				<h2>Creating a little Snake game - Outline</h2>
 				<ul>
 					<li><a href="#theProject">The Project</a></li>
 					<li><a href="#theFinalResult">The Final Result</a></li>
