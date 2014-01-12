@@ -1,10 +1,20 @@
 @charset "UTF-8";
 
+/* Create style for article content tag */
+
+article.main {
+	position: absolute;
+	top: 300px;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+}
+
+/* Create style for article header */
 article h1, article h2, article h3, article h4, article h5, article h6{
 	color: #43464D;
 }
 
-/* Create style for article header */
 article.main header {
 	text-align: center;
 }
@@ -22,16 +32,31 @@ article.main header p {
 /* Create style for article outline */
 
 article.main #outline {
+	background-color: #666B75;
+	color: #FFFFFF;
+}
+
+article.main #outline section {
 	width: 980px;
 	margin: 0 auto;
+	padding: 20px;
 }
 
 article.main #outline h2 {
 	margin: 0;
+	color: #FFFFFF;
 }
 
 article.main #outline ul {
 	margin: 10px auto;
+}
+
+article.main #outline a {
+	color: #FFFFFF;
+}
+
+article.main #outline a:hover {
+	color: #F3A11E;
 }
 
 /* Create style for article content */
@@ -54,16 +79,29 @@ article.main a.toTop {
 	font-size: .8em;
 }
 
+article.main #content a {
+	color: #C98519;
+}
+
 /* Create style for article footer */
 
 article.main footer {
-	border-top: 5px solid #43464D;
+	background-color: #666B75;
 	text-align: center;
-	padding: 20px 0 0 0;
-	margin: 0 0 20px 0;
+	padding: 20px 0 20px 0;
+	margin: 0;
+}
+
+article.main footer a {
+	color: #FFFFFF;
+}
+
+article.main footer a:hover {
+	color: #F3A11E;
 }
 
 article.main footer p {
+	color: #FFFFFF;
 	margin: 0;
 }
 

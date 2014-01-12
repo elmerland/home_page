@@ -41,7 +41,7 @@ body {
 	min-height: 100% !important;
 	height: auto;
 	
-	background-color: #43464D;
+	background-color: #666B75;
 }
 
 #main aside h3 {
@@ -51,11 +51,13 @@ body {
 
 #main aside ul {
 	margin: 5px 0 0 0;
-	padding: 0 0 0 30px;
+	padding: 0 0 0 20px;
 }
 
 #main aside li {
-	padding: 0 0 10px 0;
+	padding: 5px 0 5px 25px;
+	list-style-type: none;
+	background: url("../_images/list_icon_white.png") no-repeat left 50%;
 }
 
 #main aside h3, #main aside li, #main aside a{
@@ -64,9 +66,9 @@ body {
 
 #main aside a {
 	margin: 5px 0;
-	padding: 5px 10px 5px 30px;
+	padding: 5px 10px 5px 40px;
 	position: relative;
-	left: -30px;
+	left: -45px;
 	-webkit-border-radius: 0 25px 25px 0;
 	-moz-border-radius: 0 25px 25px 0;
 	border-radius: 0 25px 25px 0;
