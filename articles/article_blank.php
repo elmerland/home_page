@@ -9,14 +9,14 @@
 </head>
 <body>
 	<?php
-		include("../php/header.php");
-		include("../php/nav.php");
+		require_once("../php/header.php");
+		require_once("../php/nav.php");
 	?>
 	<article class="main">
 		
 		<div id="outline">
 			<section>
-				<h2>Article Outline</h2>
+				<h2>Article - Outline</h2>
 				<ul>
 					<li><a href="#theProject">The Project</a></li>
 					<li><a href="#theFinalResult">The Final Result</a></li>
@@ -28,6 +28,7 @@
 					</ul>
 					<li><a href="#conclusion">Conclusion</a></li>
 					<li><a href="#notes">Notes</a></li>
+					<li><a href="#disqus_thread">Comments</a></li>
 				</ul>
 			</section>
 		</div>
@@ -93,7 +94,7 @@
 				<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 			</p>
 		</footer>
-		
+		<?php require_once("../php/disqus.php"); ?>
 	</article>
 </body>
 </html>

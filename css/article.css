@@ -108,7 +108,7 @@ article.main footer p {
 /** Create style for disqus comments */
 
 article.main #disqus_thread {
-	width: 980px;
+	width: 700px;
 	margin: 20px auto 0 auto;
 }
 

@@ -13,7 +13,8 @@ function backToTopAnimation() {
 	});
 	
 	$('.toTop').click(function() {
-		$('body,html').animate({scrollTop:0},800);
+		var time = $(window).scrollTop() * 10;
+		$('body,html').animate({scrollTop:0},time);
 	});
 	
 	document.onclick = function (e) {
