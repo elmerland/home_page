@@ -8,7 +8,7 @@
 </head>
 <body>
 	<?php
-		include("../php/header.php"); 
+		include("../php/header.php");
 		include("../php/nav.php");
 	?>
 	<article class="main">

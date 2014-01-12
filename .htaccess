@@ -1,2 +1,7 @@
 # Use PHP5 as default
 AddHandler application/x-httpd-php5 .php
+ErrorDocument 400 http://learncodeart.com/error/400page.html
+ErrorDocument 401 http://learncodeart.com/error/401page.html
+ErrorDocument 403 http://learncodeart.com/error/403page.html
+ErrorDocument 404 http://learncodeart.com/error/404page.php
+ErrorDocument 500 http://learncodeart.com/error/500page.html
