@@ -12,9 +12,19 @@ function backToTopAnimation() {
 		}
 	});
 	
-	$('.toTop').click(function(event) {
-		var time = $(window).scrollTop() * 100;
-		$('body,html').animate({scrollTop:0},time);
+	$(".toTop").click(function(event) {
+		$('body,html').animate({scrollTop:0},"slow");
 		event.preventDefault();
 	});
+	
+	$("#outline").on("click", "a", function(event) {
+		event.preventDefault();
+		var href = $(this).attr("href");
+		scrollToAncho(href);
+	});
+}
+
+function scrollToAnchor(aid){
+    var aTag = $(aid);
+    $("body").animate({scrollTop: aTag.offset().top},"slow");
 }
