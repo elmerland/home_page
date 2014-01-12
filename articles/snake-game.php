@@ -10,6 +10,7 @@
 </head>
 <body>
 	<?php
+		require_once("../php/social/fbJS.php");
 		require_once("../php/header.php");
 		require_once("../php/nav.php");
 	?>
@@ -653,6 +654,7 @@ td.gameCell {
 		</p>
 		</div>
 		<footer>
+			<?php require_once("../php/social/fbLike.php"); ?>
 			<p>
 				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
 				Las updated: January 6, 2014<br>
