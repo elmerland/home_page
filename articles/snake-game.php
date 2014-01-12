@@ -654,7 +654,12 @@ td.gameCell {
 		</p>
 		</div>
 		<footer>
-			<?php require_once("../php/social/fbLike.php"); ?>
+			<?php 
+				require_once("../php/social/fbLike1.php");
+				$url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+				echo $url;
+				require_once("../php/social/fbLike2.php");
+			?>
 			<p>
 				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
 				Las updated: January 6, 2014<br>
