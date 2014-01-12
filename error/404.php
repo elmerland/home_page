@@ -13,8 +13,8 @@
 	?>
 	<div id="main">
 		<section>
-			<iframe width="560" height="315" src="http://www.youtube.com/embed/oqMl5CRoFdk" frameborder="0" allowfullscreen></iframe>
 			<article class="excerpt">
+				<iframe width="560" height="315" src="http://www.youtube.com/embed/oqMl5CRoFdk" frameborder="0" allowfullscreen></iframe>
 				<header>
 					<h3>
 						<a title="404 Error" href="#" rel="alternate">
