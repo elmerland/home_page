@@ -14,28 +14,31 @@
 	?>
 	<article class="main">
 		
+		<div id="outline">
+			<section>
+				<h2>Article Outline</h2>
+				<ul>
+					<li><a href="#theProject">The Project</a></li>
+					<li><a href="#theFinalResult">The Final Result</a></li>
+					<li><a href="#theCode">The Code</a></li>
+					<li><a href="#theMakingOf">The Making Of</a></li>
+					<ul>
+						<li><a href="#step1">Step 1 - HTML (index.html)</a></li>
+						<li><a href="#step2">Step 2 - JavaScript (table.js)</a></li>
+						<li><a href="#step3">Step 3 - JavaScript (snake.js)</a></li>
+						<li><a href="#step4">Step 4 - CSS (main.css)</a></li>
+					</ul>
+					<li><a href="#conclusion">Conclusion</a></li>
+					<li><a href="#notes">Notes</a></li>
+				</ul>
+			</section>
+		</div>
+		
 		<header>
 			<h1>Creating a little Snake game</h1>
 			<p><time pubdate datetime="2014-01-04">Created on: January 04, 2014</time></p>
 		</header>
 		
-		<div id="outline">
-			<h2>Article Outline</h2>
-			<ul>
-				<li><a href="#theProject">The Project</a></li>
-				<li><a href="#theFinalResult">The Final Result</a></li>
-				<li><a href="#theCode">The Code</a></li>
-				<li><a href="#theMakingOf">The Making Of</a></li>
-				<ul>
-					<li><a href="#step1">Step 1 - HTML (index.html)</a></li>
-					<li><a href="#step2">Step 2 - JavaScript (table.js)</a></li>
-					<li><a href="#step3">Step 3 - JavaScript (snake.js)</a></li>
-					<li><a href="#step4">Step 4 - CSS (main.css)</a></li>
-				</ul>
-				<li><a href="#conclusion">Conclusion</a></li>
-				<li><a href="#notes">Notes</a></li>
-			</ul>
-		</div>
 		<div id="content">
 			
 		<h2 id="theProject">The Project</h2>

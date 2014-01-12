@@ -13,18 +13,20 @@
 	?>
 	<article class="main">
 		
+		<div id="outline">
+			<section>
+				<h2>Outline</h2>
+				<ul>
+					<li><a href="#whoAmI">Who am I?</a></li>
+					<li><a href="#purpose">Purpose Of This Website</a></li>
+				</ul>
+			</section>
+		</div>
+		
 		<header>
 			<h1>About Me</h1>
 			<p><time pubdate datetime="2014-01-08">Created on: January 8, 2014</time></p>
 		</header>
-		
-		<div id="outline">
-			<h2>Outline</h2>
-			<ul>
-				<li><a href="#whoAmI">Who am I?</a></li>
-				<li><a href="#purpose">Purpose Of This Website</a></li>
-			</ul>
-		</div>
 		
 		<div id="content">
 			

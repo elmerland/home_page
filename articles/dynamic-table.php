@@ -13,26 +13,28 @@
 	?>
 	<article class="main">
 		
+		<div id="outline">
+			<section>
+				<h2>Article Outline</h2>
+				<ul>
+					<li><a href="#theProject">The Project</a></li>
+					<li><a href="#theFinalResult">The Final Result</a></li>
+					<li><a href="#theCode">The Code</a></li>
+					<li><a href="#theMakingOf">The Making Of</a></li>
+					<ul>
+						<li><a href="#step1">Step 1</a></li>
+						<li><a href="#step2">Step 2</a></li>
+					</ul>
+					<li><a href="#conclusion">Conclusion</a></li>
+					<li><a href="#notes">Notes</a></li>
+				</ul>
+			</section>
+		</div>
+		
 		<header>
 			<h1>Creating a Dynamically Sized Table with JavaScript</h1>
 			<p><time pubdate datetime="2014-01-09">Created on: January 9, 2014</time></p>
 		</header>
-		
-		<div id="outline">
-			<h2>Article Outline</h2>
-			<ul>
-				<li><a href="#theProject">The Project</a></li>
-				<li><a href="#theFinalResult">The Final Result</a></li>
-				<li><a href="#theCode">The Code</a></li>
-				<li><a href="#theMakingOf">The Making Of</a></li>
-				<ul>
-					<li><a href="#step1">Step 1</a></li>
-					<li><a href="#step2">Step 2</a></li>
-				</ul>
-				<li><a href="#conclusion">Conclusion</a></li>
-				<li><a href="#notes">Notes</a></li>
-			</ul>
-		</div>
 		
 		<div id="content">
 			
