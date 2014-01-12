@@ -4,8 +4,9 @@
 #pageNav {
 	position: absolute;
 	top: 250px;
-	width: 100%;
-	background-color: #04a3c6;
+	left: 0;
+	right: 0;
+	background-color: #04A3C6;
 	height: 50px;
 }
 
