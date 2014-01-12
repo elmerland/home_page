@@ -2,7 +2,8 @@
 <html>
 <head>
 	<?php
-		require_once("../php/articleLinks.php");
+		require_once("../php/mainCSS.php");
+		require_once("../php/articleCSS_JS.php");
 	?>
 	<title>About</title>
 </head>

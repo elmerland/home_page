@@ -2,7 +2,8 @@
 <html>
 <head>
 	<?php
-		require_once("../php/articleLinks.php");
+		require_once("../php/mainCSS.php");
+		require_once("../php/homeCSS.php");
 	?>
 	<title>Learn Code Art</title>
 </head>
