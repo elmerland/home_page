@@ -77,8 +77,8 @@
 		</p>
 	
 		<p>
-			<a title="Snake project" href="http://learncodeart.com/projects/snake/index.html" target="_blank">
-				http://learncodeart.com/projects/snake/index.html</a>
+			<a title="Snake project" href="http://learncodeart.com/projects/snake/snake.html" target="_blank">
+				http://learncodeart.com/projects/snake/snake.html</a>
 		</p>
 		
 		<h2 id="theCode">The Code</h2>
