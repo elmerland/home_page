@@ -653,11 +653,14 @@ td.gameCell {
 			After completing the project a few thoughts came to me on some improvements that I could have included. However, I will leave this improvements for some future time. The first improvement is to include a pause button, which should be really simple because there is already a key listener in place. The second improvement which might be a bit harder to implement would be to give the user a slightly longer timer when the snake hits a wall. This is just to make it a little easier for the user to get the food block that appear at the edge of the game table.
 		</p>
 		</div>
-		<footer>
-			<?php 
-				echo("<p>Hello world</p>");
-				require_once("../php/social/fbLike.php");
+		
+		<section class="social">
+			<?php
+				include("../php/social/fbLike.php");
 			?>
+		</section>
+		
+		<footer>
 			<p>
 				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
 				Las updated: January 6, 2014<br>

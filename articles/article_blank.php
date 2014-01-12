@@ -87,6 +87,12 @@
 		
 		</div>
 		
+		<section class="social">
+			<?php
+				include("../php/social/fbLike.php");
+			?>
+		</section>
+		
 		<footer>
 			<p>
 				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>

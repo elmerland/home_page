@@ -83,6 +83,16 @@ article.main #content a {
 	color: #C98519;
 }
 
+/* Create style for social media */
+
+article.main .social {
+	background-color: #FFFFFF;
+	text-align: center;
+	border-top: 2px dotted #666B75;
+	margin: 0;
+	padding: 20px;
+}
+
 /* Create style for article footer */
 
 article.main footer {
