@@ -21,7 +21,7 @@ function backToTopAnimation() {
 		console.log("Clicked on link");
 		event.preventDefault();
 		var href = $(this).attr("href");
-		scrollToAncho(href);
+		scrollToAnchor(href);
 	});
 }
 
