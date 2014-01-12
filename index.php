@@ -30,6 +30,7 @@
 						January 9, 2014
 					</p>
 				</footer>
+				<div class="clear"></div>
 			</article>
 			<article class="excerpt">
 				<header>
@@ -48,6 +49,7 @@
 						January 4, 2014
 					</p>
 				</footer>
+				<div class="clear"></div>
 			</article>
 		</section>
 		<aside>
