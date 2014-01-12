@@ -655,7 +655,7 @@ td.gameCell {
 		</div>
 		<footer>
 			<?php 
-				require_once("../php/social/fbLike1.php");
+				require_once("../php/social/fbLike.php");
 			?>
 			<p>
 				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
