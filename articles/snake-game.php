@@ -655,6 +655,7 @@ td.gameCell {
 		</div>
 		<footer>
 			<?php 
+				echo("<p>Hello world</p>");
 				require_once("../php/social/fbLike.php");
 			?>
 			<p>
