@@ -105,6 +105,13 @@ article.main footer p {
 	margin: 0;
 }
 
+/** Create style for disqus comments */
+
+article.main #disqus_thread {
+	width: 980px;
+	margin: 0 auto;
+}
+
 /****************************************/
 
 /* Create style for article excertp */
