@@ -15,16 +15,25 @@
 	<div id="main">
 		<section>
 			<article class="excerpt">
+				<header>
+					<h3>
+						<a title="404 Error" href="#">
+							404 Error - Page Not Found
+						</a>
+					</h3>
+				</header>
 				<iframe width="560" height="315" src="http://www.youtube.com/embed/oqMl5CRoFdk" frameborder="0" allowfullscreen></iframe>
 				<header>
 					<h3>
-						<a title="404 Error" href="#" rel="alternate">
+						<a title="404 Error" href="#">
 							YOUR CAN'T ALWAYS GET WHAT YOU WANT
 						</a>
 					</h3>
 				</header>
 				<p>
-					Sorry about that, we could not get your webpage.
+					But if you try sometimes,<br>
+					You just might find what you need.
+					<a title="Rolling stiones 404" href="http://www.rollingstones.com/404" target="_blank">Rollingstones 404 page</a>
 				</p>
 				<div class="clear"></div>
 			</article>
