@@ -14,10 +14,10 @@
 	?>
 	<div id="main">
 		<section>
-			<?php require_once("../php/articleExcerpts.php"); ?>
+			<?php require_once("php/articleExcerpts.php"); ?>
 		</section>
 		<aside>
-			<?php require_once("../php/homeLinks.php"); ?>
+			<?php require_once("php/homeLinks.php"); ?>
 		</aside>
 	</div>
 </body>
