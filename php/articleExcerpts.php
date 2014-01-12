@@ -2,7 +2,7 @@
 	<header>
 		<h3>
 			<a title="Creating Facebook Like Button Automatically with PHP" href="#" rel="alternate">
-				Creating Facebook Like Button Automatically with PHP
+				Creating Facebook Button Dynamically with PHP
 			</a>
 		</h3>
 	</header>
