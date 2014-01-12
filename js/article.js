@@ -18,7 +18,6 @@ function backToTopAnimation() {
 	});
 	
 	$("#outline").on("click", "a", function(event) {
-		console.log("Clicked on link");
 		event.preventDefault();
 		var href = $(this).attr("href");
 		scrollToAnchor(href);
@@ -26,7 +25,6 @@ function backToTopAnimation() {
 }
 
 function scrollToAnchor(aid){
-	console.log("Trying to scroll to link: " + aid);
     var aTag = $(aid);
     $("html,body").animate({scrollTop: aTag.offset().top},"slow");
 }
