@@ -93,6 +93,7 @@
 				<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 			</p>
 		</footer>
+		<div id="disqus_thread"></div>
 		<script type="text/javascript">
 			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 			var disqus_shortname = 'learncodeart'; // required: replace example with your forum shortname
