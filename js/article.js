@@ -12,16 +12,9 @@ function backToTopAnimation() {
 		}
 	});
 	
-	$('.toTop').click(function() {
-		var time = $(window).scrollTop() * 10;
+	$('.toTop').click(function(event) {
+		var time = $(window).scrollTop() * 100;
 		$('body,html').animate({scrollTop:0},time);
+		event.preventDefault();
 	});
-	
-	document.onclick = function (e) {
-		e = e ||  window.event;
-		var element = e.target || e.srcElement;
-		if (element.tagName == 'A' && element.className == "toTop") {
-			return false; // prevent default action and stop event propagation
-		}
-	};
 }
