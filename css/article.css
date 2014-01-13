@@ -37,7 +37,7 @@ article.main #outline {
 }
 
 article.main #outline section {
-	width: 980px;
+	max-width: 980px;
 	margin: 0 auto;
 	padding: 20px;
 }
@@ -48,7 +48,7 @@ article.main #outline h2 {
 }
 
 article.main #outline ul {
-	margin: 10px auto;
+	margin: 10px 0;
 }
 
 article.main #outline a {
@@ -62,12 +62,13 @@ article.main #outline a:hover {
 /* Create style for article content */
 
 article.main #content{
-	width: 980px;
+	max-width: 980px;
 	margin: 0 auto;
 }
 
 article.main #content p {
 	text-align: justify;
+	padding: 0 10px;
 }
 
 article.main h2, article.main h3{
@@ -118,7 +119,7 @@ article.main footer p {
 /** Create style for disqus comments */
 
 article.main #disqus_thread {
-	width: 700px;
+	max-width: 700px;
 	margin: 20px auto 0 auto;
 }
 
