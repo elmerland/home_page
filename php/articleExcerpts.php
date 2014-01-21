@@ -20,7 +20,7 @@
 <article class="excerpt">
 	<header>
 		<h3>
-			<a title="Creating a Dynamically Sized Table with JavaScript" href="#" rel="alternate">
+			<a title="Creating a Dynamically Sized Table with JavaScript" href="http://learncodeart.com/articles/dynamic_table.php" rel="alternate">
 				Creating a Dynamically Sized Table with JavaScript
 			</a>
 		</h3>
@@ -39,7 +39,7 @@
 <article class="excerpt">
 	<header>
 		<h3>
-			<a title="Creating a little snake game" href="articles/snake-game.php" rel="alternate">
+			<a title="Creating a little snake game" href="http://learncodeart.com/articles/snake_game.php" rel="alternate">
 				Creating a Little Snake Game
 			</a>
 		</h3>
