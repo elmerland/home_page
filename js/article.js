@@ -31,16 +31,17 @@ function scrollToAnchor(aid){
 }
 
 function snippetStyles() {
-	$("pre.htmlCode").snippet("html", {style:"bright",showNum:false});
+	var theme = "acid";
+	$("pre.htmlCode").snippet("html", {style:theme,showNum:true});
 		// Finds <pre> elements with the class "htmlCode"
 		// and snippet highlights the HTML code within.
 
-	$("pre.styles").snippet("css",{style:"bright",showNum:false});
+	$("pre.styles").snippet("css",{style:theme,showNum:true});
 		// Finds <pre> elements with the class "styles"
 		// and snippet highlights the CSS code within
 		// using the "greenlcd" styling.
 
-	$("pre.js").snippet("javascript",{style:"bright",showNum:false});
+	$("pre.js").snippet("javascript",{style:theme,showNum:true});
 		// Finds <pre> elements with the class "js"
 		// and snippet highlights the JAVASCRIPT code within
 		// using a random style from the selection of 39
