@@ -31,7 +31,7 @@ function scrollToAnchor(aid){
 }
 
 function snippetStyles() {
-	var theme = "acid";
+	var theme = "typical";
 	$("pre.htmlCode").snippet("html", {style:theme,showNum:true});
 		// Finds <pre> elements with the class "htmlCode"
 		// and snippet highlights the HTML code within.
