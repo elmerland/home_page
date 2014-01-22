@@ -84,6 +84,17 @@ article.main #content a {
 	color: #C98519;
 }
 
+/* Create style for pre-formatted text */
+
+article.main #content pre {
+	background-color: #666B75;
+	color: #FFFFFF;
+	border: 10px solid #43464D;
+	-webkit-border-radius: 0 25px 25px 25px;
+	-moz-border-radius: 0 25px 25px 25px;
+	border-radius: 0 25px 25px 25px;
+}
+
 /* Create style for social media */
 
 article.main .social {
@@ -121,54 +132,4 @@ article.main footer p {
 article.main #disqus_thread {
 	max-width: 700px;
 	margin: 20px auto 0 auto;
-}
-
-/****************************************/
-
-/* Create style for article excertp */
-
-article.excerpt {
-	padding: 10px;
-	margin: 5px;
-	border: 2px solid #43464D;
-	-webkit-border-radius: 0 25px 25px 25px;
-	-moz-border-radius: 0 25px 25px 25px;
-	border-radius: 0 25px 25px 25px;
-}
-
-article.excerpt p {
-	text-align: justify;
-}
-
-article.excerpt h3 a{
-	text-decoration: none;
-	color: #FFFFFF;
-	background-color: #43464D;
-	font-size: 1.2em;
-	padding: 10px 20px;
-	position: relative;
-	left: -10px;
-	-webkit-border-radius: 0 25px 25px 0;
-	-moz-border-radius: 0 25px 25px 0;
-	border-radius: 0 25px 25px 0;
-	
-	transition: background 0.3s ease-in-out;
-}
-
-article.excerpt h3 a:hover {
-	color: #FFFFFF;
-	background-color: #F3A11E;
-}
-
-article.excerpt footer {
-	font-size: .8em;
-	float: right;
-}
-
-article.excerpt footer p {
-	text-align: right;
-}
-
-article.excerpt .clear {
-	clear: both;
 }
