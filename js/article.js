@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	backToTopAnimation();
+	snippetStyles();
 });
 
 function backToTopAnimation() {
@@ -27,4 +28,22 @@ function backToTopAnimation() {
 function scrollToAnchor(aid){
     var aTag = $(aid);
     $("html,body").animate({scrollTop: aTag.offset().top},"slow");
+}
+
+function snippetStyles() {
+	$("pre.htmlCode").snippet("html", {style:"bright",showNum:false});
+		// Finds <pre> elements with the class "htmlCode"
+		// and snippet highlights the HTML code within.
+
+	$("pre.styles").snippet("css",{style:"bright",showNum:false});
+		// Finds <pre> elements with the class "styles"
+		// and snippet highlights the CSS code within
+		// using the "greenlcd" styling.
+
+	$("pre.js").snippet("javascript",{style:"bright",showNum:false});
+		// Finds <pre> elements with the class "js"
+		// and snippet highlights the JAVASCRIPT code within
+		// using a random style from the selection of 39
+		// with a transparent background
+		// without showing line numbers.
 }

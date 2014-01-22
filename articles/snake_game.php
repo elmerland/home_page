@@ -122,7 +122,7 @@
 			The first step was to create the HTML file. The structure of this file is really simple, since the main focus of the project is on the JavaScript I kept all HTML to a minimum.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="htmlCode">
 &lt;meta http-equiv="Content-type" content="text/html; charset=UTF-8" /&gt;
 &lt;title>Snake game&lt;/title&gt;
 &lt;link rel="stylesheet" type="text/css" href="css/main.css" /&gt;
@@ -147,7 +147,7 @@
 			The snake.js file is imported before the table.js file because the table.js is what actually sets off everything into motion, and I thought it would be better for the snake.js file to be already loaded into memory before the table.js file kicked in.
 		</p>
 	
-		<pre class="prettyprint linenums">
+		<pre class="htmlCode">
 &lt;div id="main"&gt;
 	&lt;h1&gt;Welcome to my snake game!&lt;/h1&gt;
 	&lt;p&gt;Size of grid: &lt;input id="input" type="text"&gt;&lt;/p&gt;
@@ -191,7 +191,7 @@
 			The first thing I created was to add an event listener to know when the document loads.
 		</p>
 	
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Calls the init function when the page document loads.
 window.onload = function () {
 	"use strict";
@@ -202,7 +202,7 @@ window.onload = function () {
 			With this in place, right after the document (page) is loaded the <strong>int()</strong> function will be called.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 //Initializes the snake game.
 function init() {
 	"use strict";
@@ -235,7 +235,7 @@ function init() {
 			The create game function is in charge of setting up the game table and prepare everything for the start of the game.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Gives functionality to the create game button.
 function createGameButton() {
 	// Clear existing table.
@@ -257,7 +257,7 @@ function createGameButton() {
 			This function first clears the game table if there was one, then it gets a validates the size of the new game table, next it creates a new game table, and finally it enables the "start game" button. The create game function looks as follows.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Creates a new game table with all the necessary components.
 function createGame() {
 	"use strict";
@@ -275,7 +275,7 @@ function createGame() {
 			The game table is creating using simple &lt;table&gt;, &lt;tbody&gt;, &lt;tr&gt;, and &lt;td&gt; elements. One thing worth noting is that each table cell has two extra properties that will be used by the snake.js file. These are the "occupied" and "hasFood" properties as shown below.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 column.occupied = false;
 column.hasFood = false;</pre>
 	
@@ -283,7 +283,7 @@ column.hasFood = false;</pre>
 			Going back to the "create game" button, we saw that it gives a function to the "start game" button. This is what that function looks like.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Gives functionality to the start game button.
 function startGameButton() {
 	if (game != undefined &amp;&amp; game != null) {
@@ -298,7 +298,7 @@ function startGameButton() {
 			This function first checks if the game table is set up. Then it resets the messages for the "countdown" and "gameStatus" elements in the HTML file. Finally it starts a new timer and gives it the <strong>countDown()</strong> function. This function just updates the "coundown" element until the counter reaches zero, and then it starts the game. This is how the <strong>countDown()</strong> function looks like.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Updates the countdown element.
 function countDown() {
 	"use strict";
@@ -327,7 +327,7 @@ function countDown() {
 			To create a snake representation recursion will always be your friend. The snake consists of several snake nodes. Each node is visually represented by a square, and so it naturally has a x and y coordinate. When the snake moves, only the head node is moved. This head node will then call on all of the trailing nodes to move right after it. Therefore, most of the thought process goes into the behavior of this head node. Every node after the head will just follow suit and should be relatively straight forward. The first step was to create a snake node constructor, that looks like this.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Constructor for a SnakeNode objec.
 function SnakeNode(row, col, tail, isHead) {
 	"use strict";
@@ -349,7 +349,7 @@ function SnakeNode(row, col, tail, isHead) {
 			Next, I implemented two functions for the snake node prototype.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Add functions to SnakeNode protrotype.
 SnakeNode.prototype = {
 	// Add move function.
@@ -413,7 +413,7 @@ SnakeNode.prototype = {
 			The first function called <strong>move()</strong> simple moves the snake node from its current position to the specified position and the second function called <strong>addNode()</strong> just adds a new snake node to the tail of the current snake node. The move function first checks if the next position the snake node is going to be moved to correspond to a cell outside of the board or if the cell is already occupied by another snake node. Then it checks if the next position has any food in it. If it does, it creates a new food item. Next it updates the position of the snake node while also changing the coloring of the table cell and the occupied status of the cell. Finally it checks whether the current snake node has a tail node. If it does, then it moves the tail node to where the current snake node was. If it doesn't have a tail node it checks if the next cell has food in it. If it does it adds a new tail node if it doesn't it does nothing. The addNode function simply creates a new snake node to the specified position. The getCell(), colorCell(), addFood(), and clearFood() functions are very self explanatory and will leave to you to figure out.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Get the game table cell at the specified locaiton.
 function getCell(row, col) {
 	"use strict";
@@ -481,7 +481,7 @@ function clearFood(row, col) {
 			Now we will concern ourselves with how the snake actually moves. First lets take a look at the play function.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Starts a new game.
 function play() {
 	"use strict";
@@ -505,7 +505,7 @@ function play() {
 			This function is called immediately after the user clicks on the "start game" button and the countdown is done. It first calls a function to clear the board and reset everything in case there was a game previously in motion. Then it gets the center position of the game table to place the new snake head node at. It also adds a new food block. Finally it adds a function to the key down event, and two timers. One timer for each time the snake has to move and another timer for the clock. The <strong>changeDirection()</strong> function handles the key down event when the user presses on any of the arrow keys. There are a couple of important things about this function. First it uses a boolean called <strong>directionLock</strong>. The purpose of this boolean is so that the user can't change direction more than once per move. This is necessary because of the next feature of this function. When you are moving right and then press left the snake will crash against itself. To avoid this situation the changeDirection function prevents the user from changing the direction of the snake to the exact opposite of what the current direction is (i.e. left to right, up to down and vice versa). So in conjunction these two features will prevent the user from crashing the snake against itself just because of careless key presses which happens when you are in the heat of the game.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Change current direction everytime an arrow key is pressed.
 function changeDirection(e) {
 	"use strict";
@@ -554,7 +554,7 @@ function changeDirection(e) {
 			Lastly lets dissect the <strong>moveSnake()</strong> function, that is in charge of moving the snake head node.
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="js">
 // Move snake head one block in the current direction.
 function moveSnake() {
 	"use strict";
@@ -601,7 +601,7 @@ function moveSnake() {
 			These are the contents of the CSS file. 
 		</p>
 		
-		<pre class="prettyprint linenums">
+		<pre class="styles">
 p {
 	margin: 5px;
 }
