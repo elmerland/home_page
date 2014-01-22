@@ -6,7 +6,6 @@
 		require_once("../php/articleCSS_JS.php");
 	?>
 	<title>Creating a little Snake game</title>
-	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
 </head>
 <body>
 	<?php
