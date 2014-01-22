@@ -228,7 +228,7 @@ $(document).ready(function () {
 		<footer>
 			<p>
 				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
-				Las updated: January 12, 2014<br>
+				Las updated: January 22, 2014<br>
 				<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 			</p>
 		</footer>
