@@ -95,7 +95,7 @@
 				First we create a simple HTML structure to hold the table. The only things needed are an input field for the user to write the size of the table, a label for the input field, a header for our page, and a button to trigger the creation of the table. Also, the HTML file needs to include a jQuery library, a link to the CSS style sheet, and a link to the JavaScript file that creates the table. This is what the HTML document looks like.
 			</p>
 			
-			<pre class="prettyprint">&lt;!DOCTYPE html&gt;
+			<pre>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 	&lt;head&gt;
 		&lt;meta http-equiv="Content-type" content="text/html; charset=UTF-8" /&gt;
