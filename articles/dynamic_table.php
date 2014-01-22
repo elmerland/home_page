@@ -58,7 +58,7 @@
 				This is what the final result looks like. Click on the link or copy it into your browser.
 			</p>
 			
-			<img href="http://learncodeart.com/projects/dynamic_table/screenshort.jpg">
+			<img href="http://learncodeart.com/projects/dynamic_table/screenshot.jpg" width="200px">
 			
 			<p>
 				<a href="http://learncodeart.com/projects/dynamic_table/table.html">http://learncodeart.com/projects/dynamic_table/table.html</a>
