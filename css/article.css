@@ -87,8 +87,9 @@ article.main #content a {
 /* Create style for pre-formatted text */
 
 article.main #content pre {
-	background-color: #666B75;
-	color: #FFFFFF;
+	background-color: #FFFFFF;
+	color: #43464D;
+	border: 10px solid #666B75;
 	-webkit-border-radius: 25px 25px 25px 25px;
 	-moz-border-radius: 25px 25px 25px 25px;
 	border-radius: 25px 25px 25px 25px;
