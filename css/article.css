@@ -89,10 +89,10 @@ article.main #content a {
 article.main #content pre {
 	background-color: #666B75;
 	color: #FFFFFF;
-	border: 10px solid #43464D;
-	-webkit-border-radius: 0 25px 25px 25px;
-	-moz-border-radius: 0 25px 25px 25px;
-	border-radius: 0 25px 25px 25px;
+	border: 10px solid #04A3C6;
+	-webkit-border-radius: 25px 25px 25px 25px;
+	-moz-border-radius: 25px 25px 25px 25px;
+	border-radius: 25px 25px 25px 25px;
 }
 
 /* Create style for social media */
