@@ -41,7 +41,7 @@ function snippetStyles() {
 		// and snippet highlights the CSS code within
 		// using the "greenlcd" styling.
 
-	$("pre.js").snippet("javascript",{style:theme,showNum:true});
+	$("pre.js").snippet("JavaScript",{style:theme,showNum:true});
 		// Finds <pre> elements with the class "js"
 		// and snippet highlights the JAVASCRIPT code within
 		// using a random style from the selection of 39
