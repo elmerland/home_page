@@ -1,25 +1,6 @@
 <article class="excerpt">
 	<header>
 		<h3>
-			<a title="Creating Facebook Like Button Automatically with PHP" href="#" rel="alternate">
-				Creating Facebook Button Dynamically with PHP
-			</a>
-		</h3>
-	</header>
-	<p>
-		How to automatically generate a Facebook like and share button for every page. This way you don’t have to copy paste the code into every article and the page URL is also dynamically created for each page. All of this is done with some simple PHP scripting.
-	</p>
-	<footer>
-		<p>
-			Written by: Elmer Landaverde<br>
-			January 12, 2014
-		</p>
-	</footer>
-	<div class="clear"></div>
-</article>
-<article class="excerpt">
-	<header>
-		<h3>
 			<a title="Creating a Dynamically Sized Table with JavaScript" href="http://learncodeart.com/articles/dynamic_table.php" rel="alternate">
 				Creating a Dynamically Sized Table with JavaScript
 			</a>

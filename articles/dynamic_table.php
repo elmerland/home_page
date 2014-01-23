@@ -36,7 +36,7 @@
 		
 		<header>
 			<h1>Creating a Dynamically Sized Table with JavaScript</h1>
-			<p><time pubdate datetime="2014-01-12">Created on: January 12, 2014</time></p>
+			<p><time pubdate datetime="2014-01-09">Created on: January 9, 2014</time></p>
 		</header>
 		
 		<div id="content">
@@ -228,7 +228,7 @@ $(document).ready(function () {
 		<footer>
 			<p>
 				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
-				Las updated: January 22, 2014<br>
+				Las updated: January 23, 2014<br>
 				<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 			</p>
 		</footer>
