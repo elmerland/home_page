@@ -15,7 +15,7 @@
 	?>
 	<article class="main">
 		
-		<div id="outline">
+		<div class="outline">
 			<section>
 				<h2>Article - Outline</h2>
 				<ul>
@@ -39,7 +39,7 @@
 			<p><time pubdate datetime="2014-00-00">Created on: Month 00, 2014</time></p>
 		</header>
 		
-		<div id="content">
+		<div class="content">
 			
 			<h2 id="theProject">The Project</h2>
 			<span><a class="toTop" href="#">Back to top</a></span>

@@ -9,11 +9,11 @@ html, body {
 
 /* Create styling for top banner */
 
-#pageHeader {
+.pageHeader {
 	background-color: #ffffff;
 }
 
-#pageHeader  div {
+.pageHeader  div {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -25,12 +25,12 @@ html, body {
 	background-color: #FFFFFF;
 }
 
-#pageHeader img {
+.pageHeader img {
 	position: relative;
 	top: 10px;
 }
 
-#pageHeader h1 {
+.pageHeader h1 {
 	position: absolute;
 	top: 30px;
 	left: 160px;
@@ -41,7 +41,7 @@ html, body {
 	color: #43464D;
 }
 
-#pageHeader h2 {
+.pageHeader h2 {
 	position: absolute;
 	top: 160px;
 	left:150px;

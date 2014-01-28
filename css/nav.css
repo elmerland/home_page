@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Create styling for navigation bar */
 
-#pageNav {
+.pageNav {
 	position: absolute;
 	top: 250px;
 	left: 0;
@@ -10,18 +10,18 @@
 	height: 50px;
 }
 
-#pageNav ul {
+.pageNav ul {
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
 	text-align: center;
 }
 
-#pageNav ul li {
+.pageNav ul li {
 	display: inline;
 }
 
-#pageNav ul li a {
+.pageNav ul li a {
 	text-decoration: none;
 	font-size: 2em;	
 	line-height: 50px;
@@ -32,7 +32,7 @@
 	transition: background 0.2s ease-in-out;
 }
 
-#pageNav ul li a:hover
+.pageNav ul li a:hover
 {
 	color: #FFFFFF;
 	background-color: #F3A11E;

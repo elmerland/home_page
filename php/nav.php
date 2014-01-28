@@ -1,4 +1,4 @@
-<nav id="pageNav">
+<nav class="pageNav">
 	<ul>
 		<li>
 			<a title="Home" href="http://learncodeart.com/index.php">Home</a>

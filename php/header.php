@@ -1,4 +1,4 @@
-<header id="pageHeader">
+<header class="pageHeader">
 	<div>
 		<figure>
 			<img src="http://learncodeart.com/_images/logo_600.png" width="150" height="150">

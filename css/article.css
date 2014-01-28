@@ -31,42 +31,42 @@ article.main header p {
 
 /* Create style for article outline */
 
-article.main #outline {
+article.main .outline {
 	background-color: #666B75;
 	color: #FFFFFF;
 }
 
-article.main #outline section {
+article.main .outline section {
 	max-width: 980px;
 	margin: 0 auto;
 	padding: 20px;
 }
 
-article.main #outline h2 {
+article.main .outline h2 {
 	margin: 0;
 	color: #FFFFFF;
 }
 
-article.main #outline ul {
+article.main .outline ul {
 	margin: 10px 0;
 }
 
-article.main #outline a {
+article.main .outline a {
 	color: #FFFFFF;
 }
 
-article.main #outline a:hover {
+article.main .outline a:hover {
 	color: #F3A11E;
 }
 
 /* Create style for article content */
 
-article.main #content{
+article.main .content{
 	max-width: 980px;
 	margin: 0 auto;
 }
 
-article.main #content p {
+article.main .content p {
 	text-align: justify;
 	padding: 0 10px;
 }
@@ -75,18 +75,18 @@ article.main h2, article.main h3{
 	display: inline-block;
 }
 
-article.main a.toTop {
+article.main .toTop {
 	margin: 0 0 0 40px;
 	font-size: .8em;
 }
 
-article.main #content a {
+article.main .content a {
 	color: #C98519;
 }
 
 /* Create style for pre-formatted text */
 
-article.main #content pre {
+article.main .content pre {
 	background-color: #DCF5FF;
 	color: #43464D;
 	border: 5px solid #04A3C6;
@@ -129,7 +129,7 @@ article.main footer p {
 
 /** Create style for disqus comments */
 
-article.main #disqus_thread {
+article.main .comments {
 	max-width: 700px;
 	margin: 20px auto 0 auto;
 }
