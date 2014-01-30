@@ -56,11 +56,15 @@
 			<span><a class="toTop" href="#">Back to top</a></span>
 	
 			<p>
-				This is what the final result looks like. Click on the link or copy it into your browser.
+				This is what the final result looks like:
 			</p>
 			
-			<img href="http://learncodeart.com/projects/dynamic_table/screenshot.jpg" width="200px">
+			<img src="http://learncodeart.com/projects/dynamic_table/screenshot.jpg" alt="Screen shot of final result">
 			
+			<p>
+				To play with it yourself you can go to this link:
+			</p>
+
 			<p>
 				<a href="http://learncodeart.com/projects/dynamic_table/table.html">http://learncodeart.com/projects/dynamic_table/table.html</a>
 			</p>
@@ -170,7 +174,7 @@ $(document).ready(function () {
 	$("thead").append("<tr></tr>");
 	var header = $("thead").first("tr");
 	for (var i = 0; i &lt; size; i++) {
-		header.append("<th>Heading " + i + "</th>")
+		header.append("<th>Heading " + i + "</th>");
 	}
 }</pre>
 			
@@ -194,7 +198,7 @@ $(document).ready(function () {
 			
 			<pre>function clearTable() {
 	var tableContainer = $("#tableContainer");
-	if (tableContainer.length != 0) {
+	if (tableContainer.length !== 0) {
 		tableContainer.remove();
 	}
 }</pre>
