@@ -6,7 +6,9 @@ html, body {
 }
 
 body {
-	background: #FFFFFF
+	background: url("http://learncodeart.com/_images/background.jpg");
+	background-position: 50% 0;
+	background-repeat: repeat-y;
 }
 
 #main {
