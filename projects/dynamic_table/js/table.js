@@ -21,7 +21,7 @@ function createTable() {
 
 function clearTable() {
 	var tableContainer = $("#tableContainer");
-	if (tableContainer.length != 0) {
+	if (tableContainer.length !== 0) {
 		tableContainer.remove();
 	}
 }
@@ -40,7 +40,7 @@ function createTableHeader() {
 	$("thead").append("<tr></tr>");
 	var header = $("thead").first("tr");
 	for (var i = 0; i < size; i++) {
-		header.append("<th>Heading " + i + "</th>")
+		header.append("<th>Heading " + i + "</th>");
 	}
 }
 
