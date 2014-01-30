@@ -1,6 +1,6 @@
 <article class="excerpt">
 	<header>
-		<a title="OpenDSA: Getting Acquainted" href="#" rel="alternate">
+		<a title="OpenDSA: Getting Acquainted" href="http://learncodeart.com/error/404.php" rel="alternate">
 			<h3>
 				OpenDSA: Getting Started With JSAV
 			</h3>
@@ -15,14 +15,14 @@
 	<footer>
 		<p>
 			Written by: Elmer Landaverde<br>
-			January 9, 2014
+			In a not too distant future
 		</p>
 	</footer>
 	<div class="clear"></div>
 </article>
 <article class="excerpt">
 	<header>
-		<a title="OpenDSA: Getting Acquainted" href="#" rel="alternate">
+		<a title="OpenDSA: Getting Acquainted" href="http://learncodeart.com/error/404.php" rel="alternate">
 			<h3>
 				OpenDSA: Getting Acquainted
 			</h3>
@@ -37,7 +37,7 @@
 	<footer>
 		<p>
 			Written by: Elmer Landaverde<br>
-			January 9, 2014
+			In a not too distant future
 		</p>
 	</footer>
 	<div class="clear"></div>
