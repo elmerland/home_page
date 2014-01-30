@@ -5,10 +5,10 @@ $(document).ready(function () {
 function backToTopAnimation() {
 	$(".toTop").hide();
 	$(window).scroll(function() {
-		if($(this).scrollTop() > 250) {
-		    $('.toTop').fadeIn();
+		if($(this).scrollTop() > 300) {
+			$('.toTop').fadeIn();
 		} else {
-		    $('.toTop').fadeOut();
+			$('.toTop').fadeOut();
 		}
 	});
 	
@@ -17,7 +17,7 @@ function backToTopAnimation() {
 		event.preventDefault();
 	});
 	
-	$("#outline").on("click", "a", function(event) {
+	$(".outline").on("click", "a", function(event) {
 		event.preventDefault();
 		var href = $(this).attr("href");
 		scrollToAnchor(href);
