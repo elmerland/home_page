@@ -84,6 +84,17 @@ article.main .content a {
 	color: #C98519;
 }
 
+article.main .content img {
+	display: block;
+	width: 600px;
+	padding: 10px;
+	margin: 0 auto;
+	border: 5px solid #04A3C6;
+	-webkit-border-radius: 0 25px 25px 25px;
+	-moz-border-radius: 0 25px 25px 25px;
+	border-radius: 0 25px 25px 25px;
+}
+
 /* Create style for pre-formatted text */
 
 article.main .content pre {

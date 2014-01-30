@@ -10,15 +10,14 @@ article.excerpt {
 	border-radius: 0 25px 25px 25px;
 }
 
-article.excerpt p {
-	text-align: justify;
-}
-
-article.excerpt h3 a{
+article.excerpt header a {
 	text-decoration: none;
 	color: #FFFFFF;
-	background-color: #43464D;
 	font-size: 1.2em;
+}
+
+article.excerpt header h3 {
+	background-color: #43464D;
 	padding: 10px 20px;
 	position: relative;
 	left: -10px;
@@ -29,9 +28,30 @@ article.excerpt h3 a{
 	transition: background 0.3s ease-in-out;
 }
 
-article.excerpt h3 a:hover {
+article.excerpt header a:hover {
 	color: #FFFFFF;
+}
+
+article.excerpt header h3:hover {
 	background-color: #F3A11E;
+}
+
+article.excerpt h4 {
+	color: #FFFFFF;
+	background-color: #04A3C6;
+	font-size: 1.0em;
+	padding: 10px 20px;
+	position: relative;
+	left: -10px;
+	-webkit-border-radius: 0 25px 25px 0;
+	-moz-border-radius: 0 25px 25px 0;
+	border-radius: 0 25px 25px 0;
+	
+	transition: background 0.3s ease-in-out;
+}
+
+article.excerpt p {
+	text-align: justify;
 }
 
 article.excerpt footer {
