@@ -13,31 +13,34 @@
 		require_once("../php/header.php");
 		require_once("../php/nav.php");
 	?>
+
+	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/leather-nunchuck.png);"></div>
+
 	<article class="main">
 		
-		<div class="outline">
+		<nav class="outline float">
 			<section>
-				<h2>OpenDSA: Getting Started - Outline</h2>
+				<h2>Outline</h2>
 				<ul>
-					<li><a href="#intro">Intro</a></li>
-					<li><a href="#tools">Tools</a></li>
-					<li><a href="#folderStructure">Folder Structure</a></li>
-					<li><a href="#rstFiles">Understanding RST Files</a></li>
-					<li><a href="#compilingBook">Compiling A Book</a></li>
-					<li><a href="#workflow">Workflow</a></li>
-					<li><a href="#conclusion">Conclusion</a></li>
-					<li><a href="#notes">Notes</a></li>
-					<li><a href="#disqus_thread">Comments</a></li>
+					<a href="#intro"><li>Intro</li></a>
+					<a href="#tools"><li>Tools</li></a>
+					<a href="#folderStructure"><li>Folder Structure</li></a>
+					<a href="#rstFiles"><li>RST Files</li></a>
+					<a href="#compilingBook"><li>Compiling A Book</li></a>
+					<a href="#workflow"><li>Workflow</li></a>
+					<a href="#conclusion"><li>Conclusion</li></a>
+					<a href="#notes"><li>Notes</li></a>
+					<a href="#disqus_thread"><li>Comments</li></a>
 				</ul>
 			</section>
-		</div>
-		
-		<header>
-			<h1>OpenDSA: Getting Started</h1>
-			<p><time pubdate datetime="2014-00-00">Created on: January 00, 2014</time></p>
-		</header>
-		
+		</nav>
+
 		<div class="content">
+
+			<header>
+				<h1>OpenDSA: Getting Started</h1>
+				<p><time pubdate datetime="2014-00-00">Created on: January 00, 2014</time></p>
+			</header>
 			
 			<h2 id="intro">Intro</h2>
 			<span><a class="toTop" href="#">Back to top</a></span>
@@ -107,23 +110,23 @@
 	
 			<p>
 			</p>
+
+			<section class="social">
+				<?php
+					include("../php/social/fbLike.php");
+				?>
+			</section>
+			
+			<footer>
+				<p>
+					Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
+					Las updated: Month 00, 2014<br>
+					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
+				</p>
+			</footer>
+			<?php require_once("../php/disqus.php"); ?>
 		
 		</div>
-		
-		<section class="social">
-			<?php
-				include("../php/social/fbLike.php");
-			?>
-		</section>
-		
-		<footer>
-			<p>
-				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
-				Las updated: Month 00, 2014<br>
-				<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
-			</p>
-		</footer>
-		<?php require_once("../php/disqus.php"); ?>
 	</article>
 </body>
 </html>

@@ -13,35 +13,38 @@
 		require_once("../php/header.php");
 		require_once("../php/nav.php");
 	?>
+
+	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/subway-lines.png);"></div>
+
 	<article class="main">
 		
-		<div class="outline" style="background-image: url(http://learncodeart.com/_images/patterns/shattered-island.png);">
+		<nav class="outline float">
 			<section>
-				<h2>Creating a little Snake game - Outline</h2>
+				<h2>Outline</h2>
 				<ul>
-					<li><a href="#theProject">The Project</a></li>
-					<li><a href="#theFinalResult">The Final Result</a></li>
-					<li><a href="#theCode">The Code</a></li>
-					<li><a href="#theMakingOf">The Making Of</a></li>
+					<a href="#theProject"><li>The Project</li></a>
+					<a href="#theFinalResult"><li>The Final Result</li></a>
+					<a href="#theCode"><li>The Code</li></a>
+					<a href="#theMakingOf"><li>The Making Of</li></a>
 					<ul>
-						<li><a href="#step1">Step 1 - HTML (index.html)</a></li>
-						<li><a href="#step2">Step 2 - JavaScript (table.js)</a></li>
-						<li><a href="#step3">Step 3 - JavaScript (snake.js)</a></li>
-						<li><a href="#step4">Step 4 - CSS (main.css)</a></li>
+						<a href="#step1"><li>HTML</li></a>
+						<a href="#step2"><li>JavaScript Table</li></a>
+						<a href="#step3"><li>JavaScript Snake</li></a>
+						<a href="#step4"><li>CSS</li></a>
 					</ul>
-					<li><a href="#conclusion">Conclusion</a></li>
-					<li><a href="#notes">Notes</a></li>
-					<li><a href="#disqus_thread">Comments</a></li>
+					<a href="#conclusion"><li>Conclusion</li></a>
+					<a href="#notes"><li>Notes</li></a>
+					<a href="#disqus_thread"><li>Comments</li></a>
 				</ul>
 			</section>
-		</div>
+		</nav>
 		
+		<div class="content">
+
 		<header>
 			<h1>Creating a little Snake game</h1>
 			<p><time pubdate datetime="2014-01-04">Created on: January 04, 2014</time></p>
 		</header>
-		
-		<div class="content">
 			
 		<h2 id="theProject">The Project</h2>
 		<span><a class="toTop" href="#">Back to top</a></span>
@@ -651,8 +654,7 @@ td.gameCell {
 		<p>
 			After completing the project a few thoughts came to me on some improvements that I could have included. However, I will leave this improvements for some future time. The first improvement is to include a pause button, which should be really simple because there is already a key listener in place. The second improvement which might be a bit harder to implement would be to give the user a slightly longer timer when the snake hits a wall. This is just to make it a little easier for the user to get the food block that appear at the edge of the game table.
 		</p>
-		</div>
-		
+
 		<section class="social">
 			<?php
 				include("../php/social/fbLike.php");
@@ -667,6 +669,8 @@ td.gameCell {
 			</p>
 		</footer>
 		<?php require_once("../php/disqus.php"); ?>
+
+		</div>
 	</article>
 </body>
 </html>

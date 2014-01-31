@@ -4,7 +4,8 @@
 
 .banner {
 	background-color: #666B75;
-	background-repeat: repeat-x repeat-y;
+	background-size: Auto 200px;
+	background-repeat: repeat-x;
 	height: 200px;
 	position: absolute;
 	top: 300px;
@@ -12,10 +13,16 @@
 	left: 0;
 }
 
+article.main nav.fixed {
+	position: fixed;
+	top: 0;
+	left: 150px;
+}
+
 /* Create article structure **************************************************/
 
 article.main {
-	position: absolute;
+	position: relative;
 	top: 500px;
 	left: 0;
 	right: 0;
@@ -26,10 +33,11 @@ article.main {
 
 article.main nav {
 	position: absolute;
+	top: 0;
 	left: 0;
 	min-width: 200px;
+	width: 200px;
 	max-width: 200px;
-
 }
 
 article.main .content{
@@ -48,38 +56,48 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 /* Create style for article outline ******************************************/
 
 article.main nav.outline {
-	background-color: #666B75;
-	background-repeat: repeat-x repeat-y;
-	color: #FFFFFF;
+
 }
 
 article.main nav.outline section {
-	background-color: rgba(102, 107, 117, 0.5); /* #666B75 */
-	padding: 10px 5px;
+	background-color: #666B75;
+	color: #FFFFFF;
+	padding: 10px 0px;
 }
 
 article.main nav.outline h2 {
 	text-align: center;
-	margin: 0;
+	margin: 0 0 10px;
 	color: #FFFFFF;
+}
+
+article.main nav.outline section > ul {
+	border-top: 2px dotted #04A3C6;
 }
 
 article.main nav.outline ul {
 	list-style-type: none;
-	padding: 0 10px;
-	margin: 10px 0;
+	padding: 0;
+	margin: 0;
 }
 
 article.main nav.outline a {
+	text-decoration: none;
 	color: #FFFFFF;
 }
 
-article.main nav.outline a:hover {
-	color: #F3A11E;
+article.main nav.outline li {
+	padding: 0 5px 5px 5px;
+	border-bottom: 2px dotted #04A3C6;
+	transition: background 0.2s ease-in-out;
 }
 
-article.main nav.outline li {
-	padding-bottom: 5px;
+article.main nav.outline ul ul {
+	padding: 0 0px 0px 20px;
+}
+
+article.main nav.outline li:hover {
+	background-color: #04A3C6;
 }
 
 /* Create style for article content ******************************************/

@@ -14,7 +14,7 @@
 		require_once("../php/nav.php");
 	?>
 
-	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/asteroids.jpg);"></div>
+	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/cuadros.png);"></div>
 
 	<article class="main">
 
@@ -22,17 +22,17 @@
 			<section>
 				<h2>Outline</h2>
 				<ul>
-					<li><a href="#theProject">The Project</a></li>
-					<li><a href="#theFinalResult">The Final Result</a></li>
-					<li><a href="#theCode">The Code</a></li>
-					<li><a href="#theMakingOf">The Making Of</a></li>
+					<a href="#theProject"><li>The Project</li></a>
+					<a href="#theFinalResult"><li>The Final Result</li></a>
+					<a href="#theCode"><li>The Code</li></a>
+					<a href="#theMakingOf"><li>The Making Of</li></a>
 					<ul>
-						<li><a href="#step1">Step 1</a></li>
-						<li><a href="#step2">Step 2</a></li>
+						<a href="#step1"><li>HTML</li></a>
+						<a href="#step2"><li>JavaScript</li></a>
 					</ul>
-					<li><a href="#conclusion">Conclusion</a></li>
-					<li><a href="#notes">Notes</a></li>
-					<li><a href="#disqus_thread">Comments</a></li>
+					<a href="#conclusion"><li>Conclusion</li></a>
+					<a href="#notes"><li>Notes</li></a>
+					<a href="#disqus_thread"><li>Comments</li></a>
 				</ul>
 			</section>
 		</nav>

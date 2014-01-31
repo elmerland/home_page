@@ -13,26 +13,29 @@
 		require_once("../php/header.php");
 		require_once("../php/nav.php");
 	?>
+
+	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/asteroids.jpg);"></div>
+
 	<article class="main">
 		
-		<div class="outline">
+		<nav class="outline float">
 			<section>
 				<h2>Article - Outline</h2>
 				<ul>
-					<li><a href="#theProject">The Project</a></li>
-					<li><a href="#theFinalResult">The Final Result</a></li>
-					<li><a href="#theCode">The Code</a></li>
-					<li><a href="#theMakingOf">The Making Of</a></li>
+					<a href="#theProject"><li>The Project</li></a>
+					<a href="#theFinalResult"><li>The Final Result</li></a>
+					<a href="#theCode"><li>The Code</li></a>
+					<a href="#theMakingOf"><li>The Making Of</li></a>
 					<ul>
-						<li><a href="#step1">Step 1</a></li>
-						<li><a href="#step2">Step 2</a></li>
+						<a href="#step1"><li>Step 1</li></a>
+						<a href="#step2"><li>Step 2</li></a>
 					</ul>
-					<li><a href="#conclusion">Conclusion</a></li>
-					<li><a href="#notes">Notes</a></li>
-					<li><a href="#disqus_thread">Comments</a></li>
+					<a href="#conclusion"><li>Conclusion</li></a>
+					<a href="#notes"><li>Notes</li></a>
+					<a href="#disqus_thread"><li>Comments</li></a>
 				</ul>
 			</section>
-		</div>
+		</nav>
 		
 		<header>
 			<h1>Title Of The Article</h1>
@@ -85,23 +88,23 @@
 	
 			<p>
 			</p>
+
+			<section class="social">
+				<?php
+					include("../php/social/fbLike.php");
+				?>
+			</section>
+			
+			<footer>
+				<p>
+					Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
+					Las updated: Month 00, 2014<br>
+					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
+				</p>
+			</footer>
+			<?php require_once("../php/disqus.php"); ?>
 		
 		</div>
-		
-		<section class="social">
-			<?php
-				include("../php/social/fbLike.php");
-			?>
-		</section>
-		
-		<footer>
-			<p>
-				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
-				Las updated: Month 00, 2014<br>
-				<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
-			</p>
-		</footer>
-		<?php require_once("../php/disqus.php"); ?>
 	</article>
 </body>
 </html>
