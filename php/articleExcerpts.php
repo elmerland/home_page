@@ -22,14 +22,14 @@
 </article>
 <article class="excerpt">
 	<header>
-		<a title="OpenDSA: Getting Acquainted" href="http://learncodeart.com/error/404.php" rel="alternate">
+		<a title="OpenDSA: Getting Acquainted" href="http://learncodeart.com/articles/odsa_getting_started.php" rel="alternate">
 			<h3>
 				OpenDSA: Getting Acquainted
 			</h3>
 		</a>
 	</header>
 	<h4>
-		Coming soon!
+		Under construction.
 	</h4>
 	<p>
 		Starting on a new project can be a daunting task, especially if the project has a lot of files and complex organization. Over time I have found that getting a high level overview of how the project works has helped me understand how all the details fit together. This is why in this article I will explain all you need to know to get acquainted with the OpenDSA project. At the end of the article you should be familiar with how the project is set up and understand all the parts you have to consider to start creating new content using JSAV.

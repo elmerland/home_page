@@ -15,7 +15,7 @@
 	?>
 	<article class="main">
 		
-		<div class="outline">
+		<div class="outline" style="background-image: url(http://learncodeart.com/_images/patterns/shattered-island.png);">
 			<section>
 				<h2>Creating a little Snake game - Outline</h2>
 				<ul>

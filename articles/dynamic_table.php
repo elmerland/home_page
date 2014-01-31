@@ -13,11 +13,14 @@
 		require_once("../php/header.php");
 		require_once("../php/nav.php");
 	?>
+
+	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/asteroids.jpg);"></div>
+
 	<article class="main">
-		
-		<div class="outline">
+
+		<nav class="outline float">
 			<section>
-				<h2>Article - Outline</h2>
+				<h2>Outline</h2>
 				<ul>
 					<li><a href="#theProject">The Project</a></li>
 					<li><a href="#theFinalResult">The Final Result</a></li>
@@ -32,14 +35,14 @@
 					<li><a href="#disqus_thread">Comments</a></li>
 				</ul>
 			</section>
-		</div>
-		
-		<header>
-			<h1>Creating a Dynamically Sized Table with JavaScript</h1>
-			<p><time pubdate datetime="2014-01-09">Created on: January 9, 2014</time></p>
-		</header>
-		
+		</nav>
+
 		<div class="content">
+
+			<header>
+				<h1>Creating a Dynamically Sized Table with JavaScript</h1>
+				<p><time pubdate datetime="2014-01-09">Created on: January 9, 2014</time></p>
+			</header>
 			
 			<h2 id="theProject">The Project</h2>
 			<span><a class="toTop" href="#">Back to top</a></span>
@@ -220,23 +223,22 @@ $(document).ready(function () {
 			<p>
 				The source code for this project includes a CSS files. However, in the instructions of how to make this project there is not mention of the file. This was intentional. The focus of the project is on the JavaScript, and so there is no need to discuss the styling of the table. The CSS file was included just to make the table a little more appealing. However, this styling will be removed in later articles.
 			</p>
-		
+
+			<section class="social">
+				<?php
+					include("../php/social/fbLike.php");
+				?>
+			</section>
+			
+			<footer>
+				<p>
+					Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
+					Las updated: January 25, 2014<br>
+					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
+				</p>
+			</footer>
+			<?php require_once("../php/disqus.php"); ?>
 		</div>
-		
-		<section class="social">
-			<?php
-				include("../php/social/fbLike.php");
-			?>
-		</section>
-		
-		<footer>
-			<p>
-				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
-				Las updated: January 25, 2014<br>
-				<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
-			</p>
-		</footer>
-		<?php require_once("../php/disqus.php"); ?>
 	</article>
 </body>
 </html>

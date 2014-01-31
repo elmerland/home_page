@@ -2,7 +2,6 @@
 <html>
 <head>
 	<?php
-		require_once("../php/social/fbJS.php");
 		require_once("../php/mainCSS.php");
 		require_once("../php/articleCSS_JS.php");
 	?>
@@ -10,6 +9,7 @@
 </head>
 <body>
 	<?php
+		require_once("../php/social/fbJS.php");
 		require_once("../php/header.php");
 		require_once("../php/nav.php");
 	?>
