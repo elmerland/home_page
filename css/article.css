@@ -4,7 +4,7 @@
 
 .banner {
 	background-color: #666B75;
-	background-size: Auto 200px;
+	background-position: 50% 0;
 	background-repeat: repeat-x;
 	height: 200px;
 	position: absolute;
@@ -55,14 +55,10 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 
 /* Create style for article outline ******************************************/
 
-article.main nav.outline {
-
-}
-
 article.main nav.outline section {
 	background-color: #666B75;
 	color: #FFFFFF;
-	padding: 10px 0px;
+	padding: 10px 0;
 }
 
 article.main nav.outline h2 {
@@ -93,7 +89,7 @@ article.main nav.outline li {
 }
 
 article.main nav.outline ul ul {
-	padding: 0 0px 0px 20px;
+	padding: 0 0 0 20px;
 }
 
 article.main nav.outline li:hover {
