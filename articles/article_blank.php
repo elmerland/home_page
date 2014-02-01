@@ -44,47 +44,61 @@
 		
 		<div class="content">
 			
-			<h2 id="theProject">The Project</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="theProject">
+				The Project
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 		
 			<p>
 			</p>
 	
-			<h2 id="theFinalResult">The Final Result</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="theFinalResult">
+				The Final Result
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
 			<p>
 			</p>
 		
-			<h2 id="theCode">The Code</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="theCode">
+				The Code
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
 			<p>
 			</p>
 	
-			<h2 id="theMakingOf">The Making Of</h2>
-			<span><a class="toTop" href="#">Back to top</a></span><br>
+			<h2 id="theMakingOf">
+				The Making Of
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
-			<h3 id="step1">Step 1</h3>
-			<span><a class="toTop" href="#">Back to top</a></span>
-	
-			<p>
-			</p>
-	
-			<h3 id="step2">Step 2</h3>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h3 id="step1">
+				Step 1
+			</h3>
 	
 			<p>
 			</p>
 	
-			<h2 id="conclusion">Conclusion</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h3 id="step2">
+				Step 2
+			</h3>
 	
 			<p>
 			</p>
 	
-			<h2 id="notes">Notes</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="conclusion">
+				Conclusion
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
+	
+			<p>
+			</p>
+	
+			<h2 id="notes">
+				Notes
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
 			<p>
 			</p>
@@ -98,7 +112,7 @@
 			<footer>
 				<p>
 					Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
-					Las updated: Month 00, 2014<br>
+					Last updated: Month 00, 2014<br>
 					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 				</p>
 			</footer>

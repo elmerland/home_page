@@ -44,8 +44,10 @@
 				<p><time pubdate datetime="2014-01-09">Created on: January 9, 2014</time></p>
 			</header>
 			
-			<h2 id="theProject">The Project</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="theProject">
+				The Project
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 		
 			<p>
 				The last article that was posted explained the entire process for creating a snake game using JavaScript. Upon some reflection I realized that writing up such a big project in one article might have being a bad idea. There is too much content and it is hard to follow. After some thought, I have decided to break the project into smaller pieces and post how each of the individual pieces where created. This will result in a much more modular design for my blog, and will make it easier to navigate through the project. Once all of the parts of the project have being explained I will create a blog post that pulls in everything together by just referencing the previous posts. With that said, let’s jump in.
@@ -55,8 +57,10 @@
 				The first step for creating a snake game is to create the board that the game will take place in. To make it a little bit more interesting the user will be allowed to select the size of the table that is going to be generated. For now we will not worry about the formatting of the table or how it looks. The focus is just on generating a dynamically sized table.
 			</p>
 	
-			<h2 id="theFinalResult">The Final Result</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="theFinalResult">
+				The Final Result
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
 			<p>
 				This is what the final result looks like:
@@ -72,8 +76,10 @@
 				<a href="http://learncodeart.com/projects/dynamic_table/table.html">http://learncodeart.com/projects/dynamic_table/table.html</a>
 			</p>
 		
-			<h2 id="theCode">The Code</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="theCode">
+				The Code
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
 			<p>
 				You can see the complete source code by clicking on the following links.
@@ -93,11 +99,14 @@
 				</a><br>
 			</p>
 	
-			<h2 id="theMakingOf">The Making Of</h2>
-			<span><a class="toTop" href="#">Back to top</a></span><br>
+			<h2 id="theMakingOf">
+				The Making Of
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
-			<h3 id="step1">Step 1 - HTML</h3>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h3 id="step1">
+				Step 1 - HTML
+			</h3>
 	
 			<p>
 				First we create a simple HTML structure to hold the table. The only things needed are an input field for the user to write the size of the table, a label for the input field, a header for our page, and a button to trigger the creation of the table. Also, the HTML file needs to include a jQuery library, a link to the CSS style sheet, and a link to the JavaScript file that creates the table. This is what the HTML document looks like.
@@ -119,8 +128,9 @@
 	&lt;/body&gt;
 &lt;/html&gt;</pre>
 	
-			<h3 id="step2">Step 2 - JavaScript</h3>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h3 id="step2">
+				Step 2 - JavaScript
+			</h3>
 	
 			<p>
 				With the HTML done we can start writing the JavaScript part of the dynamic table. These are the things that the JavaScript file needs to do: add an event listeners to the button element, create a variable that will store the size of the table, create functions that will automatically generate a table inside of the body element.
@@ -210,15 +220,19 @@ $(document).ready(function () {
 				This function concludes the dynamically sized table project. When the page is loaded the text input will be read to determine the size of the table, and when the button is pressed a new table will be created with the specified size. If the button is clicked on again, the old table will be removed and new one will take its place.
 			</p>
 					
-			<h2 id="conclusion">Conclusion</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="conclusion">
+				Conclusion
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
 			<p>
 				To reiterate this project was created because it was the first step to creating an in browser snake game. The dynamically size table will then be used as the game board where the game will be played on. Later on some more features will be added to the table that will serve as a way to identify each row and make it easier to get a pointer to a table cell element and also properties will be added that will help determine if there is a snake node on any given table cell.
 			</p>
 	
-			<h2 id="notes">Notes</h2>
-			<span><a class="toTop" href="#">Back to top</a></span>
+			<h2 id="notes">
+				Notes
+				<a class="toTop" href="#">Back to top</a>
+			</h2>
 	
 			<p>
 				The source code for this project includes a CSS files. However, in the instructions of how to make this project there is not mention of the file. This was intentional. The focus of the project is on the JavaScript, and so there is no need to discuss the styling of the table. The CSS file was included just to make the table a little more appealing. However, this styling will be removed in later articles.

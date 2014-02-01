@@ -46,8 +46,11 @@
 			<p><time pubdate datetime="2014-01-04">Created on: January 04, 2014</time></p>
 		</header>
 			
-		<h2 id="theProject">The Project</h2>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h2 id="theProject">
+			The Project
+			<a class="toTop" href="#">Back to top</a>
+		</h2>
+
 		<p>
 			At the end of last semester (Fall of 2013), I decided to get involved with a research project. I talked to one of the professors I had last semester who taught the data structures class and asked him if he needed any help for his research project. The professor I asked, Dr. Cliff Shaffer, is working on an open source online book for students that are taking a data structures class. This is a really cool site that has a lot of interactive learning tools for visualizing the data structures that we are taught in class. He told me that if I was interested in joining him I would mainly be working on creating visualizations, slides and exercises for the website. However, the thing that I would need the most was JavaScript, which I so happen to not know anything about. And so, into the JavaScript rabbit hole I went...
 		</p>
@@ -74,8 +77,10 @@
 			With all this in mind I started working on it, and after a day and a half of work it was done. In the end the project has a little bit under 500 lines of JavaScript code, about 40 lines of CSS and 30 lines of HTML. After completing the project I found that the most challenging part of completing the project was how often I had to look up thing on google. Even though I went through a lot of tutorials and videos about JavaScript you forget a lot of the details. However, because I watched so many tutorials as soon as I found the solution on-line everything came back and I did not have any problems understanding either the syntax or the logic of JavaScript.
 		</p>
 	
-		<h2 id="theFinalResult">The Final Result</h2>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h2 id="theFinalResult">
+			The Final Result
+			<a class="toTop" href="#">Back to top</a>
+		</h2>
 	
 		<p>
 			You can take a look at the final result by following this link, or copying into your browser:
@@ -86,8 +91,10 @@
 				http://learncodeart.com/projects/snake/snake.html</a>
 		</p>
 		
-		<h2 id="theCode">The Code</h2>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h2 id="theCode">
+			The Code
+			<a class="toTop" href="#">Back to top</a>
+		</h2>
 	
 		<p>
 			Since this was my first time writing a webpage I had to reorganize my files a couple of times before getting an organization that I liked. At the end there where four files. One HTML, one CSS and two JavaScript. The contents of the HTML and CSS files are straightforward. I decided to split the JavaScript file into two because I thought it looked cleaner. The first file "snake.js" controls the logic of the actual game, the second file "table.js" is in charge of the webpage functionality. Mainly it handles the creation of the table where the game takes places, gets information from the text field and radio buttons, and it determines what the buttons do when pressed. Below is a copy of the source code for the project.
@@ -115,11 +122,14 @@
 			To download the files, right click on them and then select "save target as" or "save link as" (depending on OS) to get the original text file.
 		</p>
 	
-		<h2 id="theMakingOf">The Making Of</h2>
-		<span><a class="toTop" href="#">Back to top</a></span><br>
+		<h2 id="theMakingOf">
+			The Making Of
+			<a class="toTop" href="#">Back to top</a>
+		</h2>
 	
-		<h3 id="step1">Step 1 - HTML file</h3>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h3 id="step1">
+			Step 1 - HTML file
+		</h3>
 	
 		<p>
 			The first step was to create the HTML file. The structure of this file is really simple, since the main focus of the project is on the JavaScript I kept all HTML to a minimum.
@@ -187,8 +197,9 @@
 			When you open page in your browser all you will see is the content of the HTML file. The rest is added once the user clicks on the "create game" button.
 		</p>
 	
-		<h3 id="step2">Step 2 - JavaScript (table.js)</h3>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h3 id="step2">
+			Step 2 - JavaScript (table.js)
+		</h3>
 	
 		<p>
 			The first thing I created was to add an event listener to know when the document loads.
@@ -323,8 +334,9 @@ function countDown() {
 			From this moment on, the table.js file is done and as soon as the user clicks on the start game button, then the countdown starts and the <strong>play()</strong> function in the snake.js file is executed.
 		</p>
 	
-		<h3 id="step3">Step 3 - JavaScript (Snake.js)</h3>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h3 id="step3">
+			Step 3 - JavaScript (Snake.js)
+		</h3>
 	
 		<p>
 			To create a snake representation recursion will always be your friend. The snake consists of several snake nodes. Each node is visually represented by a square, and so it naturally has a x and y coordinate. When the snake moves, only the head node is moved. This head node will then call on all of the trailing nodes to move right after it. Therefore, most of the thought process goes into the behavior of this head node. Every node after the head will just follow suit and should be relatively straight forward. The first step was to create a snake node constructor, that looks like this.
@@ -584,8 +596,9 @@ function moveSnake() {
 			This function first determines the next cell the snake has to move to based on the current direction. Then it calls the <strong>move()</strong> function on the snake head node, and finally it sets the directionLock to false. This covers the most important parts of the snake.js file. There are still some functions left that were not covered (i.e. resetBoard, gameOver, addPoints, increaseTimer), I feel confident the you can figure them out.
 		</p>
 	
-		<h3 id="step4">Step 4 - CSS (main.css)</h3>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h3 id="step4">
+			Step 4 - CSS (main.css)
+		</h3>
 	
 		<p>
 			The CSS file for this project is fairly small. These are the stylings that are made by the style sheet file.
@@ -641,15 +654,19 @@ td.gameCell {
 	float:left;
 }</pre>
 	
-		<h2 id="conclusion">Conclusion</h2>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h2 id="conclusion">
+			Conclusion
+			<a class="toTop" href="#">Back to top</a>
+		</h2>
 	
 		<p>
 			This was fun little project, and it definitely served its purpose of getting some JavaScript practice under my belt. I was able to achieve all the features I wanted to and gave me more confidence to engage in bigger and more complex projects. I'll definitely make some other posts in the future about any other JavaScript challenges I face next semester and probably also any other project that I have to do for school.
 		</p>
 	
-		<h2 id="notes">Notes</h2>
-		<span><a class="toTop" href="#">Back to top</a></span>
+		<h2 id="notes">
+			Notes
+			<a class="toTop" href="#">Back to top</a>
+		</h2>
 	
 		<p>
 			After completing the project a few thoughts came to me on some improvements that I could have included. However, I will leave this improvements for some future time. The first improvement is to include a pause button, which should be really simple because there is already a key listener in place. The second improvement which might be a bit harder to implement would be to give the user a slightly longer timer when the snake hits a wall. This is just to make it a little easier for the user to get the food block that appear at the edge of the game table.

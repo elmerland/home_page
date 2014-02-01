@@ -4,19 +4,24 @@ var windowSize;
 var leftOffset;
 
 $(document).ready(function () {
+	// Get window size and set foating objects offset.
 	windowSize = $(document).width();
 	leftOffset = Math.floor((windowSize - 980) / 2);
+	// Hide the "Back to top" buttons when the page loads.
+	$(".toTop").hide();
+	// Initialize all animations.
 	addAnimation();
 });
 
 function addAnimation() {
+	// Updates the left ofset of the floating element every time the window is resized.
 	$(window).resize(function () {
 		windowSize = $(document).width();
 		leftOffset = Math.floor((windowSize - 980) / 2);
 		$(".fixed").css("left", leftOffset + "px");
 	});
 
-	$(".toTop").hide();
+	// Create animation for "Back to top" fadein and fadeout, and also add animation for floating elment.
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop() - 500;
 		var nav = $(".float");
@@ -55,6 +60,7 @@ function scrollToAnchor(aid){
     $("html,body").animate({scrollTop: aTag.offset().top},"slow");
 }
 
+// Toggles the fadein and fadeout of "Back to top" elements only when needed.
 function displayToggle(d) {
 	if ((display && d) || (!display && !d)) {
 		return;

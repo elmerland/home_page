@@ -1,0 +1,1 @@
+1) Add the logo image at the top of the floating navigation outline. When the user scrolls down the navigation page also scrolls down and the hidden logo appears.
