@@ -44,6 +44,12 @@
 			<header>
 				<h1>Creating a little Snake game</h1>
 				<p><time pubdate datetime="2014-01-04">Created on: January 04, 2014</time></p>
+				<section class="social">
+					<?php
+						include("../php/social/fbLike.php");
+						include("../php/social/twitter.php");
+					?>
+				</section>
 			</header>
 			
 			<section id="theProject">
@@ -357,6 +363,7 @@
 			<section class="social">
 				<?php
 					include("../php/social/fbLike.php");
+					include("../php/social/twitter.php");
 				?>
 			</section>
 			

@@ -20,7 +20,7 @@
 		
 		<nav class="outline float">
 			<section>
-				<h2>Outline</h2>
+				<header>Article - Outline</header>
 				<ul>
 					<a href="#theProject"><li>The Project</li></a>
 					<a href="#theFinalResult"><li>The Final Result</li></a>
@@ -130,7 +130,6 @@
 				<p>
 				</p>
 			</section>
-			
 			<section class="social">
 				<?php
 					include("../php/social/fbLike.php");

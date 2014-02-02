@@ -7,6 +7,8 @@ $(document).ready(function () {
 	// Get window size and set foating objects offset.
 	windowSize = $(document).width();
 	leftOffset = Math.floor((windowSize - 980) / 2);
+	$(".fixed").css("left", leftOffset + "px");
+	scrollNav();
 	// Hide the "Back to top" buttons and link images when the page loads.
 	$(".toTop").css("visibility", "hidden");
 	$("section header img").css("visibility", "hidden");
@@ -23,21 +25,7 @@ function addAnimation() {
 	});
 
 	// Create animation for "Back to top" fadein and fadeout, and also add animation for floating elment.
-	$(window).scroll(function() {
-		var scroll = $(this).scrollTop() - 500;
-		var nav = $(".float");
-		if(scroll >= 0) {
-			if (!nav.hasClass(className)) {
-				nav.addClass(className);
-				nav.css("left", leftOffset + "px");
-			}
-		} else {
-			if (nav.hasClass(className)) {
-				nav.removeClass(className);
-				nav.css("left", "0");
-			}
-		}
-	});
+	$(window).scroll(scrollNav);
 	
 	// Intercept click to the "Back to top" links.
 	$(".toTop").click(function(event) {
@@ -68,3 +56,20 @@ function scrollToAnchor(aid){
     var aTag = $(aid);
     $("html,body").animate({scrollTop: aTag.offset().top},"slow");
 }
+
+// Scrolls the navigation pane into view.
+function scrollNav() {
+		var scroll = $(this).scrollTop() - 500;
+		var nav = $(".float");
+		if(scroll >= 0) {
+			if (!nav.hasClass(className)) {
+				nav.addClass(className);
+				nav.css("left", leftOffset + "px");
+			}
+		} else {
+			if (nav.hasClass(className)) {
+				nav.removeClass(className);
+				nav.css("left", "0");
+			}
+		}
+	}

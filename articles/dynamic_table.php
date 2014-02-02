@@ -38,9 +38,16 @@
 		</nav>
 
 		<div class="content">
+
 			<header>
 				<h1>Creating a Dynamically Sized Table with JavaScript</h1>
 				<p><time pubdate datetime="2014-01-09">Created on: January 9, 2014</time></p>
+				<section class="social">
+					<?php
+						include("../php/social/fbLike.php");
+						include("../php/social/twitter.php");
+					?>
+				</section>
 			</header>
 
 			<section id="theProject">
@@ -70,7 +77,7 @@
 					This is what the final result looks like:
 				</p>
 				
-				<img class="image" src="http://learncodeart.com/projects/dynamic_table/screenshot.jpg" alt="Screen shot of final result">
+				<img class="image" src="http://learncodeart.com/projects/dynamic_table/screenshot.png" alt="Screen shot of final result">
 				
 				<p>
 					To play with it yourself you can go to this link:
@@ -204,6 +211,7 @@
 			<section class="social">
 				<?php
 					include("../php/social/fbLike.php");
+					include("../php/social/twitter.php");
 				?>
 			</section>
 			
