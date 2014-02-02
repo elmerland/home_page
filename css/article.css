@@ -5,7 +5,7 @@
 div.banner {
 	background-color: #666B75;
 	background-position: 50% 0;
-	background-repeat: repeat-x;
+	background-repeat: repeat-x repeat-y;
 	height: 200px;
 	position: absolute;
 	top: 300px;
@@ -49,9 +49,7 @@ article.main .content{
 
 /* Create style for article header *******************************************/
 
-article h1, article h2, article h3, article h4, article h5, article h6 {
-	color: #43464D;
-}
+article h1, article h2, article h3, article h4, article h5, article h6 {color: #43464D;}
 
 /* Create style for article outline ******************************************/
 
@@ -67,9 +65,7 @@ nav.outline h2 {
 	color: #FFFFFF;
 }
 
-nav.outline section > ul {
-	border-top: 2px solid #04A3C6;
-}
+nav.outline section > ul {border-top: 2px solid #04A3C6;}
 
 nav.outline ul {
 	list-style-type: none;
@@ -88,19 +84,15 @@ nav.outline li {
 	transition: background 0.2s ease-in-out;
 }
 
-nav.outline ul > ul li {
-	padding-left: 20px;
-}
+nav.outline ul > ul li {padding-left: 20px;}
 
-nav.outline li:hover {
-	background-color: #04A3C6;
-}
+nav.outline li:hover {background-color: #04A3C6;}
 
 /* Create style for article content ******************************************/
 
-.content header {
-	text-align: center;
-}
+/* Headers styling */
+
+.content header {text-align: center;}
 
 .content header h1 {
 	margin-top: 10px;
@@ -113,38 +105,65 @@ nav.outline li:hover {
 	text-align: center;
 }
 
-.content p {
-	text-align: justify;
-	text-indent: 30px;
-}
-
-.content h2 {
+section > header {
 	border-bottom: 2px dotted #04A3C6;
+	margin-top: 30px;
 }
 
-.content h3 {
-	margin-bottom: 0;
+section > section > header {border-bottom: 0;}
+
+section header h2 {
+	display: inline;
+	margin-left: 90px;
 }
 
-a.toTop {
-	margin: 0 0 0 40px;
-	padding: 0 5px;
-	font-size: .5em;
+section header h3 {margin-bottom: 0;}
+
+section img, .section a {display: inline;}
+
+/* Link styling */
+
+header a {
+	margin: 0;
+	padding: 6px 5px 0 5px;
+	font-size: 1.0em;
 	font-weight: normal;
 	text-decoration: none;
 	background-color: #FFFFFF;
 }
 
-a.toTop:hover {
+header a:hover {
 	background-color: #F3A11E;
 	color: #FFFFFF;
 }
 
 .content a {
 	color: #C98519;
+	text-decoration: none;
+	font-weight: 600;
 }
 
-.content img {
+.content a:hover {text-shadow: 0 0 0.1em #C98519;}
+
+.content a em:hover {text-shadow: 0 0 0.1em #04A3C6;}
+
+/* Styling for rest of the tags */
+
+.content p {
+	text-align: justify;
+	text-indent: 30px;
+}
+
+.content li {padding-bottom: 8px;}
+
+.content em, .content strong {
+	font-style: normal;
+	font-weight: 600;
+	color: #037E99;
+}
+
+/* Image styling */
+section > img {
 	display: block;
 	width: 600px;
 	margin: 0 auto;
@@ -155,15 +174,7 @@ a.toTop:hover {
 	border-radius: 0 25px 25px 25px;
 }
 
-.content li {
-	padding-bottom: 8px;
-}
-
-.content em, .content strong {
-	font-style: normal;
-	font-weight: 600;
-	color: #037E99;
-}
+section header > img {display: inline;}
 
 /* Create style for pre-formatted text ***************************************/
 
@@ -197,16 +208,10 @@ a.toTop:hover {
 	margin: 0;
 }
 
-.content footer a {
-	color: #FFFFFF;
-}
+.content footer a {color: #FFFFFF;}
 
-.content footer a:hover {
-	color: #F3A11E;
-}
+.content footer a:hover {color: #F3A11E;}
 
 /** Create style for disqus comments *****************************************/
 
-.comments {
-	margin: 20px auto 0 auto;
-}
+.comments {margin: 20px auto 0 auto;}

@@ -20,7 +20,7 @@
 		
 		<nav class="outline float">
 			<section>
-				<h2>Article - Outline</h2>
+				<header>Article - Outline</header>
 				<ul>
 					<a href="#theProject"><li>The Project</li></a>
 					<a href="#theFinalResult"><li>The Final Result</li></a>
@@ -44,65 +44,86 @@
 		
 		<div class="content">
 			
-			<h2 id="theProject">
-				The Project
-				<a class="toTop" href="#">Back to top</a>
-			</h2>
+			<section id="theProject">
+				<header>
+					<h2>The Project</h2>
+					<a href="#theProject"><img src="http://learncodeart.com/_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+				</header>
+			
+				<p>
+				</p>
+			</section>
+	
+			<section id="theFinalResult">
+				<header>
+					<h2>The Final Result</h2>
+					<a href="#theFinalResult"><img src="http://learncodeart.com/_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+				</header>
+	
+				<p>
+				</p>
+			</section>
 		
-			<p>
-			</p>
-	
-			<h2 id="theFinalResult">
-				The Final Result
-				<a class="toTop" href="#">Back to top</a>
-			</h2>
-	
-			<p>
-			</p>
+			<section id="theCode">
+				<header>
+					<h2>The Code</h2>
+					<a href="#theCode"><img src="http://learncodeart.com/_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+				</header>
 		
-			<h2 id="theCode">
-				The Code
-				<a class="toTop" href="#">Back to top</a>
-			</h2>
+				<p>
+				</p>
+			</section>
 	
-			<p>
-			</p>
+			<section id="theMakingOf">
+				<header>
+					<h2>The Making Of</h2>
+					<a href="#theMakingOf"><img src="http://learncodeart.com/_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+				</header>
 	
-			<h2 id="theMakingOf">
-				The Making Of
-				<a class="toTop" href="#">Back to top</a>
-			</h2>
+				<section id="step1">
+					<header>
+						<h3>Step 1</h3>
+					</header>
+			
+					<p>
+					</p>
+				</section>
+		
+				<section id="step2">
+					<header>
+						<h3>Step 2</h3>
+					</header>
+			
+					<p>
+					</p>
+				</section>
+			</section>
 	
-			<h3 id="step1">
-				Step 1
-			</h3>
+			<section id="conclusion">
+				<header>
+					<h2>Conclusion</h2>
+					<a href="#conclusion"><img src="http://learncodeart.com/_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+				</header>
+		
+				<p>
+				</p>
+			</section>
 	
-			<p>
-			</p>
-	
-			<h3 id="step2">
-				Step 2
-			</h3>
-	
-			<p>
-			</p>
-	
-			<h2 id="conclusion">
-				Conclusion
-				<a class="toTop" href="#">Back to top</a>
-			</h2>
-	
-			<p>
-			</p>
-	
-			<h2 id="notes">
-				Notes
-				<a class="toTop" href="#">Back to top</a>
-			</h2>
-	
-			<p>
-			</p>
-
+			<section id="notes">
+				<header>
+					<h2>Notes</h2>
+					<a href="#notes"><img src="http://learncodeart.com/_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+				</header>
+		
+				<p>
+				</p>
+			</section>
 			<section class="social">
 				<?php
 					include("../php/social/fbLike.php");
