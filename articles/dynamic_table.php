@@ -40,7 +40,7 @@
 		<div class="content">
 
 			<header>
-				<h1>Creating a Dynamically Sized Table with JavaScript</h1>
+				<h1>Project: A Dynamically Sized Table</h1>
 				<p><time pubdate datetime="2014-01-09">Created on: January 9, 2014</time></p>
 				<section class="social">
 					<?php
@@ -217,7 +217,7 @@
 			
 			<footer>
 				<p>
-					Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
+					Written by: Elmer Landaverde <a href="mailto:elmerlandaverde@gmail.com">(elmerlandaverde@gmail.com)</a><br>
 					Las updated: January 25, 2014<br>
 					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 				</p>

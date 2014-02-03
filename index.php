@@ -12,7 +12,7 @@
 		require_once("php/header.php"); 
 		require_once("php/nav.php");
 	?>
-	<div id="main">
+	<div class="main">
 		<section>
 			<?php require_once("php/articleExcerpts.php"); ?>
 		</section>

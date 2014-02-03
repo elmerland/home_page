@@ -42,7 +42,7 @@
 		<div class="content">
 
 			<header>
-				<h1>Creating a little Snake game</h1>
+				<h1>Project: A little Snake game</h1>
 				<p><time pubdate datetime="2014-01-04">Created on: January 04, 2014</time></p>
 				<section class="social">
 					<?php
@@ -369,7 +369,7 @@
 			
 			<footer>
 				<p>
-					Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
+					Written by: Elmer Landaverde <a href="mailto:elmerlandaverde@gmail.com">(elmerlandaverde@gmail.com)</a><br>
 					Las updated: January 6, 2014<br>
 					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 				</p>

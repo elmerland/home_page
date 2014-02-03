@@ -39,7 +39,7 @@
 		
 		<footer>
 			<p>
-				Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
+				Written by: Elmer Landaverde <a href="mailto:elmerlandaverde@gmail.com">(elmerlandaverde@gmail.com)</a><br>
 				Las updated: January 8, 2014<br>
 				<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 			</p>

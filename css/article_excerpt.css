@@ -17,7 +17,7 @@ article.excerpt header a {
 }
 
 article.excerpt header h3 {
-	background-color: #43464D;
+	background-color: #04C67E;
 	padding: 10px 20px;
 	position: relative;
 	left: -10px;
@@ -38,7 +38,7 @@ article.excerpt header h3:hover {
 
 article.excerpt h4 {
 	color: #FFFFFF;
-	background-color: #04A3C6;
+	background-color: #285660;
 	font-size: 1.0em;
 	padding: 10px 20px;
 	position: relative;

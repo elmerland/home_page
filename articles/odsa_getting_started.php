@@ -163,6 +163,10 @@
 						When a book gets compiled, the information of what modules to include can be found in the <em>config</em> folder. However, the data of what goes into the modules is found in the <em>RST</em> folder. This folder contains one <i>.rst</i> (reStructuredText) file for each one of the modules. This <i>rst</i> file is then converted into <i>HTML</i> by the compiler. By using certain directives, developers are able to include their newly created content in the <i>rst</i> file. Normally a developer would create a copy of an existing <i>rst</i> file, this copy would then be placed inside the <em>RST/source/IS</em> folder. This <em>IS</em> folder is where all the content that is under development lives. Once the newly created slideshow or diagram has being approved it will be moved to a more permanent location.
 					</p>
 				</section>
+
+				<p>
+					There are many other folders that were left out because they are of no particular importance to a <i>JSAV</i> developer. However, two folders worth mentioning are the <em>Doc</em> and the <em>SourceCode</em> folders. The <em>Doc</em> directory as the name implies holds all of the manuals and documentation for <i>OpenDSA</i>. The best way to access the documentation however, is through this <a href="http://algoviz.org/OpenDSA/Doc/">link</a>. The <em>SourceCode</em> folder holds all the code snippets that are used throughout the modules to show implementation examples for the different data structures.
+				</p>
 			</section>
 
 			<section id="rstFiles">
@@ -284,7 +288,7 @@
 					First step is to create the empty <i>JavaScript</i> and <i>CSS (optional)</i> files that are needed. Be sure to place these files under the <em>AV/Development</em> folder. Once this is done, the <em>rst</em> file needs to be modified.
 				<br>
 				<br>
-					Using the knowledge of the <a href="#rstFiles">“RST Files”</a> section, modify the rst file so that it will display the new content. If the new content is going to replace an old one, then be sure to update any directive or options as appropriate. Next step is to place the odsalink directives in the document so that they link to the newly created <i>JavaScript</i> or <i>CSS</i> files.
+					Using the knowledge of the <a href="#rstFiles">“RST Files”</a> section, modify the rst file so that it will display the new content. If the new content is going to replace an old one, then be sure to update any directive, options or links. If you are a <i>JSAV</i> developer you will need to move this modified rst file to the <em>RST/source/IS</em> directory. This is where the IS book will grab the module from and it stops developers from messing with live <i>rst</i> files. Once the content has being tested and approved it will be moved back to one of the other folders in the <em>RST</em> directory.
 				<br>
 				<br>
 					When all that is done the module needs to be included in the config file. The <a href="#configFiles">“Config Files”</a> section shows how to modify a JSON config file for a book to include a specific module. Following that, the book needs to be compiled. If all of the tools from the <a href="#tools">“Tools”</a> section have being installed correctly the following steps should be simple. First open a terminal and navigate to the <em>OpenDSA</em> folder (The parent folder to everything). Then type in the make command followed by the name of the book to be compiled as shown below
@@ -327,7 +331,7 @@
 			
 			<footer>
 				<p>
-					Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
+					Written by: Elmer Landaverde <a href="mailto:elmerlandaverde@gmail.com">(elmerlandaverde@gmail.com)</a><br>
 					Last updated: February 2, 2014<br>
 					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 				</p>

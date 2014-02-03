@@ -1,13 +1,13 @@
 <article class="excerpt">
 	<header>
-		<a title="OpenDSA: Getting Acquainted" href="http://learncodeart.com/error/404.php" rel="alternate">
+		<a title="OpenDSA: Getting Acquainted" href="http://learncodeart.com/articles/odsa_jsav.php" rel="alternate">
 			<h3>
 				OpenDSA: Getting Started With JSAV
 			</h3>
 		</a>
 	</header>
 	<h4>
-		Coming soon!
+		Under Construction.
 	</h4>
 	<p>
 		The previous articles went through a high level overview of the OpenDSA project. This article starts going deeper into the details of the project and will give you enough information for you to get started with JSAV. It will teach you everything you need to know to create your first diagram using JSAV and more importantly it will go through some good practices that will make your code easier to maintain and reduce any conflicts with other developers’ code.
@@ -28,16 +28,13 @@
 			</h3>
 		</a>
 	</header>
-	<h4>
-		Under construction.
-	</h4>
 	<p>
 		Starting on a new project can be a daunting task, especially if the project has a lot of files and complex organization. Over time I have found that getting a high level overview of how the project works has helped me understand how all the details fit together. This is why in this article I will explain all you need to know to get acquainted with the OpenDSA project. At the end of the article you should be familiar with how the project is set up and understand all the parts you have to consider to start creating new content using JSAV.
 	</p>
 	<footer>
 		<p>
 			Written by: Elmer Landaverde<br>
-			In a not too distant future
+			January 31, 2014
 		</p>
 	</footer>
 	<div class="clear"></div>
@@ -46,7 +43,7 @@
 	<header>
 		<a title="Creating a Dynamically Sized Table with JavaScript" href="http://learncodeart.com/articles/dynamic_table.php" rel="alternate">
 			<h3>
-				Creating a Dynamically Sized Table with JavaScript
+				Project: A Dynamically Sized Table
 			</h3>
 		</a>
 	</header>
@@ -56,7 +53,7 @@
 	<footer>
 		<p>
 			Written by: Elmer Landaverde<br>
-			January 30, 2014
+			January 9, 2014
 		</p>
 	</footer>
 	<div class="clear"></div>
@@ -65,7 +62,7 @@
 	<header>
 		<a title="Creating a little snake game" href="http://learncodeart.com/articles/snake_game.php" rel="alternate">
 			<h3>
-				Creating a Little Snake Game
+				Project: A Little Snake Game
 			</h3>
 		</a>
 	</header>

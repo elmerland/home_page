@@ -44,6 +44,7 @@ article.main .content{
 	position: absolute;
 	right: 0;
 	max-width: 760px;
+	width: 760px;
 	padding: 0 10px;
 }
 

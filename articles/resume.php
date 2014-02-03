@@ -5,7 +5,7 @@
 		require_once("../php/mainCSS.php");
 		require_once("../php/articleCSS_JS.php");
 	?>
-	<title>Article</title>
+	<title>Resume</title>
 </head>
 <body>
 	<?php
@@ -14,7 +14,7 @@
 		require_once("../php/nav.php");
 	?>
 
-	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/asteroids.jpg);"></div>
+	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/escape-flight.png);"></div>
 
 	<article class="main">
 		
@@ -52,7 +52,7 @@
 				</header>
 			
 				<p>
-
+				The resumes here might be a little out of date. If you are interested please email me at <a href="mailto:elmer@vt.edu">elmer@vt.edu</a> and I will be more than happy to provide you with the latest version of my resume.
 				</p>
 
 				<section id="high">
@@ -85,7 +85,7 @@
 			
 			<footer>
 				<p>
-					Written by: Elmer Landaverde (elmerlandaverde@gmail.com)<br>
+					Written by: Elmer Landaverde <a href="mailto:elmerlandaverde@gmail.com">(elmerlandaverde@gmail.com)</a><br>
 					Last updated: Month 00, 2014<br>
 					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 				</p>

@@ -7,10 +7,11 @@
 	<li><a title="Stack Overflow" href="http://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
 </ul>
 <header>
-	<h3>Coding Blogs</h3>
+	<h3>Coding and CS</h3>
 </header>
 <ul>
 	<li><a title="Coding Horror" href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+	<li><a title="OpenDSA" href="http://algoviz.org/OpenDSA/" target="_blank">OpenDSA</a></li>
 </ul>
 <header>
 	<h3>Photography</h3>
