@@ -12,23 +12,19 @@
 		require_once("../php/header.php"); 
 		require_once("../php/nav.php");
 	?>
-	<div id="main">
+	<div class="main">
 		<section>
 			<article class="excerpt">
 				<header>
-					<h3>
-						<a title="404 Error" href="#">
-							404 Error - Page Not Found
-						</a>
-					</h3>
+					<a title="404 Error" href="#">
+						<h3>404 Error - Page Not Found</h3>
+					</a>
 				</header>
 				<iframe width="650" height="400" src="http://www.youtube.com/embed/oqMl5CRoFdk?start=5&amp;feature=oembed&amp;loop=1&amp;autoplay=1" frameborder="0" allowfullscreen=""></iframe>
 				<header>
-					<h3>
-						<a title="404 Error" href="#">
-							YOUR CAN'T ALWAYS GET WHAT YOU WANT
-						</a>
-					</h3>
+					<a title="404 Error" href="#">
+						<h3>YOUR CAN'T ALWAYS GET WHAT YOU WANT</h3>
+					</a>
 				</header>
 				<p>
 					But if you try sometimes,<br>
