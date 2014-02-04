@@ -336,6 +336,7 @@
 					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 				</p>
 			</footer>
+			
 			<?php require_once("../php/disqus.php"); ?>
 		
 		</div>
