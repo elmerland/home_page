@@ -1,4 +1,4 @@
 error_log
 favicon.ico
 php.ini
-
+development/*
