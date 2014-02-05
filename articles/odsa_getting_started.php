@@ -254,7 +254,7 @@
 					The IS.json file located inside of the config folder contains any module that is currently being worked on. Since this is the file that most developers will likely deal with, this section will use this file as an example. Lets take a look at the contents of that file:
 				</p>
 
-				<pre><?php include("http://learncodeart.com/_code/odsa_getting_started_5.php") ?></pre>
+				<pre data-highlight="14,15,16,17,18,19,20,21,22,23,24"><?php include("http://learncodeart.com/_code/odsa_getting_started_5.php") ?></pre>
 
 				<p>
 					The file itself is very short although somewhat convoluted because of all the brackets and indentation levels. However, this section is mainly interested in the highlighted part of the file. This highlighted part started with the key <em>“chapters”</em> followed by a <i>colon</i> and then an <i>opening bracket</i>. Everything that follows after that bracket correspond to the chapters that will be created in the book. Notice that on the next line we see the key <em>“Testing”</em> and again a <i>colon</i> and <i>opening bracket</i>. This signifies the start of a new chapter named <i>Testing</i>. Included in this chapter are all of the modules that are specified next. In this case there are two modules <i>Bintree</i> and <i>TwoThreeTree</i>. We can identify these two modules because like the two keys before they are followed by a <i>colon</i> an opening bracket. Inside of each one of these modules there are two options set. The first is the <em>“long_name”</em> option which sets the name that is to be displayed in the table of contents and then an <em>"exercises"</em> option which is empty.
@@ -263,7 +263,7 @@
 					To add a new module to the Testing chapter all we would need to do insert a new object right after the <i>TwoThreeTree</i> module. For example, if a developer needed to add a <i>Tree Indexing</i> module it would look like this:
 				</p>
 
-				<pre><?php include("http://learncodeart.com/_code/odsa_getting_started_6.php") ?></pre>
+				<pre data-highlight="12,13,14,15"><?php include("http://learncodeart.com/_code/odsa_getting_started_6.php") ?></pre>
 
 				<p>
 					If the book is compiled again it will include the new Tree Indexing module inside of the Testing chapter. Using the same syntax a developer can add as many modules as he/she wants or needs. More information on all the options that can go inside of the module can be found <a href="http://algoviz.org/OpenDSA/Doc/manual/Configuration.html#settings-all-are-required-unless-otherwise-specified">here</a>.

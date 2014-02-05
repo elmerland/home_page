@@ -108,6 +108,7 @@ nav.outline li:hover {background-color: #04A3C6;}
 }
 
 .content > section > header {
+	padding-bottom: 5px;
 	border-bottom: 3px solid #04A3C6;
 	margin-top: 30px;
 }
@@ -160,6 +161,7 @@ section > p > a:hover {text-shadow: 0 0 0.1em #C98519;}
 }
 
 .content p.notes {
+	text-align: left;
 	padding: 10px;
 	font-size: .8em;
 	text-indent: 0;
@@ -186,23 +188,6 @@ section > img {
 }
 
 section header > img {display: inline;}
-
-/* Create style for pre-formatted text ***************************************/
-
-.content pre {
-	background-color: #DCF5FF;
-	color: #43464D;
-	border: 5px solid #04A3C6;
-	-webkit-border-radius: 0 25px 25px 25px;
-	-moz-border-radius: 0 25px 25px 25px;
-	border-radius: 0 25px 25px 25px;
-}
-
-section pre span.highlight {
-	background-color: #037E99;
-	color: #FFFFFF;
-	font-weight: 600;
-}
 
 /* Create style for social media *********************************************/
 

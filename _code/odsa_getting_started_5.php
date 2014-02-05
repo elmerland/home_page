@@ -11,7 +11,7 @@
   "glob_jsav_exer_options": {
     "debug": "true"
   },
-<span class="highlight">  "chapters": {
+  "chapters": {
     "Testing": {
       "IS/Bintree.rst": {
         "long_name": "Bintree",
@@ -21,7 +21,7 @@
         "long_name": "2-3 Trees",
         "exercises": {}
       }
-    },</span>
+    },
     "Appendix": {
       "Glossary": {
         "long_name": "Glossary",

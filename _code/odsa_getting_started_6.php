@@ -9,9 +9,9 @@
         "long_name": "2-3 Trees",
         "exercises": {}
       },
-<span class="highlight">      "IS/TreeIndexing.rst": {
+      "IS/TreeIndexing.rst": {
         "long_name": "Tree Indexing",
         "exercises": {}
-      }</span>
+      }
     },
 ...

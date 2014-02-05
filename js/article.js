@@ -14,6 +14,7 @@ $(document).ready(function () {
 	$("section header img").css("visibility", "hidden");
 	// Initialize all animations.
 	addAnimation();
+	formatCode();
 });
 
 function addAnimation() {
@@ -59,17 +60,96 @@ function scrollToAnchor(aid){
 
 // Scrolls the navigation pane into view.
 function scrollNav() {
-		var scroll = $(this).scrollTop() - 500;
-		var nav = $(".float");
-		if(scroll >= 0) {
-			if (!nav.hasClass(className)) {
-				nav.addClass(className);
-				nav.css("left", leftOffset + "px");
-			}
-		} else {
-			if (nav.hasClass(className)) {
-				nav.removeClass(className);
-				nav.css("left", "0");
-			}
+	var scroll = $(this).scrollTop() - 500;
+	var nav = $(".float");
+	if(scroll >= 0) {
+		if (!nav.hasClass(className)) {
+			nav.addClass(className);
+			nav.css("left", leftOffset + "px");
+		}
+	} else {
+		if (nav.hasClass(className)) {
+			nav.removeClass(className);
+			nav.css("left", "0");
 		}
 	}
+}
+
+function formatCode() {
+	// Get all pre tags of document.
+	var code = $("pre");
+	// Create a table for each one of the pre tags.
+	for (var j = 0; j < code.length; j++) {
+		// Get all the inner html of the pre tag.
+		var lines = code[j].innerHTML.split("\n");
+		
+
+		// Create table variable where the table will be stored.
+		var table = "<table>\n";
+		// Get the column groups tag.
+		table += getColumnGroups();
+		// Initailize table body.
+		table += "\t<tbody>\n";
+
+		// Generate a table row for each line.
+		for (var i = 0; i < lines.length; i++) {
+			// Get the row syntax.
+			table += getTableRow(i, lines[i]);
+		}
+
+		// Close the table body tag.
+		table += "\t<tbody>\n";
+		// Close the table tag.
+		table += "</table>";
+		// Set the table as the new inner html of the pre tag.
+		code[j].innerHTML = table;
+
+		// Get the data payload of the pre tag.
+		var highlight_data = code[j].getAttribute("data-highlight");
+		// Add highlight class to the appropriate rows.
+		addHighlightClass(code[j], highlight_data);
+	}
+
+}
+
+// Creates the colgroup tag.
+function getColumnGroups() {
+	var colgroup = "";
+	colgroup += "\t<colgroup>\n";
+	colgroup += "\t\t<col class='first'>\n";
+	colgroup += "\t\t<col class='second'\n>";
+	colgroup += "\t</colgroup>\n";
+	return colgroup;
+}
+
+// Creates a new row with the line number on the 
+// first cell and the line contents on the second cell.
+function getTableRow(i, line) {
+	var row = "";
+	row += "\t\t<tr>\n";
+	// Column one, has the line number.
+	row += "\t\t\t<td>" + (i + 1) + "</td>\n";
+	// Column two, has the contents of the line of code.
+	row += "\t\t\t<td>" + line + "</td>\n";
+	row += "\t\t</tr>\n";
+	return row;
+}
+
+function addHighlightClass(pre, data) {
+	if (data == null) {
+		return;
+	}
+	// Turn pre element into jQuery object.
+	var pre_j = $(pre);
+	// Split highlight data into number array.
+	var h_lines = data.split(",");
+	// Iterate through every line number that needs to be highlighted.
+	for (var i = 0; i < h_lines.length; i++) {
+		// Get index of line that needs to be higlighted.
+		var index = parseInt(h_lines[i]);
+		// Get tr element at the index to be highlighted.
+		var row = pre_j.find("tr")[index - 1];
+		// Turn row element to jQuery object and add "highlight" class to it.
+		$(row).addClass("highlight");
+	}
+}

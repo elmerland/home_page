@@ -17,12 +17,16 @@ int main(void)
   // Fork new process
   if(fork() == 0)
   {
+    // Close read end of pipe.
+    close( fd[IN] );
     // Child Process: Send "string" through the output side of pipe.
     write( fd[OUT], string, (strlen(string)+1) );
     exit(0);
   }
   else
   {
+    // Clise write end of pipe.
+    close( fd[OUT] );
     // Parent Process: Read string from the read side of pipe.
     read( fd[IN], readbuffer, sizeof(readbuffer) );
     printf("Received string: %s", readbuffer);

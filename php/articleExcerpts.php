@@ -6,16 +6,13 @@
 			</h3>
 		</a>
 	</header>
-	<h4>
-		Under Construction.
-	</h4>
 	<p>
-		Systems class is hard, and understanding the concepts is also hard. In doing the first assignment I found that there wasn’t a very good tutorial or source that outlined all of the concepts that are needed to complete the first assignment. This is why I wrote this article. It explains the basics of pipes and how to handle file descriptors across multiple processes. Specifically focusing on how to pipe input and output across multiple child processes.
+		This article provides the basics concepts and accompanying C functions about creating and manipulating pipes. It also offers visualizations to help better understand the information flow and structure.
 	</p>
 	<footer>
 		<p>
 			Written by: Elmer Landaverde<br>
-			In a not too distant future
+			February 4th, 2014
 		</p>
 	</footer>
 	<div class="clear"></div>
@@ -32,7 +29,7 @@
 		Coming soon!
 	</h4>
 	<p>
-		The previous articles went through a high level overview of the OpenDSA project. This article starts going deeper into the details of the project and will give you enough information for you to get started with JSAV. It will teach you everything you need to know to create your first diagram using JSAV and more importantly it will go through some good practices that will make your code easier to maintain and reduce any conflicts with other developers’ code.
+		The previous article went through a high level overview of the OpenDSA project. This article starts going deeper into the details of the project and will give you enough information for you to get started with JSAV. It will teach you everything you need to know to create your first diagram using JSAV and more importantly it will go through some good practices that will make your code easier to maintain and reduce any conflicts with other developers’ code.
 	</p>
 	<footer>
 		<p>
@@ -46,7 +43,7 @@
 	<header>
 		<a title="OpenDSA: Getting Acquainted" href="http://learncodeart.com/articles/odsa_getting_started.php" rel="alternate">
 			<h3>
-				OpenDSA: Getting Acquainted
+				OpenDSA: Getting Started
 			</h3>
 		</a>
 	</header>
@@ -56,7 +53,7 @@
 	<footer>
 		<p>
 			Written by: Elmer Landaverde<br>
-			January 31, 2014
+			January 31st, 2014
 		</p>
 	</footer>
 	<div class="clear"></div>
@@ -75,7 +72,7 @@
 	<footer>
 		<p>
 			Written by: Elmer Landaverde<br>
-			January 9, 2014
+			January 9th, 2014
 		</p>
 	</footer>
 	<div class="clear"></div>
@@ -94,7 +91,7 @@
 	<footer>
 		<p>
 			Written by: Elmer Landaverde<br>
-			January 4, 2014
+			January 4th, 2014
 		</p>
 	</footer>
 	<div class="clear"></div>

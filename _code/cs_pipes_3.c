@@ -17,12 +17,19 @@ int main(void)
   // Fork new process
   if(fork() == 0)
   {
-    // Child Process: Send "string" through the output side of pipe.
-    write( fd[OUT], string, (strlen(string)+1) );
-    exit(0);
+    // Copy the write end of pipe to standard out.
+    dup2( fd[OUT], OUT );
+    // Close read and write end of pipe.
+    close( fd[IN] );
+    close( fd[OUT] );
+    // Child Process: execute new process
+    char *cmd[] = {"ls", "-la", (char *) 0};
+    execvp("ls", cmd);
   }
   else
   {
+    // Clise write end of pipe.
+    close( fd[OUT] );
     // Parent Process: Read string from the read side of pipe.
     read( fd[IN], readbuffer, sizeof(readbuffer) );
     printf("Received string: %s", readbuffer);
