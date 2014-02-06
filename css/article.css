@@ -153,7 +153,7 @@ section > p > a {
 
 section > p > a:hover {text-shadow: 0 0 0.1em #C98519;}
 
-/* Styling for rest of the tags */
+/* Paragraph styling */
 
 .content p {
 	text-align: justify;
@@ -168,13 +168,28 @@ section > p > a:hover {text-shadow: 0 0 0.1em #C98519;}
 	background-color: #D3DEF2;
 }
 
+/* Styling for rest of the tags */
+
 .content li {padding-bottom: 8px;}
 
-.content em, .content strong {
+/* Emphasis tags */
+
+.content strong {
 	font-style: normal;
 	font-weight: 600;
 	color: #037E99;
 }
+
+.content em {
+	font-style: normal;
+	font-family: monospace, serif;
+	color: #43464D;
+	background-color: #DCF5FF;
+	border: 1px solid #04A3C6;
+	padding: 0 2px;
+}
+
+/* Styling for sub-sections */
 
 .content section > section {
 	margin-left: 30px;
