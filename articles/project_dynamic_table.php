@@ -142,25 +142,25 @@
 					</p>
 					
 					<p>
-						Lets start by declaring a <strong>size</strong> variable that will hold the size of the table. Next we add a <strong>ready</strong> function that will add functionality to the button once the DOM is loaded. Inside of the ready function we add an event listener to the button element that calls a function that we will name <strong>createTable</strong>. This function is that one that will actually build the entire table and create all the rows and columns inside of the table.	
+						Lets start by declaring a <em>size</em> variable that will hold the size of the table. Next we add a <em>ready</em> function that will add functionality to the button once the DOM is loaded. Inside of the ready function we add an event listener to the button element that calls a function that we will name <em>createTable</em>. This function is that one that will actually build the entire table and create all the rows and columns inside of the table.	
 					</p>
 					
 					<pre><?php include("../_code/dynamic_table_2.php") ?></pre>
 
 					<p>
-						Now lets implement the <strong>createTable</strong> function. This function first has to get the size of the table. We will accomplish this by using the <em>val()</em> function of the jQuery. Then the size must be validated (In this case there is an arbitrary minimum size of 5). When the table size is validated we proceed to creating the table elements. Before doing this however, any existing table must be removed to avoid having more than one table on the page. Therefore we will create two other functions. One called <strong>createTableElements</strong> that will manage the creation of all the elements inside of the table and the table itself. The second function will be called <strong>clearTable</strong> which simply removes any table inside of the body tags.
+						Now lets implement the <em>createTable</em> function. This function first has to get the size of the table. We will accomplish this by using the <em>val()</em> function of the jQuery. Then the size must be validated (In this case there is an arbitrary minimum size of 5). When the table size is validated we proceed to creating the table elements. Before doing this however, any existing table must be removed to avoid having more than one table on the page. Therefore we will create two other functions. One called <em>createTableElements</em> that will manage the creation of all the elements inside of the table and the table itself. The second function will be called <em>clearTable</em> which simply removes any table inside of the body tags.
 					</p>
 			
 					<pre><?php include("../_code/dynamic_table_3.php") ?></pre>
 			
 					<p>
-						To implement the <strong>createTableElements</strong> function we will use jQuery to make things a little easier. The things we need to create for the table are the following: A <em>div</em> element to hold the table, a <em>table</em> element that will hold the actual table, a <em>thead</em> elment that holds the header row for the table, and finally a <em>tbody</em> element that holds all the rows and cells of the table. When these elements have being created, the next step is to populate the <em>thead</em> and <em>tbody</em> elements. This will be delegated to two other functions called <strong>createTableHeader</strong> and <strong>createTableBody</strong> respectively. 
+						To implement the <em>createTableElements</em> function we will use jQuery to make things a little easier. The things we need to create for the table are the following: A <em>div</em> element to hold the table, a <em>table</em> element that will hold the actual table, a <em>thead</em> elment that holds the header row for the table, and finally a <em>tbody</em> element that holds all the rows and cells of the table. When these elements have being created, the next step is to populate the <em>thead</em> and <em>tbody</em> elements. This will be delegated to two other functions called <em>createTableHeader</em> and <em>createTableBody</em> respectively. 
 					</p>
 					
 					<pre><?php include("../_code/dynamic_table_4.php") ?></pre>
 			
 					<p>
-						The easiest way to populate a variable size table is of course by using <em>for loops</em>. Populating the table header is easier so lets start with that. Inside of the <em>createTableHeader</em> function we first add a new <em>tr</em> element inside of the <em>thead</em> element. This is the table row where each of the header cells will go. Next we get a pointer to the <em>tr</em> element object inside of the <em>thead</em> element. The <em>tr</em> object will then be used inside of the for loop to add all of the <em>th</em> elements. The inside of the for loop just adds <em>th</em> elements until the table size is reached. This will result in one header for each column of the table.
+						The easiest way to populate a variable size table is of course by using <strong>for loops</strong>. Populating the table header is easier so lets start with that. Inside of the <em>createTableHeader</em> function we first add a new <em>tr</em> element inside of the <em>thead</em> element. This is the table row where each of the header cells will go. Next we get a pointer to the <em>tr</em> element object inside of the <em>thead</em> element. The <em>tr</em> object will then be used inside of the for loop to add all of the <em>th</em> elements. The inside of the for loop just adds <em>th</em> elements until the table size is reached. This will result in one header for each column of the table.
 					</p>
 					
 					<pre><?php include("../_code/dynamic_table_5.php") ?></pre>
@@ -172,7 +172,7 @@
 					<pre><?php include("../_code/dynamic_table_6.php") ?></pre>
 			
 					<p>
-						We have now implemented all the functions needed to generate a table inside of the body tag of the HTML document. The last remaining step is to implement the <strong>clearTable</strong> function which is very straightforward. This function first needs to get a pointer to the <em>div</em> element that contains the table. Next we verify if this pointer is valid. If the pointer is not valid it means that the table doesn’t exist and there is nothing to do. If the pointer is valid, it means that there is an existing table. In this case all that needs to be done is to remove the <em>div</em> container by using the <em>remov()</em> function of the jQuery library.
+						We have now implemented all the functions needed to generate a table inside of the body tag of the HTML document. The last remaining step is to implement the <em>clearTable</em> function which is very straightforward. This function first needs to get a pointer to the <em>div</em> element that contains the table. Next we verify if this pointer is valid. If the pointer is not valid it means that the table doesn’t exist and there is nothing to do. If the pointer is valid, it means that there is an existing table. In this case all that needs to be done is to remove the <em>div</em> container by using the <em>remov()</em> function of the jQuery library.
 					</p>
 					
 					<pre><?php include("../_code/dynamic_table_7.php") ?></pre>
