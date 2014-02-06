@@ -2,7 +2,7 @@
 	<header>
 		<a title="CS: Pipes and Processes" href="../articles/cs_pipes.php" rel="alternate">
 			<h3>
-				Test!!!!
+				CS: Pipes and Processes
 			</h3>
 		</a>
 	</header>
