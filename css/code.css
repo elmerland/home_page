@@ -33,13 +33,3 @@
 	padding-right: 5px;
 	padding-left: 5px;
 }
-
-/* Bug with facebook button, temporary solution */
-#fb_login_button { 
-    width: 80px; 
-}
-#fb_login_button span, 
-#fb_login_button iframe {
-    width: 80px! important;
-    height: 25px! important;
-}
