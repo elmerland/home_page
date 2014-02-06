@@ -73,7 +73,7 @@
 							Understanding the folder structure of the OpenDSA project. Going over what type of information is stored in which folders and defining which folders you should care about.
 						</li>
 						<li>
-							Getting familiar with the <em>RST</em> (reStructuredText) file syntax. Ultimately this is where you are going to include the content you created so its worth spending some time on it.
+							Getting familiar with the <strong>RST</strong> (reStructuredText) file syntax. Ultimately this is where you are going to include the content you created so its worth spending some time on it.
 						</li>
 						<li>
 							Understanding how books are compiled, how the config files come into play and knowing what you should be concerned about.
@@ -130,7 +130,7 @@
 					</header>
 			
 					<p>
-						The <em>AV</em> folder is designated to store all the <i>JavaScript</i> and <i>CSS</i> files that relate to JSAV slideshows and diagrams. Naturally this is where JSAV developers will spend most of their time in. Inside of the <em>AV</em> folder there are several other directories. Most developers will do their work on the Development folder, which as its name foreshadows is where all the content that is under development is stored. Once the slideshow or diagram has being completed, approved and validated it will be moved (Most likely by Dr. Shaffer) to one of the other folders that contain files based on their topic (e.g. lists, sorting, etc).
+						The <strong>AV</strong> folder is designated to store all the <i>JavaScript</i> and <i>CSS</i> files that relate to JSAV slideshows and diagrams. Naturally this is where JSAV developers will spend most of their time in. Inside of the <strong>AV</strong> folder there are several other directories. Most developers will do their work on the Development folder, which as its name foreshadows is where all the content that is under development is stored. Once the slideshow or diagram has being completed, approved and validated it will be moved (Most likely by Dr. Shaffer) to one of the other folders that contain files based on their topic (e.g. lists, sorting, etc).
 					</p>
 				</section>
 
@@ -140,7 +140,7 @@
 					</header>
 			
 					<p>
-						Once a book is compiled all of its relevant files are stored in this directory. Each book has a unique name and all the files for that book will be stored in a directory of the same name. Inside of the <em>book-name</em> directory there is another folder named <em>html</em>. This is where all the generated <i>HTML</i> pages are located in. The <em>index.html</em> file is also here which holds the contents page for the entire book. After compiling a book, a developer can go inside of the <em>book-name</em> directory and find the module he/she is working on to see how the slideshow or diagram will look on the site. Any changes made to the <i>JavaScript</i> or <i>CSS</i> files inside of the <em>AV</em> folder will be reflected on the module page.
+						Once a book is compiled all of its relevant files are stored in this directory. Each book has a unique name and all the files for that book will be stored in a directory of the same name. Inside of the <strong>book-name</strong> directory there is another folder named <strong>html</strong>. This is where all the generated <i>HTML</i> pages are located in. The <strong>index.html</strong> file is also here which holds the contents page for the entire book. After compiling a book, a developer can go inside of the <strong>book-name</strong> directory and find the module he/she is working on to see how the slideshow or diagram will look on the site. Any changes made to the <i>JavaScript</i> or <i>CSS</i> files inside of the <strong>AV</strong> folder will be reflected on the module page.
 					</p>
 				</section>
 
@@ -150,7 +150,7 @@
 					</header>
 			
 					<p>
-						The <em>config</em> folder is a really important folder that gets modified on rare occasions. It was mentioned earlier that the <em>Books</em> folder contained the files for every compiled book, and inside the <em>book-name</em> directory were the <i>HTML</i> files for all of the modules in the book. Well all of these modules are created because a file inside of the <em>config</em> folder told the compiler to include them. More specifically, inside of the <em>config</em> folder there are a lot of <i>JSON</i> files that have instructions for the compiler to know which modules to include in a particular book. There is one <i>JSON</i> file for every book, and the name of the <i>JSON</i> file matches the name of the book. So for example, if a developer is working a new module then he/she would need to add that new module to the <em>IS.json file</em>. This is because the <i>IS</i> book was created specifically for developers to test out all of their newly created content. A later section will explain how to edit these <i>JSON</i> files to add a new module.
+						The <strong>config</strong> folder is a really important folder that gets modified on rare occasions. It was mentioned earlier that the <strong>Books</strong> folder contained the files for every compiled book, and inside the <strong>book-name</strong> directory were the <i>HTML</i> files for all of the modules in the book. Well all of these modules are created because a file inside of the <strong>config</strong> folder told the compiler to include them. More specifically, inside of the <strong>config</strong> folder there are a lot of <i>JSON</i> files that have instructions for the compiler to know which modules to include in a particular book. There is one <i>JSON</i> file for every book, and the name of the <i>JSON</i> file matches the name of the book. So for example, if a developer is working a new module then he/she would need to add that new module to the <strong>IS.json file</strong>. This is because the <i>IS</i> book was created specifically for developers to test out all of their newly created content. A later section will explain how to edit these <i>JSON</i> files to add a new module.
 					</p>
 				</section>
 
@@ -160,12 +160,12 @@
 					</header>
 			
 					<p>
-						When a book gets compiled, the information of what modules to include can be found in the <em>config</em> folder. However, the data of what goes into the modules is found in the <em>RST</em> folder. This folder contains one <i>.rst</i> (reStructuredText) file for each one of the modules. This <i>rst</i> file is then converted into <i>HTML</i> by the compiler. By using certain directives, developers are able to include their newly created content in the <i>rst</i> file. Normally a developer would create a copy of an existing <i>rst</i> file, this copy would then be placed inside the <em>RST/source/IS</em> folder. This <em>IS</em> folder is where all the content that is under development lives. Once the newly created slideshow or diagram has being approved it will be moved to a more permanent location.
+						When a book gets compiled, the information of what modules to include can be found in the <strong>config</strong> folder. However, the data of what goes into the modules is found in the <strong>RST</strong> folder. This folder contains one <i>.rst</i> (reStructuredText) file for each one of the modules. This <i>rst</i> file is then converted into <i>HTML</i> by the compiler. By using certain directives, developers are able to include their newly created content in the <i>rst</i> file. Normally a developer would create a copy of an existing <i>rst</i> file, this copy would then be placed inside the <strong>RST/source/IS</strong> folder. This <strong>IS</strong> folder is where all the content that is under development lives. Once the newly created slideshow or diagram has being approved it will be moved to a more permanent location.
 					</p>
 				</section>
 
 				<p>
-					There are many other folders that were left out because they are of no particular importance to a <i>JSAV</i> developer. However, two folders worth mentioning are the <em>Doc</em> and the <em>SourceCode</em> folders. The <em>Doc</em> directory as the name implies holds all of the manuals and documentation for <i>OpenDSA</i>. The best way to access the documentation however, is through this <a href="http://algoviz.org/OpenDSA/Doc/">link</a>. The <em>SourceCode</em> folder holds all the code snippets that are used throughout the modules to show implementation examples for the different data structures.
+					There are many other folders that were left out because they are of no particular importance to a <i>JSAV</i> developer. However, two folders worth mentioning are the <strong>Doc</strong> and the <strong>SourceCode</strong> folders. The <strong>Doc</strong> directory as the name implies holds all of the manuals and documentation for <i>OpenDSA</i>. The best way to access the documentation however, is through this <a href="http://algoviz.org/OpenDSA/Doc/">link</a>. The <strong>SourceCode</strong> folder holds all the code snippets that are used throughout the modules to show implementation examples for the different data structures.
 				</p>
 			</section>
 
@@ -181,22 +181,22 @@
 				</p>
 
 				<p>
-					The fastest way to get started with rst syntax is by looking at an example from an existing module. Lets take for example this snippet from the <em>TwoThreeTree.rst</em> file.
+					The fastest way to get started with rst syntax is by looking at an example from an existing module. Lets take for example this snippet from the <strong>TwoThreeTree.rst</strong> file.
 				</p>
 
 				<pre><?php include("../_code/odsa_getting_started_2.php") ?></pre>
 
 				<p>
-					The example above will generate a diagram (static image) inside of the TwoThreeTree module. A <i>JavaScript</i> file will actually generate the static image, the <em>rst</em> file just handles the creation of the <i>divs</i> that will serve as containers for the <i>JSAV</i> content. Lets break the example down to smaller pieces to understand what the syntax means.
+					The example above will generate a diagram (static image) inside of the TwoThreeTree module. A <i>JavaScript</i> file will actually generate the static image, the <strong>rst</strong> file just handles the creation of the <i>divs</i> that will serve as containers for the <i>JSAV</i> content. Lets break the example down to smaller pieces to understand what the syntax means.
 				<br>
 				<br>
 					Line one of the syntax serves as a <a href="http://algoviz.org/OpenDSA/Doc/manual/Extensions.html#topic-special-case">numbered reference</a> to the content that follows. Making it easier to refer to any content later on in the module or in the book; contrary to having to hard code the reference numbers. This is done this way because the chapter numbers and content reference numbers are dynamically generated when the book is compiled, which makes sense given that every book has a different number of chapters in it and they can be placed in a different order.
 				<br>
 				<br>
-					The second portion of the file, which spans from line three to line four, relates to the actual <em>JSAV</em> container. On line three we see the directive <a href="http://algoviz.org/OpenDSA/Doc/manual/Extensions.html#inlineav">inlineav</a>. This directive indicates to the compiler that <i>JSAV</i> content will go here and the compiler will know to create the necessary <i>HTML</i> markup. After the directive there are two parameters, the first one is very important. In the above example we see that the first parameter is <i>“twoThreeTreeCON”</i>, this will end up being the <i>ID</i> of the <i>JSAV container</i>. We need this because when new <i>JSAV</i> content is created a new <i>JSAV object</i> has to be instantiated. The <i>ID</i> of the <i>JSAV container</i> is then passed as a parameter to the <i>JSAV object</i> so that the <i>JSAV library</i> knows which element to modify. Whatever name is placed as the first parameter on the <em>inlineav</em> directive, it will be set as the <i>ID</i> of the <i>JSAV container</i>. The second parameter of the <em>inlineav</em> directive, <em>dgm</em>, simply indicates to the compiler that the content that goes here is a diagram. On line four there is the option <em>:center:</em>, indicating that the caption of this content will have to be centered. Finally on line six we can see a line of text with one level of indentation. This line of text represents the caption of the image or slideshow above. It can be as long as the developer wants it to be. If it has the same indentation level it will continue to be considered part of the caption. 
+					The second portion of the file, which spans from line three to line four, relates to the actual <strong>JSAV</strong> container. On line three we see the directive <a href="http://algoviz.org/OpenDSA/Doc/manual/Extensions.html#inlineav">inlineav</a>. This directive indicates to the compiler that <i>JSAV</i> content will go here and the compiler will know to create the necessary <i>HTML</i> markup. After the directive there are two parameters, the first one is very important. In the above example we see that the first parameter is <i>“twoThreeTreeCON”</i>, this will end up being the <i>ID</i> of the <i>JSAV container</i>. We need this because when new <i>JSAV</i> content is created a new <i>JSAV object</i> has to be instantiated. The <i>ID</i> of the <i>JSAV container</i> is then passed as a parameter to the <i>JSAV object</i> so that the <i>JSAV library</i> knows which element to modify. Whatever name is placed as the first parameter on the <em>inlineav</em> directive, it will be set as the <i>ID</i> of the <i>JSAV container</i>. The second parameter of the <em>inlineav</em> directive, <em>dgm</em>, simply indicates to the compiler that the content that goes here is a diagram. On line four there is the option <em>:center:</em>, indicating that the caption of this content will have to be centered. Finally on line six we can see a line of text with one level of indentation. This line of text represents the caption of the image or slideshow above. It can be as long as the developer wants it to be. If it has the same indentation level it will continue to be considered part of the caption. 
 				<br>
 				<br>
-					Lets now examine an example for creating a slide show. Moving forwards in the <em>TwoThreeTree.rst</em> file we find another the syntax for slideshow.
+					Lets now examine an example for creating a slide show. Moving forwards in the <strong>TwoThreeTree.rst</strong> file we find another the syntax for slideshow.
 
 				</p>
 
@@ -215,7 +215,7 @@
 				<pre><?php include("../_code/odsa_getting_started_4.php") ?></pre>
 
 				<p>
-					These two directives correspond to a <i>HTML</i> <em>&lt;link&gt;</em> tag and a HTML <em>&lt;script&gt;</em> tag respectively. One important rule to keep in mind here is that while the <i>css link</i> can be placed anywhere (By convention it's placed at the top of the document), the <i>JavaScript script</i> tag has to be placed at the very end of the document. This will ensure that the DOM has loaded before the JavaScript file tries to modify it (Mainly because most <i>JavaScript</i> files don't use the ready method). Notice as well that the <i>JavaScript</i> and <i>CSS</i> files are located in the <em>AV</em> folder under the <em>Development</em> directory. Meaning that the files have not being approved yet. When they are they will need to be moved to another file and the links will need to be updated.
+					These two directives correspond to a <i>HTML</i> <em>&lt;link&gt;</em> tag and a HTML <em>&lt;script&gt;</em> tag respectively. One important rule to keep in mind here is that while the <i>css link</i> can be placed anywhere (By convention it's placed at the top of the document), the <i>JavaScript script</i> tag has to be placed at the very end of the document. This will ensure that the DOM has loaded before the JavaScript file tries to modify it (Mainly because most <i>JavaScript</i> files don't use the ready method). Notice as well that the <i>JavaScript</i> and <i>CSS</i> files are located in the <strong>AV</strong> folder under the <strong>Development</strong> directory. Meaning that the files have not being approved yet. When they are they will need to be moved to another file and the links will need to be updated.
 				</p>
 			</section>
 
@@ -231,22 +231,22 @@
 				</p>
 
 				<p>
-					Lets do a quick recap. The AV folder holds all the JavaScript and CSS files that generate the content. The rst files are in charge of creating a template for the modules to be converted to HTML. They also link to all of the relevant JavaScript and CSS files. The question now is how do the modules get included in the books? This is where the config files come into play.
+					Lets do a quick recap. The <strong>AV</strong> folder holds all the JavaScript and CSS files that generate the content. The rst files are in charge of creating a template for the modules to be converted to HTML. They also link to all of the relevant JavaScript and CSS files. The question now is how do the modules get included in the books? This is where the config files come into play.
 				<br>
 				<br>
-					Located inside of the config folder, there is a list of .”json” files. These files are referenced by the compiler when a new book is going to be created and they tell the compiler which modules to include and in what manner. There are a lot of things that can be done inside of the .json config file but this section will only cover the basics of how to add a new module to a book.
+					Located inside of the <strong>config</strong> folder, there is a list of <em>.json</em> files. These files are referenced by the compiler when a new book is going to be created and they tell the compiler which modules to include and in what manner. There are a lot of things that can be done inside of the .json config file but this section will only cover the basics of how to add a new module to a book.
 				<br>
 				<br>
-					The IS.json file located inside of the config folder contains any module that is currently being worked on. Since this is the file that most developers will likely deal with, this section will use this file as an example. Lets take a look at the contents of that file:
+					The <strong>IS.json</strong> file located inside of the <strong>config</strong> folder contains any module that is currently being worked on. Since this is the file that most developers will likely deal with, this section will use this file as an example. Lets take a look at the contents of that file:
 				</p>
 
 				<pre data-highlight="14,15,16,17,18,19,20,21,22,23,24"><?php include("../_code/odsa_getting_started_5.php") ?></pre>
 
 				<p>
-					The file itself is very short although somewhat convoluted because of all the brackets and indentation levels. However, this section is mainly interested in the highlighted part of the file. This highlighted part started with the key <em>“chapters”</em> followed by a <i>colon</i> and then an <i>opening bracket</i>. Everything that follows after that bracket correspond to the chapters that will be created in the book. Notice that on the next line we see the key <em>“Testing”</em> and again a <i>colon</i> and <i>opening bracket</i>. This signifies the start of a new chapter named <i>Testing</i>. Included in this chapter are all of the modules that are specified next. In this case there are two modules <i>Bintree</i> and <i>TwoThreeTree</i>. We can identify these two modules because like the two keys before they are followed by a <i>colon</i> an opening bracket. Inside of each one of these modules there are two options set. The first is the <em>“long_name”</em> option which sets the name that is to be displayed in the table of contents and then an <em>"exercises"</em> option which is empty.
+					The file itself is very short although somewhat convoluted because of all the brackets and indentation levels. However, this section is mainly interested in the highlighted part of the file. This highlighted part started with the key <em>chapters</em> followed by a <i>colon</i> and then an <i>opening bracket</i>. Everything that follows after that bracket correspond to the chapters that will be created in the book. Notice that on the next line we see the key <em>Testing</em> and again a <i>colon</i> and <i>opening bracket</i>. This signifies the start of a new chapter named <em>Testing</em>. Included in this chapter are all of the modules that are specified next. In this case there are two modules <em>Bintree</em> and <em>TwoThreeTree</em>. We can identify these two modules because like the two keys before they are followed by a <i>colon</i> an opening bracket. Inside of each one of these modules there are two options set. The first is the <em>long_name</em> option which sets the name that is to be displayed in the table of contents and then an <em>exercises</em> option which is empty.
 				<br>
 				<br>
-					To add a new module to the Testing chapter all we would need to do insert a new object right after the <i>TwoThreeTree</i> module. For example, if a developer needed to add a <i>Tree Indexing</i> module it would look like this:
+					To add a new module to the Testing chapter all we would need to do insert a new object right after the <em>TwoThreeTree</em> module. For example, if a developer needed to add a <em>Tree Indexing</em> module it would look like this:
 				</p>
 
 				<pre data-highlight="12,13,14,15"><?php include("../_code/odsa_getting_started_6.php") ?></pre>
@@ -271,21 +271,21 @@
 					When starting to work on new content the need to see your work as it will be displayed on the real website arises. More important the ability to be able to make modifications to any <i>JavaScript</i> or <i>CSS</i> file, and quickly see those changes reflected on the site becomes a necessity. This can all be done with the following workflow:
 				<br>
 				<br>
-					First step is to create the empty <i>JavaScript</i> and <i>CSS (optional)</i> files that are needed. Be sure to place these files under the <em>AV/Development</em> folder. Once this is done, the <em>rst</em> file needs to be modified.
+					First step is to create the empty <i>JavaScript</i> and <i>CSS (optional)</i> files that are needed. Be sure to place these files under the <strong>AV/Development</strong> folder. Once this is done, the <strong>rst</strong> file needs to be modified.
 				<br>
 				<br>
-					Using the knowledge of the <a href="#rstFiles">“RST Files”</a> section, modify the rst file so that it will display the new content. If the new content is going to replace an old one, then be sure to update any directive, options or links. If you are a <i>JSAV</i> developer you will need to move this modified rst file to the <em>RST/source/IS</em> directory. This is where the IS book will grab the module from and it stops developers from messing with live <i>rst</i> files. Once the content has being tested and approved it will be moved back to one of the other folders in the <em>RST</em> directory.
+					Using the knowledge of the <a href="#rstFiles">“RST Files”</a> section, modify the rst file so that it will display the new content. If the new content is going to replace an old one, then be sure to update any directive, options or links. If you are a <i>JSAV</i> developer you will need to move this modified rst file to the <strong>RST/source/IS</strong> directory. This is where the IS book will grab the module from and it stops developers from messing with live <i>rst</i> files. Once the content has being tested and approved it will be moved back to one of the other folders in the <strong>RST</strong> directory.
 				<br>
 				<br>
-					When all that is done the module needs to be included in the config file. The <a href="#configFiles">“Config Files”</a> section shows how to modify a JSON config file for a book to include a specific module. Following that, the book needs to be compiled. If all of the tools from the <a href="#tools">“Tools”</a> section have being installed correctly the following steps should be simple. First open a terminal and navigate to the <em>OpenDSA</em> folder (The parent folder to everything). Then type in the make command followed by the name of the book to be compiled as shown below
+					When all that is done the module needs to be included in the config file. The <a href="#configFiles">“Config Files”</a> section shows how to modify a JSON config file for a book to include a specific module. Following that, the book needs to be compiled. If all of the tools from the <a href="#tools">“Tools”</a> section have being installed correctly the following steps should be simple. First open a terminal and navigate to the <strong>OpenDSA</strong> folder (The parent folder to everything). Then type in the make command followed by the name of the book to be compiled as shown below
 				</p>
 
 				<pre>make [book-name]</pre>
 				<p>
-					Hit enter and wait a few seconds for the compiler to do its thing. If there are any broken links in the <i>rst</i> file the compiler will complain about it. Otherwise it should compile successfully. Once the make command has finished go into the <em>Books</em> directory. There should be a new directory with the name of the book. Inside the <i>book-name</i> directory there should be an html folder, and inside the html directory all the static html for the book.
+					Hit enter and wait a few seconds for the compiler to do its thing. If there are any broken links in the <i>rst</i> file the compiler will complain about it. Otherwise it should compile successfully. Once the make command has finished go into the <strong>Books</strong> directory. There should be a new directory with the name of the book. Inside the <i>book-name</i> directory there should be an html folder, and inside the html directory all the static html for the book.
 				<br>
 				<br>
-					Inside of the <em>html</em> folder there should be a <i>HTML</i> file with the same name as the <i>rst</i> file that was added to the <i>config</i> file. Open it up and check if the proper containers were generated for the <i>JSAV</i> content. If the <i>JavaScript</i> file created earlier was empty all there will be is an empty box about twenty pixels tall. You can now begin to modify the JavaScript and CSS files to add content to the JSAV container and the chages will be reflected on that page when it is refreshed. Depending on the text editor being used, it is possible to get plugins that will automatically push the changes made to any JavaScript or CSS files to the web page so that it doesn’t need to be refreshed after every change.
+					Inside of the <strong>html</strong> folder there should be a <i>HTML</i> file with the same name as the <i>rst</i> file that was added to the <i>config</i> file. Open it up and check if the proper containers were generated for the <i>JSAV</i> content. If the <i>JavaScript</i> file created earlier was empty all there will be is an empty box about twenty pixels tall. You can now begin to modify the JavaScript and CSS files to add content to the JSAV container and the chages will be reflected on that page when it is refreshed. Depending on the text editor being used, it is possible to get plugins that will automatically push the changes made to any JavaScript or CSS files to the web page so that it doesn’t need to be refreshed after every change.
 				</p>
 			</section>
 
