@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-pre {
+.content pre {
 	background-color: #DCF5FF;
 	color: #43464D;
 	border: 5px solid #04A3C6;
@@ -10,27 +10,36 @@ pre {
 	border-radius: 0 25px 25px 0;
 }
 
-pre table .highlight {
+.content pre table .highlight {
 	background-color: #04A3C6;
 	color: #FFFFFF;
 	font-weight: 500;
 }
 
-pre table {
+.content pre table {
 	width: 745px;
 }
 
-pre table .first {
+.content pre table .first {
 	width: 28px;
 	border-right: 2px solid #04A3C6;
 }
 
-pre table tr {
+.content pre table tr {
 	border-bottom: 1px solid #CAE1EB;
 }
 
-pre table td {
+.content pre table td {
 	padding-right: 5px;
 	padding-left: 5px;
 }
 
+/* Bug with facebook button, temporary solution */
+#fb_login_button { 
+    width: 80px; 
+}
+#fb_login_button span, 
+#fb_login_button iframe {
+    width: 80px! important;
+    height: 25px! important;
+}
