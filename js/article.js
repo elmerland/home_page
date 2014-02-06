@@ -10,7 +10,7 @@ $(document).ready(function () {
 	$(".fixed").css("left", leftOffset + "px");
 	scrollNav();
 	// Hide the "Back to top" buttons and link images when the page loads.
-	$(".toTop").css("visibility", "hidden");
+	$(".content .toTop").css("visibility", "hidden");
 	$("section header img").css("visibility", "hidden");
 	// Initialize all animations.
 	addAnimation();
@@ -35,7 +35,7 @@ function addAnimation() {
 	});
 	
 	// Intercept clicks to the outline panel.
-	$(".outline").on("click", "a", function(event) {
+	$(".outline ul").on("click", "a", function(event) {
 		event.preventDefault();
 		var href = $(this).attr("href");
 		scrollToAnchor(href);
