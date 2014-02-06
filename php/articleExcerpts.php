@@ -1,8 +1,8 @@
 <article class="excerpt">
 	<header>
-		<a title="CS: Pipes and Processes" href="http://learncodeart.com/articles/cs_pipes.php" rel="alternate">
+		<a title="CS: Pipes and Processes" href="../articles/cs_pipes.php" rel="alternate">
 			<h3>
-				CS: Pipes and Processes
+				Test!!!!
 			</h3>
 		</a>
 	</header>
@@ -19,7 +19,7 @@
 </article>
 <article class="excerpt">
 	<header>
-		<a title="OpenDSA: Getting Started With JSAV" href="http://learncodeart.com/articles/odsa_jsav.php" rel="alternate">
+		<a title="OpenDSA: Getting Started With JSAV" href="../articles/odsa_jsav.php" rel="alternate">
 			<h3>
 				OpenDSA: Getting Started With JSAV
 			</h3>
@@ -41,7 +41,7 @@
 </article>
 <article class="excerpt">
 	<header>
-		<a title="OpenDSA: Getting Acquainted" href="http://learncodeart.com/articles/odsa_getting_started.php" rel="alternate">
+		<a title="OpenDSA: Getting Acquainted" href="../articles/odsa_getting_started.php" rel="alternate">
 			<h3>
 				OpenDSA: Getting Started
 			</h3>
@@ -60,7 +60,7 @@
 </article>
 <article class="excerpt">
 	<header>
-		<a title="Creating a Dynamically Sized Table with JavaScript" href="http://learncodeart.com/articles/project_dynamic_table.php" rel="alternate">
+		<a title="Creating a Dynamically Sized Table with JavaScript" href="../articles/project_dynamic_table.php" rel="alternate">
 			<h3>
 				Project: A Dynamically Sized Table
 			</h3>
@@ -79,7 +79,7 @@
 </article>
 <article class="excerpt">
 	<header>
-		<a title="Creating a little snake game" href="http://learncodeart.com/articles/project_snake_game.php" rel="alternate">
+		<a title="Creating a little snake game" href="../articles/project_snake_game.php" rel="alternate">
 			<h3>
 				Project: A Little Snake Game
 			</h3>

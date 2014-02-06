@@ -14,7 +14,7 @@
 		require_once("../php/nav.php");
 	?>
 
-	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/alchemy.jpg);"></div>
+	<div class="banner" style="background-image: url(../_images/patterns/alchemy.jpg);"></div>
 
 	<article class="main">
 		
@@ -45,8 +45,8 @@
 			<section id="who">
 				<header>
 					<h2>Who Am I?</h2>
-					<a href="#who"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#who"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -57,8 +57,8 @@
 			<section id="purpose">
 				<header>
 					<h2>Purpose Of This Website</h2>
-					<a href="#purpose"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#purpose"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 	
 				<p>

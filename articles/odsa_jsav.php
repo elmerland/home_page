@@ -14,7 +14,7 @@
 		require_once("../php/nav.php");
 	?>
 
-	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/leather-nunchuck.png);"></div>
+	<div class="banner" style="background-image: url(../_images/patterns/leather-nunchuck.png);"></div>
 
 	<article class="main">
 		
@@ -52,8 +52,8 @@
 			<section id="intro">
 				<header>
 					<h2>Intro</h2>
-					<a href="#intro"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#intro"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -63,8 +63,8 @@
 			<section id="js1">
 				<header>
 					<h2>JavaScript: Getting Started</h2>
-					<a href="#js1"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#js1"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -74,8 +74,8 @@
 			<section id="js2">
 				<header>
 					<h2>JavaScript: Encapsulation</h2>
-					<a href="#js2"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#js2"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -85,8 +85,8 @@
 			<section id="js3">
 				<header>
 					<h2>JavaScript: Absolute Positioning</h2>
-					<a href="#js3"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#js3"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -96,8 +96,8 @@
 			<section id="css1">
 				<header>
 					<h2>CSS: Getting Started</h2>
-					<a href="#css1"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#css1"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -107,8 +107,8 @@
 			<section id="css2">
 				<header>
 					<h2>CSS: Container Size</h2>
-					<a href="#css2"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#css2"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -118,8 +118,8 @@
 			<section id="css3">
 				<header>
 					<h2>CSS: Node Size</h2>
-					<a href="#css3"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#css3"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -129,8 +129,8 @@
 			<section id="css4">
 				<header>
 					<h2>CSS: Text Alignment</h2>
-					<a href="#css4"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#css4"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -140,8 +140,8 @@
 			<section id="notes">
 				<header>
 					<h2>Notes</h2>
-					<a href="#notes"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#notes"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p>

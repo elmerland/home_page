@@ -14,7 +14,7 @@
 		require_once("../php/nav.php");
 	?>
 
-	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/asteroids.jpg);"></div>
+	<div class="banner" style="background-image: url(../_images/patterns/asteroids.jpg);"></div>
 
 	<article class="main">
 		
@@ -53,8 +53,8 @@
 			<section id="theProject">
 				<header>
 					<h2>The Project</h2>
-					<a href="#theProject"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#theProject"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -64,8 +64,8 @@
 			<section id="theFinalResult">
 				<header>
 					<h2>The Final Result</h2>
-					<a href="#theFinalResult"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#theFinalResult"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 	
 				<p>
@@ -75,8 +75,8 @@
 			<section id="theCode">
 				<header>
 					<h2>The Code</h2>
-					<a href="#theCode"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#theCode"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p>
@@ -86,8 +86,8 @@
 			<section id="theMakingOf">
 				<header>
 					<h2>The Making Of</h2>
-					<a href="#theMakingOf"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#theMakingOf"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 	
 				<section id="step1">
@@ -112,8 +112,8 @@
 			<section id="conclusion">
 				<header>
 					<h2>Conclusion</h2>
-					<a href="#conclusion"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#conclusion"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p>
@@ -123,8 +123,8 @@
 			<section id="notes">
 				<header>
 					<h2>Notes</h2>
-					<a href="#notes"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#notes"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p>

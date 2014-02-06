@@ -14,7 +14,7 @@
 		require_once("../php/nav.php");
 	?>
 
-	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/leather-nunchuck.png);"></div>
+	<div class="banner" style="background-image: url(../_images/patterns/leather-nunchuck.png);"></div>
 
 	<article class="main">
 		
@@ -56,8 +56,8 @@
 			<section id="intro">
 				<header>
 					<h2>Intro</h2>
-					<a href="#intro"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#intro"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -88,8 +88,8 @@
 			<section id="tools">
 				<header>
 					<h2>Tools</h2>
-					<a href="#tools"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#tools"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p>
@@ -116,8 +116,8 @@
 			<section id="folderStructure">
 				<header>
 					<h2>Folder Structure</h2>
-					<a href="#folderStructure"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#folderStructure"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p>
@@ -172,8 +172,8 @@
 			<section id="rstFiles">
 				<header>
 					<h2>RST Files</h2>
-					<a href="#rstFiles"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#rstFiles"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p class="notes">
@@ -184,37 +184,13 @@
 					The fastest way to get started with rst syntax is by looking at an example from an existing module. Lets take for example this snippet from the <em>TwoThreeTree.rst</em> file.
 				</p>
 
-				<pre><?php include("http://learncodeart.com/_code/odsa_getting_started_1.php") ?></pre>
+				<pre><?php include("../_code/odsa_getting_started_2.php") ?></pre>
 
 				<p>
-					This kind of syntax is what a new developer can expect to find the first time he/she opens an <i>rst</i> file that he/she is about to start working on. Lets break this text into smaller pieces to understand what they do:
-				<br>
-				<br>
-					The first line of text is used to create a <a href="http://algoviz.org/OpenDSA/Doc/manual/Extensions.html#topic-special-case">numbered reference</a> to the content that follows. Making it easier to refer to this content later on in the module without having to hard code numbers into it. This is done this way because the chapter numbers and content reference numbers are dynamically generated when the book is compiled, which makes sense given that every book has a different number of chapters in it and they can placed in a different order.
-				<br>
-				<br>
-					The second line contains the directive <a href="http://algoviz.org/OpenDSA/Doc/manual/Extensions.html#odsafig">odsafig</a> that indicates that an image is to be inserted here. The path to the image is specified next and on the following lines some options of how the image and caption will be displayed are set. Bellow the image directive and options there is a piece of text with one level of indentation. This indicates that this text is to be placed as a caption for the image/diagram/slideshow that is above it.
-				<br>
-				<br>
-					If a developer wanted to substitute this image with a diagram (a static image created with <i>JSAV</i>), then he/she would want to replace the above text with the one below:
+					
 				</p>
 
-				<pre><?php include("http://learncodeart.com/_code/odsa_getting_started_2.php") ?></pre>
-
-				<p>
-					Notice that the first line does not change. This will still be used to create a dynamic reference to the content. The rest of the text however has being changed. Lets first examine the change in directive. The original file had the directive <em>odsafig</em> which has being changed to <a href="http://algoviz.org/OpenDSA/Doc/manual/Extensions.html#inlineav">inlineav</a> followed by two parameters <i>twoThreeTreeCON</i> and <i>dgm</i>. Lets break this down:
-				<br>
-				<br>
-					The parameter that immediately follows the <em>inlineav</em> directive is very important. This parameter is going to be set as the <i>ID</i> of the <i>JSAV</i> container. When new <i>JSAV</i> content is created a new <i>JSAV</i> has object has to be instantiated. The <i>ID</i> of the <i>JSAV container</i>  is then passed as a parameter to the <i>JSAV object</i> so that the <i>JSAV library</i> knows which element to modify. The next parameter, <em>dgm</em>, just indicates that this is a diagram (a static image) and should not include any slideshow controls.
-				<br>
-				<br>
-					Bellow the <em>inlineav</em> directive there is only one option which sets the alignment of the captions to the center, whereas before there were several options to control the appearance of the content. This is because the <i>JSAV</i> object is largely in control of the appearance and behavior of the container, so there is not need to set any extra parameters. Finally, the last line of text remains unchanged and still corresponds to the caption of the content, in this case the diagram.
-				<br>
-				<br>
-					Lets now imagine that we wanted to add a slideshow. Moving forwards in the <em>TwoThreeTree.rst</em> file we find another image that needs to be replaced with a slideshow. This is what it will look like after the text has being changed.
-				</p>
-
-	 			<pre><?php include("http://learncodeart.com/_code/odsa_getting_started_3.php") ?></pre>
+	 			<pre><?php include("../_code/odsa_getting_started_3.php") ?></pre>
 
 				<p>
 					In this example the first line has changed because it belongs to a different image. These references should always be unique. Next we encounter the <em>inlineav</em> directive, which is the same and is still followed by a parameter that will be set as the <i>ID</i> of the <i>JSAV</i> container. The second parameter however, is new. This new parameter <em>ss</em> stands for slideshow and indicates to the compiler that it needs to include all the slideshow controls (e.g. arrows, settings button, etc).
@@ -226,7 +202,7 @@
 					The final piece of the puzzle is how to link the appropriate <a href="http://algoviz.org/OpenDSA/Doc/manual/Extensions.html#odsascript">JavaScript</a> and <a href="http://algoviz.org/OpenDSA/Doc/manual/Extensions.html#odsalink">CSS</a> files to this module. This is done is by using two simple directives that are shown bellow:
 				</p>
 
-				<pre><?php include("http://learncodeart.com/_code/odsa_getting_started_4.php") ?></pre>
+				<pre><?php include("../_code/odsa_getting_started_4.php") ?></pre>
 
 				<p>
 					These two directives correspond to a <i>HTML</i> <em>&lt;link&gt;</em> tag and a HTML <em>&lt;script&gt;</em> tag respectively. One important rule to keep in mind here is that while the <i>css link</i> can be placed anywhere (By convention it's placed at the top of the document), the <i>JavaScript script</i> tag has to be placed at the very end of the document. This will ensure that the DOM has loaded before the JavaScript file tries to modify it (Mainly because most <i>JavaScript</i> files don't use the ready method). Notice as well that the <i>JavaScript</i> and <i>CSS</i> files are located in the <em>AV</em> folder under the <em>Development</em> directory. Meaning that the files have not being approved yet. When they are they will need to be moved to another file and the links will need to be updated.
@@ -236,8 +212,8 @@
 			<section id="configFiles">
 				<header>
 					<h2>Config Files</h2>
-					<a href="#configFiles"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#configFiles"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 
 				<p class="notes">
@@ -254,7 +230,7 @@
 					The IS.json file located inside of the config folder contains any module that is currently being worked on. Since this is the file that most developers will likely deal with, this section will use this file as an example. Lets take a look at the contents of that file:
 				</p>
 
-				<pre data-highlight="14,15,16,17,18,19,20,21,22,23,24"><?php include("http://learncodeart.com/_code/odsa_getting_started_5.php") ?></pre>
+				<pre data-highlight="14,15,16,17,18,19,20,21,22,23,24"><?php include("../_code/odsa_getting_started_5.php") ?></pre>
 
 				<p>
 					The file itself is very short although somewhat convoluted because of all the brackets and indentation levels. However, this section is mainly interested in the highlighted part of the file. This highlighted part started with the key <em>“chapters”</em> followed by a <i>colon</i> and then an <i>opening bracket</i>. Everything that follows after that bracket correspond to the chapters that will be created in the book. Notice that on the next line we see the key <em>“Testing”</em> and again a <i>colon</i> and <i>opening bracket</i>. This signifies the start of a new chapter named <i>Testing</i>. Included in this chapter are all of the modules that are specified next. In this case there are two modules <i>Bintree</i> and <i>TwoThreeTree</i>. We can identify these two modules because like the two keys before they are followed by a <i>colon</i> an opening bracket. Inside of each one of these modules there are two options set. The first is the <em>“long_name”</em> option which sets the name that is to be displayed in the table of contents and then an <em>"exercises"</em> option which is empty.
@@ -263,7 +239,7 @@
 					To add a new module to the Testing chapter all we would need to do insert a new object right after the <i>TwoThreeTree</i> module. For example, if a developer needed to add a <i>Tree Indexing</i> module it would look like this:
 				</p>
 
-				<pre data-highlight="12,13,14,15"><?php include("http://learncodeart.com/_code/odsa_getting_started_6.php") ?></pre>
+				<pre data-highlight="12,13,14,15"><?php include("../_code/odsa_getting_started_6.php") ?></pre>
 
 				<p>
 					If the book is compiled again it will include the new Tree Indexing module inside of the Testing chapter. Using the same syntax a developer can add as many modules as he/she wants or needs. More information on all the options that can go inside of the module can be found <a href="http://algoviz.org/OpenDSA/Doc/manual/Configuration.html#settings-all-are-required-unless-otherwise-specified">here</a>.
@@ -273,8 +249,8 @@
 			<section id="workflow">
 				<header>
 					<h2>Workflow</h2>
-					<a href="#workflow"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#workflow"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p class="notes">
@@ -306,8 +282,8 @@
 			<section id="notes">
 				<header>
 					<h2>Notes</h2>
-					<a href="#notes"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#notes"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 		
 				<p>
@@ -318,7 +294,7 @@
 				</p>
 
 				<p class="notes">
-					This article deals mostly with how to set everything up, there is another article on the way that deals specifically on how to get started creating content with JSAV. It is still not finished yet but will be available through this <a href="http://learncodeart.com/articles/odsa_jsav.php">link</a> when it is done.
+					This article deals mostly with how to set everything up, there is another article on the way that deals specifically on how to get started creating content with JSAV. It is still not finished yet but will be available through this <a href="../articles/odsa_jsav.php">link</a> when it is done.
 				</p>
 			</section>
 

@@ -14,7 +14,7 @@
 		require_once("../php/nav.php");
 	?>
 
-	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/escape-flight.png);"></div>
+	<div class="banner" style="background-image: url(../_images/patterns/escape-flight.png);"></div>
 
 	<article class="main">
 		
@@ -47,8 +47,8 @@
 			<section id="resume">
 				<header>
 					<h2>My R&eacute;sum&eacute;</h2>
-					<a href="#resume"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#resume"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -61,7 +61,7 @@
 					</header>
 			
 					<p>
-						<a title="High resolution resume" href="http://learncodeart.com/_sources/resume_high_res.pdf" target="_blank">Resume</a>
+						<a title="High resolution resume" href="../_sources/resume_high_res.pdf" target="_blank">Resume</a>
 					</p>
 				</section>
 
@@ -71,7 +71,7 @@
 					</header>
 			
 					<p>
-						<a title="High resolution resume" href="http://learncodeart.com/_sources/resume_low_res.pdf" target="_blank">Resume</a>
+						<a title="High resolution resume" href="../_sources/resume_low_res.pdf" target="_blank">Resume</a>
 					</p>
 				</section>
 			</section>

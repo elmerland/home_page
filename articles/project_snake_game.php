@@ -14,7 +14,7 @@
 		require_once("../php/nav.php");
 	?>
 
-	<div class="banner" style="background-image: url(http://learncodeart.com/_images/patterns/subway-lines.png);"></div>
+	<div class="banner" style="background-image: url(../_images/patterns/subway-lines.png);"></div>
 
 	<article class="main">
 		
@@ -55,8 +55,8 @@
 			<section id="theProject">
 				<header>
 					<h2>The Project</h2>
-					<a href="#theProject"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#theProject"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 
 				<p>
@@ -89,8 +89,8 @@
 			<section id="theFinalResult">
 				<header>
 					<h2>The Final Result</h2>
-					<a href="#theFinalResult"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#theFinalResult"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -98,35 +98,35 @@
 				</p>
 			
 				<p>
-					<a title="Snake project" href="http://learncodeart.com/projects/snake/snake.html" target="_blank">
-						http://learncodeart.com/projects/snake/snake.html</a>
+					<a title="Snake project" href="../projects/snake/snake.html" target="_blank">
+						../projects/snake/snake.html</a>
 				</p>
 			</section>
 
 			<section id="theCode">
 				<header>
 					<h2>The Code</h2>
-					<a href="#theCode"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#theCode"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
 					Since this was my first time writing a webpage I had to reorganize my files a couple of times before getting an organization that I liked. At the end there where four files. One HTML, one CSS and two JavaScript. The contents of the HTML and CSS files are straightforward. I decided to split the JavaScript file into two because I thought it looked cleaner. The first file "snake.js" controls the logic of the actual game, the second file "table.js" is in charge of the webpage functionality. Mainly it handles the creation of the table where the game takes places, gets information from the text field and radio buttons, and it determines what the buttons do when pressed. Below is a copy of the source code for the project.
 					<br>
 					<br>
-					<a title="Snake-index.html" href="http://learncodeart.com/projects/snake/index.html" target="_blank">
+					<a title="Snake-index.html" href="../projects/snake/index.html" target="_blank">
 						HTML - index.html
 					</a><br>
 			
-					<a title="Snake-main.css" href="http://learncodeart.com/projects/snake/css/main.css" target="_blank">
+					<a title="Snake-main.css" href="../projects/snake/css/main.css" target="_blank">
 						CSS - main.css
 					</a><br>
 			
-					<a title="Snake-table.js" href="http://learncodeart.com/projects/snake/js/table.js" target="_blank">
+					<a title="Snake-table.js" href="../projects/snake/js/table.js" target="_blank">
 						JavaScript - table.js
 					</a><br>
 			
-					<a title="Snake-snake.js" href="http://learncodeart.com/projects/snake/js/snake.js" target="_blank">
+					<a title="Snake-snake.js" href="../projects/snake/js/snake.js" target="_blank">
 						JavaScript - snake.js
 					</a><br>
 				</p>
@@ -139,8 +139,8 @@
 			<section id="theMakingOf">
 				<header>
 					<h2>The Making Of</h2>
-					<a href="#theMakingOf"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#theMakingOf"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<section id="step1">
@@ -152,7 +152,7 @@
 						The first step was to create the HTML file. The structure of this file is really simple, since the main focus of the project is on the JavaScript I kept all HTML to a minimum.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_1.php") ?></pre>
+					<pre><?php include("../_code/snake_game_1.php") ?></pre>
 				
 					<p>
 						These are the things included in the head tag:
@@ -171,7 +171,7 @@
 						The snake.js file is imported before the table.js file because the table.js is what actually sets off everything into motion, and I thought it would be better for the snake.js file to be already loaded into memory before the table.js file kicked in.
 					</p>
 				
-					<pre><?php include("http://learncodeart.com/_code/snake_game_2.php") ?></pre>
+					<pre><?php include("../_code/snake_game_2.php") ?></pre>
 				
 					<p>
 						Next, these are the things included in the body tag:
@@ -202,13 +202,13 @@
 						The first thing I created was to add an event listener to know when the document loads.
 					</p>
 				
-					<pre><?php include("http://learncodeart.com/_code/snake_game_3.php") ?></pre>
+					<pre><?php include("../_code/snake_game_3.php") ?></pre>
 				
 					<p>
 						With this in place, right after the document (page) is loaded the <strong>int()</strong> function will be called.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_4.php") ?></pre>
+					<pre><?php include("../_code/snake_game_4.php") ?></pre>
 					
 					<p>
 						This function does the following:
@@ -225,13 +225,13 @@
 						The create game function is in charge of setting up the game table and prepare everything for the start of the game.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_5.php") ?></pre>
+					<pre><?php include("../_code/snake_game_5.php") ?></pre>
 				
 					<p>
 						This function first clears the game table if there was one, then it gets a validates the size of the new game table, next it creates a new game table, and finally it enables the "start game" button. The create game function looks as follows.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_6.php") ?></pre>
+					<pre><?php include("../_code/snake_game_6.php") ?></pre>
 				
 					<p>
 						First it creates a new div element that will hold the entire table. Next it creates the actual table and it finally adds the game div to the main div.
@@ -241,19 +241,19 @@
 						The game table is creating using simple &lt;table&gt;, &lt;tbody&gt;, &lt;tr&gt;, and &lt;td&gt; elements. One thing worth noting is that each table cell has two extra properties that will be used by the snake.js file. These are the "occupied" and "hasFood" properties as shown below.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_7.php") ?></pre>
+					<pre><?php include("../_code/snake_game_7.php") ?></pre>
 				
 					<p>
 						Going back to the "create game" button, we saw that it gives a function to the "start game" button. This is what that function looks like.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_8.php") ?></pre>
+					<pre><?php include("../_code/snake_game_8.php") ?></pre>
 				
 					<p>
 						This function first checks if the game table is set up. Then it resets the messages for the "countdown" and "gameStatus" elements in the HTML file. Finally it starts a new timer and gives it the <strong>countDown()</strong> function. This function just updates the "coundown" element until the counter reaches zero, and then it starts the game. This is how the <strong>countDown()</strong> function looks like.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_9.php") ?></pre>
+					<pre><?php include("../_code/snake_game_9.php") ?></pre>
 				
 					<p>
 						From this moment on, the table.js file is done and as soon as the user clicks on the start game button, then the countdown starts and the <strong>play()</strong> function in the snake.js file is executed.
@@ -269,7 +269,7 @@
 						To create a snake representation recursion will always be your friend. The snake consists of several snake nodes. Each node is visually represented by a square, and so it naturally has a x and y coordinate. When the snake moves, only the head node is moved. This head node will then call on all of the trailing nodes to move right after it. Therefore, most of the thought process goes into the behavior of this head node. Every node after the head will just follow suit and should be relatively straight forward. The first step was to create a snake node constructor, that looks like this.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_10.php") ?></pre>
+					<pre><?php include("../_code/snake_game_10.php") ?></pre>
 				
 					<p>
 						The constructor sets the properties for row (x) and col (y) position. The tail pointer and the isHead boolean. It then colors the cell on the game table to reflect the snake node and also marks the cell as occupied.
@@ -279,31 +279,31 @@
 						Next, I implemented two functions for the snake node prototype.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_11.php") ?></pre>
+					<pre><?php include("../_code/snake_game_11.php") ?></pre>
 				
 					<p>
 						The first function called <strong>move()</strong> simple moves the snake node from its current position to the specified position and the second function called <strong>addNode()</strong> just adds a new snake node to the tail of the current snake node. The move function first checks if the next position the snake node is going to be moved to correspond to a cell outside of the board or if the cell is already occupied by another snake node. Then it checks if the next position has any food in it. If it does, it creates a new food item. Next it updates the position of the snake node while also changing the coloring of the table cell and the occupied status of the cell. Finally it checks whether the current snake node has a tail node. If it does, then it moves the tail node to where the current snake node was. If it doesn't have a tail node it checks if the next cell has food in it. If it does it adds a new tail node if it doesn't it does nothing. The addNode function simply creates a new snake node to the specified position. The getCell(), colorCell(), addFood(), and clearFood() functions are very self explanatory and will leave to you to figure out.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_12.php") ?></pre>
+					<pre><?php include("../_code/snake_game_12.php") ?></pre>
 				
 					<p>
 						Now we will concern ourselves with how the snake actually moves. First lets take a look at the play function.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_13.php") ?></pre>
+					<pre><?php include("../_code/snake_game_13.php") ?></pre>
 					
 					<p>
 						This function is called immediately after the user clicks on the "start game" button and the countdown is done. It first calls a function to clear the board and reset everything in case there was a game previously in motion. Then it gets the center position of the game table to place the new snake head node at. It also adds a new food block. Finally it adds a function to the key down event, and two timers. One timer for each time the snake has to move and another timer for the clock. The <strong>changeDirection()</strong> function handles the key down event when the user presses on any of the arrow keys. There are a couple of important things about this function. First it uses a boolean called <strong>directionLock</strong>. The purpose of this boolean is so that the user can't change direction more than once per move. This is necessary because of the next feature of this function. When you are moving right and then press left the snake will crash against itself. To avoid this situation the changeDirection function prevents the user from changing the direction of the snake to the exact opposite of what the current direction is (i.e. left to right, up to down and vice versa). So in conjunction these two features will prevent the user from crashing the snake against itself just because of careless key presses which happens when you are in the heat of the game.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_14.php") ?></pre>
+					<pre><?php include("../_code/snake_game_14.php") ?></pre>
 				
 					<p>
 						Lastly lets dissect the <strong>moveSnake()</strong> function, that is in charge of moving the snake head node.
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_15.php") ?></pre>
+					<pre><?php include("../_code/snake_game_15.php") ?></pre>
 				
 					<p>
 						This function first determines the next cell the snake has to move to based on the current direction. Then it calls the <strong>move()</strong> function on the snake head node, and finally it sets the directionLock to false. This covers the most important parts of the snake.js file. There are still some functions left that were not covered (i.e. resetBoard, gameOver, addPoints, increaseTimer), I feel confident the you can figure them out.
@@ -332,15 +332,15 @@
 						These are the contents of the CSS file. 
 					</p>
 					
-					<pre><?php include("http://learncodeart.com/_code/snake_game_16.php") ?></pre>
+					<pre><?php include("../_code/snake_game_16.php") ?></pre>
 				</section>
 			</section>
 
 			<section id="conclusion">
 				<header>
 					<h2>Conclusion</h2>
-					<a href="#conclusion"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#conclusion"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
@@ -351,8 +351,8 @@
 			<section id="notes">
 				<header>
 					<h2>Notes</h2>
-					<a href="#notes"><img src="http://learncodeart.com/_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="http://learncodeart.com/_images/toTop.png"></a>
+					<a href="#notes"><img src="../_images/link20.png"></a>
+					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 			
 				<p>
