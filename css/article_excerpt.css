@@ -5,9 +5,9 @@ article.excerpt {
 	padding: 10px;
 	margin: 5px;
 	border: 2px solid #43464D;
-	-webkit-border-radius: 0 25px 25px 25px;
-	-moz-border-radius: 0 25px 25px 25px;
-	border-radius: 0 25px 25px 25px;
+	-webkit-border-radius: 0 20px 20px 20px;
+	-moz-border-radius: 0 20px 20px 20px;
+	border-radius: 0 20px 20px 20px;
 }
 
 article.excerpt header a {
