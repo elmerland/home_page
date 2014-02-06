@@ -3,3 +3,4 @@ favicon.ico
 php.ini
 development/*
 sftp-config.json
+.htaccess*
