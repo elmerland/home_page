@@ -20,6 +20,7 @@
 		
 		<nav class="outline float">
 			<section>
+				<a class="toTop" href="#"><h3>Back to top</h3></a>
 				<h2>Outline</h2>
 				<ul>
 					<a href="#resume"><li>My R&eacute;sum&eacute;</li></a>
