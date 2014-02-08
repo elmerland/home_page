@@ -201,7 +201,7 @@ section > p > a:hover {text-shadow: 0 0 0.1em #C98519;}
 	color: #43464D;
 	background-color: #DCF5FF;
 	border: 1px solid #04A3C6;
-	padding: 0 2px;
+	padding: 0 2px 1px 2px;
 }
 
 /* Styling for sub-sections */
