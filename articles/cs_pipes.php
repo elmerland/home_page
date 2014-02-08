@@ -110,7 +110,7 @@
 				<pre data-highlight="13,14,15"><?php include("../_code/cs_pipes_1.c"); ?></pre>
 
 				<p>
-					As mentioned earlier a file descriptor is stored in the way of an integer. So when a pipe is created an integer array of size two is needed. By convention the integer element at index 0 is the read side and the integer element at index 1 is the read side. It is useful to declare the constants <em>IN</em> and <em>OUT</em> (alternatively <em>STD_IN</em> and <em>STD_OUT</em>) to make reading the code more human readable.
+					As mentioned earlier a file descriptor is stored in the way of an integer. So when a pipe is created an integer array of size two is needed. By convention the integer element at index 0 is the read side and the integer element at index 1 is the write side. It is useful to declare the constants <em>IN</em> and <em>OUT</em> (alternatively <em>STD_IN</em> and <em>STD_OUT</em>) to make reading the code more human readable.
 				<br>
 				<br>
 					The <em>pipe()</em> function is where all the magic happens. This function first creates a new <strong>pipe</strong> and then finds the two lowest available <strong>file descriptors</strong> and assigns them to the ends of the pipes. The function returns <em>0</em> when successful and <em>-1</em> when an error occurred. For more information please refer to the man page or this <a href="http://linux.die.net/man/2/pipe">site</a>. Alternatively this <a hre="http://linux.die.net/man/7/pipe">site</a> offers a more in depth discussion on pipes.
