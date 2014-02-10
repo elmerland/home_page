@@ -4,3 +4,4 @@ php.ini
 development/*
 sftp-config.json
 .htaccess*
+articles/*
