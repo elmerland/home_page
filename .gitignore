@@ -5,3 +5,4 @@ development/*
 sftp-config.json
 .htaccess*
 articles/*
+index.html
