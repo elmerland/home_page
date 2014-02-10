@@ -3,7 +3,7 @@
 <head>
 	<?php
 		require_once("py/snippets/header_nav_css.html");
-		require_once("php/homeCSS.php");
+		require_once("py/snippets/home_css.html");
 	?>
 	<title>Learn Code Art</title>
 </head>
