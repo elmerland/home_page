@@ -1,5 +1,4 @@
-import os.path
-import sys
+import filemanager
 
 # Header and footer html code for all sections of article.
 head_start = "<!DOCTYPE html>\n<html>\n<head>\n"
@@ -47,8 +46,8 @@ def generate_articles(article_list):
     for article in articles:
         # Get path for input and output.
         print('Digesting article:', article)
-        in_article_path = get_input_path(article)
-        out_article_path = get_output_path(article)
+        in_article_path = filemanager.get_article_input_path(article)
+        out_article_path = filemanager.get_article_output_path(article)
         # Open files
         in_article = open(in_article_path, 'r')
         out_article = open(out_article_path, 'w')
@@ -56,37 +55,6 @@ def generate_articles(article_list):
         digest_article(in_article, out_article)
         in_article.close()
         out_article.close()
-
-# Get the input path for an article.
-def get_input_path(article):
-    basepath = os.path.dirname(__file__)
-    return os.path.abspath(os.path.join(basepath, 'articles', article))
-
-# Get the output path for an article
-def get_output_path(article):
-    article = article.strip('\n ')
-    article = article[:len(article)-4]
-    basepath = os.path.dirname(__file__)
-    return os.path.abspath(os.path.join(basepath, '..', 'articles', article + '.php'))
-
-# Writes a block of text to the specified file with the specified number of tabs
-def write_text_block(out_file, text_array, indentation_level):
-    # Get specified level of indentation
-    tabs = ''
-    for i in range(indentation_level):
-        tabs += '\t'
-    # Write text block to file
-    for line in text_array:
-        out_file.write(tabs + line)
-
-# Gets the next non-empty line of text from the specfied file
-def get_next_line(in_file):
-    while True:
-        line = in_file.readline()
-        if line == '\n':
-            continue
-        else:
-            return line
 
 # Formats date string into proper form for article.
 def get_date(date):
@@ -128,7 +96,7 @@ def extract_alphanumeric(InputString):
 # Reads text file with article contents and write the digest HTML content to the output file
 def digest_article(in_article, out_article):
     # Get page title
-    page_title = get_next_line(in_article)
+    page_title = filemanager.get_next_line(in_article)
     # Write html header to file
     write_header(out_article, page_title.strip('\n '))
     # Writ body header to file
@@ -141,11 +109,11 @@ def write_header(out_article, page_title):
 
     # Write css links for header and nav to file
     with open(header_nav_css, 'r') as css:
-        write_text_block(out_article, css.readlines(), 1)
+        filemanager.write_text_block(out_article, css.readlines(), 1)
 
     # Write css and js links for article content to file.
     with open(article_css_js, 'r') as css:
-        write_text_block(out_article, css.readlines(), 1)
+        filemanager.write_text_block(out_article, css.readlines(), 1)
 
     # Write page title
     out_article.write('\n\t<title>' + page_title + '</title>\n')
@@ -155,23 +123,23 @@ def write_header(out_article, page_title):
 # Writes the body tag of the article
 def write_body(out_article, in_article):
     # Get Banner image
-    banner_img = get_next_line(in_article)
+    banner_img = filemanager.get_next_line(in_article)
     # Get article title and date
-    title = get_next_line(in_article)
-    date = get_next_line(in_article)
-    writen_by = get_next_line(in_article)
-    last_updated = get_next_line(in_article)
+    title = filemanager.get_next_line(in_article)
+    date = filemanager.get_next_line(in_article)
+    writen_by = filemanager.get_next_line(in_article)
+    last_updated = filemanager.get_next_line(in_article)
 
     # Write body start
     out_article.write(body_start)
 
     # Write page header
     with open(header, 'r') as head:
-        write_text_block(out_article, head.readlines(), 1)
+        filemanager.write_text_block(out_article, head.readlines(), 1)
 
     # Write page nav
     with open(navigation, 'r') as nav:
-        write_text_block(out_article, nav.readlines(), 1)
+        filemanager.write_text_block(out_article, nav.readlines(), 1)
 
     # Write banner image
     out_article.write(banner_start + banner_img.strip('\n ') + banner_end)
@@ -192,7 +160,7 @@ def write_body(out_article, in_article):
     out_article.write('</time></p>\n')
     # Write social media links
     with open(social_links, 'r') as social:
-        write_text_block(out_article, social.readlines(), 4)
+        filemanager.write_text_block(out_article, social.readlines(), 4)
     # Close header
     out_article.write('\t\t\t</header>\n')
 
@@ -202,14 +170,14 @@ def write_body(out_article, in_article):
 
     # Write social media for footer
     with open(social_links, 'r') as social:
-        write_text_block(out_article, social.readlines(), 3)
+        filemanager.write_text_block(out_article, social.readlines(), 3)
 
     # Write footer for article
     write_footer(out_article, writen_by, last_updated, 3)
 
     # Write disqus commenting system
     with open(comment_system, 'r') as comments:
-        write_text_block(out_article, comments.readlines(), 3)
+        filemanager.write_text_block(out_article, comments.readlines(), 3)
 
     # Close content div
     out_article.write(content_end)
@@ -239,21 +207,21 @@ def write_content(out_article, in_article, indentation_level):
                 continue
             section_list.append(line[tag_length[tags[0]]:].strip('\n '))
             section = get_section_title(line[tag_length[tags[0]]:])
-            write_text_block(out_article, section, indentation_level)
+            filemanager.write_text_block(out_article, section, indentation_level)
             section_in_progress = True
             indentation_level += 1
 
         elif line.startswith(tags[1]): # Image
             image = get_image(line[tag_length[tags[1]]:])
-            write_text_block(out_article, image, indentation_level)
+            filemanager.write_text_block(out_article, image, indentation_level)
 
         elif line.startswith(tags[2]): # Code
             code = get_code(line[tag_length[tags[2]]:])
-            write_text_block(out_article, code, indentation_level)
+            filemanager.write_text_block(out_article, code, indentation_level)
 
         elif line.startswith(tags[3]): # Notes class
             paragraph = get_paragraph(line[tag_length[tags[3]]:], True)
-            write_text_block(out_article, paragraph, indentation_level)
+            filemanager.write_text_block(out_article, paragraph, indentation_level)
 
         elif line.startswith(tags[4]): # Section end
             if not section_in_progress:
@@ -262,7 +230,7 @@ def write_content(out_article, in_article, indentation_level):
             section_in_progress = False
             indentation_level -= 1
             section = ['</section>\n']
-            write_text_block(out_article, section, indentation_level)
+            filemanager.write_text_block(out_article, section, indentation_level)
 
         elif line.startswith(tags[5]): # Raw html
             output = []
@@ -271,13 +239,13 @@ def write_content(out_article, in_article, indentation_level):
                 if raw_line.startswith(tags[6]):
                     break
                 output.append(raw_line)
-            write_text_block(out_article, output, indentation_level)
+            filemanager.write_text_block(out_article, output, indentation_level)
 
         else:
             if line == '\n':
                 continue
             paragraph = get_paragraph(line, False)
-            write_text_block(out_article, paragraph, indentation_level)
+            filemanager.write_text_block(out_article, paragraph, indentation_level)
     section_list.append('</outline>')
 
 # Gets the HTML text for a section title.
@@ -342,7 +310,7 @@ def write_footer(out_article, writen_by, last_updated, indentation_level):
     text.append('\t\t<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>\n')
     text.append('\t</p>\n')
     text.append('</footer\n')
-    write_text_block(out_article, text, indentation_level)
+    filemanager.write_text_block(out_article, text, indentation_level)
 
 # Writes the outline navigation HTML code
 def write_outline(out_article, indentation_level):
@@ -366,4 +334,4 @@ def write_outline(out_article, indentation_level):
     output.append('\t</section>\n')
     output.append('</nav>\n')
 
-    write_text_block(out_article, output, indentation_level)
+    filemanager.write_text_block(out_article, output, indentation_level)
