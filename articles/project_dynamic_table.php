@@ -187,7 +187,7 @@
 					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
 				<p>
-					The source code for this project includes a CSS files. However, in the instructions of how to make this project there is not mention of the file. This was intentional. The focus of the project is on the JavaScript, and so there is no need to discuss the styling of the table. The CSS file was included just to make the table a little more appealing. However, this styling will be removed in later articles.
+					The source code for this project includes a CSS file. However, in the instructions of how to make this project there is no mention of the file. This was intentional. The focus of the project is on the JavaScript part, and so there is no need to discuss the styling of the table. The CSS file was included just to make the table a little more appealing. However, this styling will be removed in later articles.
 				</p>
 			</section>
 			<section class="social">
