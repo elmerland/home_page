@@ -1,0 +1,28 @@
+Resume
+
+../_images/patterns/escape-flight.png
+
+My R&eacute;sum&eacute;
+2014-01-08
+Written by: Elmer Landaverde (<a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a>)
+Last updated: January 8, 2014
+			
+<section>My R&eacute;sum&eacute;
+
+<p>
+The resumes here might be a little out of date. If you are interested please email me at <a href="mailto:elmer@vt.edu">elmer@vt.edu</a> and I will be more than happy to provide you with the latest version of my resume.
+</p>
+
+<section>High Resolution
+
+<a title="High resolution resume" href="../_sources/resume_high_res.pdf" target="_blank">Resume</a>
+
+</section>
+
+<section>Low Resolution
+
+<a title="High resolution resume" href="../_sources/resume_low_res.pdf" target="_blank">Resume</a>
+
+</section>
+
+</section>

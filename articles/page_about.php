@@ -20,7 +20,7 @@
 	<script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../js/article.js"></script>
 
-	<title>OpenDSA: JSAV</title>
+	<title>About</title>
 </head>
 <body>
 	<header class="pageHeader">
@@ -45,12 +45,12 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="banner" style="background-image: url(../_images/patterns/leather-nunchuck.png);"></div>
+	<div class="banner" style="background-image: url(../_images/patterns/alchemy.jpg);"></div>
 	<article class="main">
 		<div class="content">
 			<header>
-				<h1>OpenDSA: Getting Started With JSAV</h1>
-				<p><time pubdate datetime="2014-02-02">Created on: February 2, 2014</time></p>
+				<h1>About Me</h1>
+				<p><time pubdate datetime="2014-01-08">Created on: January 8, 2014</time></p>
 				<section class="social">
 					<a href="https://twitter.com/share" class="twitter-share-button" data-via="elmerlandaverde" data-hashtags="learncodeart">Tweet</a>
 				
@@ -59,68 +59,31 @@
 					</script>
 				</section>
 			</header>
-			<section id="Intro">
+			<section id="WhoAmI">
 				<header>
-					<h2>Intro</h2>
-					<a href="#Intro"><img src="../_images/link20.png"></a>
+					<h2>Who Am I?</h2>
+					<a href="#WhoAmI"><img src="../_images/link20.png"></a>
 					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
+				<p>
+					My Name is Elmer Landaverde. Currently I am a senior at Virginia Tech, doing a double major in computer science and business management. But that’s the boring part. More to the point I am a guy who is passionate about learning. My interests vary from sociology, math, statistics to design, photography and aesthetics. Mostly however I just enjoy learning about different things to try and figure out this darn world we live in. Out of all my interests the one I focus on the most and have had the longest is in Computer Science. This passion started when I took my first Java class in high school and has being with me ever since. I hope some of what I write in this webpage is helpful to somebody but most of all this webpage is helpful to me because it serves as visual map of the projects that I embark on.
+				</p>
 			</section>
-			<section id="JSGettingStarted">
+			<section id="PurposeOfThisWebsite">
 				<header>
-					<h2>JS: Getting Started</h2>
-					<a href="#JSGettingStarted"><img src="../_images/link20.png"></a>
+					<h2>Purpose Of This Website</h2>
+					<a href="#PurposeOfThisWebsite"><img src="../_images/link20.png"></a>
 					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
 				</header>
-			</section>
-			<section id="Encapsulation">
-				<header>
-					<h2>Encapsulation</h2>
-					<a href="#Encapsulation"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="AbsolutePositioning">
-				<header>
-					<h2>Absolute Positioning</h2>
-					<a href="#AbsolutePositioning"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="CSSGettingStarted">
-				<header>
-					<h2>CSS: Getting Started</h2>
-					<a href="#CSSGettingStarted"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="ContainerSize">
-				<header>
-					<h2>Container Size</h2>
-					<a href="#ContainerSize"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="NodeSize">
-				<header>
-					<h2>Node Size</h2>
-					<a href="#NodeSize"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="TextAlignment">
-				<header>
-					<h2>Text Alignment</h2>
-					<a href="#TextAlignment"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="Notes">
-				<header>
-					<h2>Notes</h2>
-					<a href="#Notes"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
+				<p>
+					The idea for this website has being long in the making. However it wasn’t until recently that I had to learn JavaScript for a research project I’m about to be part of, and because the most important part about learning is doing I figured it would be a good practice to finally create a web page to get some practice. This is how I came about to create this site. Initially I thought I would just make a <a title="Word Press" href="http://wordpress.org/" target="_blank">WordPress</a> blog, but that ended quickly. Partly because I didn’t find a theme I liked, and mostly because typing it up your-self is more fun :)
+				</p>
+				<p>
+					The main purpose of this site is to write articles about the projects that I complete either for class or for pleasure. It will also serve to me as a visual representation of my progress across time and be a useful place for things that I forget and wish to remember. Never the less I do hope that this site can be helpful to someone other than me, and so I will put as much effort as I have time for into writing the articles for this site.
+				</p>
+				<p>
+					Thanks for visiting my site, I hope you find something that interests you!	
+				</p>
 			</section>
 			<section class="social">
 				<a href="https://twitter.com/share" class="twitter-share-button" data-via="elmerlandaverde" data-hashtags="learncodeart">Tweet</a>
@@ -132,7 +95,7 @@
 			<footer>
 				<p>
 					Written by: Elmer Landaverde (<a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a>)<br>
-					Last updated: February 2, 2014<br>
+					Last updated: Feburary 2, 2014<br>
 					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 				</p>
 			</footer
@@ -164,15 +127,8 @@
 				<a class="toTop" href="#"><h3>Back to top</h3></a>
 				<h2>Outline</h2>
 				<ul>
-					<a href="#Intro"><li>Intro</li></a>
-					<a href="#JSGettingStarted"><li>JS: Getting Started</li></a>
-					<a href="#Encapsulation"><li>Encapsulation</li></a>
-					<a href="#AbsolutePositioning"><li>Absolute Positioning</li></a>
-					<a href="#CSSGettingStarted"><li>CSS: Getting Started</li></a>
-					<a href="#ContainerSize"><li>Container Size</li></a>
-					<a href="#NodeSize"><li>Node Size</li></a>
-					<a href="#TextAlignment"><li>Text Alignment</li></a>
-					<a href="#Notes"><li>Notes</li></a>
+					<a href="#WhoAmI"><li>Who Am I?</li></a>
+					<a href="#PurposeOfThisWebsite"><li>Purpose Of This Website</li></a>
 					<a href="#Comments"><li>Comments</li></a>
 				</ul>
 			</section>

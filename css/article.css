@@ -123,9 +123,10 @@ nav.outline li:hover {background-color: #04A3C6;}
 }
 
 .content > section > header {
-	padding-bottom: 5px;
+	padding-bottom: 3px;
 	border-bottom: 3px solid #04A3C6;
 	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
 .content > section > section > header {
@@ -133,13 +134,15 @@ nav.outline li:hover {background-color: #04A3C6;}
 	border-bottom: 1px solid #04A3C6;
 }
 
-section header h2 {
+section > header h2 {
 	display: inline;
 	margin-left: 60px;
 }
 
-section header h3 {
+section > section > header h2 {
+	font-size: 1.4em;
 	margin-bottom: 0;
+	margin-left: 0;
 }
 
 section img .section a {display: inline;}
@@ -170,9 +173,9 @@ section > p > a:hover {text-shadow: 0 0 0.1em #C98519;}
 
 /* Paragraph styling */
 
-.content p {
+.content section p {
 	text-align: justify;
-	text-indent: 30px;
+	text-indent: 20px;
 }
 
 .content p.notes {

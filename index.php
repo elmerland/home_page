@@ -2,22 +2,22 @@
 <html>
 <head>
 	<?php
-		require_once("php/mainCSS.php");
+		require_once("py/snippets/header_nav_css.html");
 		require_once("php/homeCSS.php");
 	?>
 	<title>Learn Code Art</title>
 </head>
 <body>
 	<?php
-		require_once("php/header.php"); 
-		require_once("php/nav.php");
+		require_once("py/snippets/header.html"); 
+		require_once("py/snippets/nav.html");
 	?>
 	<div class="main">
 		<section>
-			<?php require_once("php/articleExcerpts.php"); ?>
+			<?php require_once("py/snippets/article_excerpts.html"); ?>
 		</section>
 		<aside>
-			<?php require_once("php/homeLinks.php"); ?>
+			<?php require_once("py/snippets/home_links.html"); ?>
 		</aside>
 	</div>
 </body>

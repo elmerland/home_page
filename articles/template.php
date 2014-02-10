@@ -20,7 +20,7 @@
 	<script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../js/article.js"></script>
 
-	<title>OpenDSA: JSAV</title>
+	<title>Page title</title>
 </head>
 <body>
 	<header class="pageHeader">
@@ -45,12 +45,12 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="banner" style="background-image: url(../_images/patterns/leather-nunchuck.png);"></div>
+	<div class="banner" style="background-image: url(../_images/patterns/asteroids.jpg);"></div>
 	<article class="main">
 		<div class="content">
 			<header>
-				<h1>OpenDSA: Getting Started With JSAV</h1>
-				<p><time pubdate datetime="2014-02-02">Created on: February 2, 2014</time></p>
+				<h1>Article Title</h1>
+				<p><time pubdate datetime="2014-00-00">Created on:  0, 2014</time></p>
 				<section class="social">
 					<a href="https://twitter.com/share" class="twitter-share-button" data-via="elmerlandaverde" data-hashtags="learncodeart">Tweet</a>
 				
@@ -59,69 +59,20 @@
 					</script>
 				</section>
 			</header>
-			<section id="Intro">
-				<header>
-					<h2>Intro</h2>
-					<a href="#Intro"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="JSGettingStarted">
-				<header>
-					<h2>JS: Getting Started</h2>
-					<a href="#JSGettingStarted"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="Encapsulation">
-				<header>
-					<h2>Encapsulation</h2>
-					<a href="#Encapsulation"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="AbsolutePositioning">
-				<header>
-					<h2>Absolute Positioning</h2>
-					<a href="#AbsolutePositioning"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="CSSGettingStarted">
-				<header>
-					<h2>CSS: Getting Started</h2>
-					<a href="#CSSGettingStarted"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="ContainerSize">
-				<header>
-					<h2>Container Size</h2>
-					<a href="#ContainerSize"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="NodeSize">
-				<header>
-					<h2>Node Size</h2>
-					<a href="#NodeSize"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="TextAlignment">
-				<header>
-					<h2>Text Alignment</h2>
-					<a href="#TextAlignment"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
-			<section id="Notes">
-				<header>
-					<h2>Notes</h2>
-					<a href="#Notes"><img src="../_images/link20.png"></a>
-					<a class="toTop" href="#"><img src="../_images/toTop.png"></a>
-				</header>
-			</section>
+			<p>
+				<sectiontitle>Section title
+			</p>
+			<p>
+				Regular paragraph
+			</p>
+			<p class="notes">
+				Notes paragraph
+			</p>
+			<img src="../_images/article_src/PATH OF IMAGE">
+			<pre data-highlight="Highlited line go here"><?php include("../_code/PATH OF CODE"); ?></pre>
+			<p>
+				<sectionend>
+			</p>
 			<section class="social">
 				<a href="https://twitter.com/share" class="twitter-share-button" data-via="elmerlandaverde" data-hashtags="learncodeart">Tweet</a>
 			
@@ -132,7 +83,7 @@
 			<footer>
 				<p>
 					Written by: Elmer Landaverde (<a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a>)<br>
-					Last updated: February 2, 2014<br>
+					Last updated: Month 00, 2014<br>
 					<a title="Nerdfighters" href="http://nerdfighters.ning.com/" target="_blank">DFTBA!</a>
 				</p>
 			</footer
@@ -164,15 +115,6 @@
 				<a class="toTop" href="#"><h3>Back to top</h3></a>
 				<h2>Outline</h2>
 				<ul>
-					<a href="#Intro"><li>Intro</li></a>
-					<a href="#JSGettingStarted"><li>JS: Getting Started</li></a>
-					<a href="#Encapsulation"><li>Encapsulation</li></a>
-					<a href="#AbsolutePositioning"><li>Absolute Positioning</li></a>
-					<a href="#CSSGettingStarted"><li>CSS: Getting Started</li></a>
-					<a href="#ContainerSize"><li>Container Size</li></a>
-					<a href="#NodeSize"><li>Node Size</li></a>
-					<a href="#TextAlignment"><li>Text Alignment</li></a>
-					<a href="#Notes"><li>Notes</li></a>
 					<a href="#Comments"><li>Comments</li></a>
 				</ul>
 			</section>

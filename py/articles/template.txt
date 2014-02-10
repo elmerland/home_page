@@ -1,0 +1,20 @@
+Page title
+
+../_images/patterns/asteroids.jpg
+
+Article Title
+2014-00-00
+Written by: Elmer Landaverde (<a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a>)
+Last updated: Month 00, 2014
+
+<sectiontitle>Section title
+
+Regular paragraph
+
+<notes>Notes paragraph
+
+<image>../_images/article_src/PATH OF IMAGE
+
+<code>Highlited line go here$../_code/PATH OF CODE
+
+<sectionend>

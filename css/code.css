@@ -16,8 +16,12 @@
 	font-weight: 500;
 }
 
-.content pre table {
+.content > section > pre table {
 	width: 745px;
+}
+
+.content > section > section > pre table {
+	width: 715px;
 }
 
 .content pre table .first {
