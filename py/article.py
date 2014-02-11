@@ -40,7 +40,9 @@ articles = []
 # List of sections in article. Gets reset after every article is created
 section_list = []
 
+
 def generate_articles(article_list):
+    global articles
     articles = article_list
     # Iterate through all the articles
     for article in articles:
@@ -51,10 +53,11 @@ def generate_articles(article_list):
         # Open files
         in_article = open(in_article_path, 'r')
         out_article = open(out_article_path, 'w')
-        # digest conent of input article and write to output article
+        # digest content of input article and write to output article
         digest_article(in_article, out_article)
         in_article.close()
         out_article.close()
+
 
 # Formats date string into proper form for article.
 def get_date(date):
@@ -88,10 +91,12 @@ def get_date(date):
     result += " " + str(int(lines[2])) + ", " + lines[0]
     return result
 
+
 # Get alphanumeric characters
 def extract_alphanumeric(InputString):
     from string import ascii_letters, digits
     return "".join([ch for ch in InputString if ch in (ascii_letters + digits)])
+
 
 # Reads text file with article contents and write the digest HTML content to the output file
 def digest_article(in_article, out_article):
@@ -101,6 +106,7 @@ def digest_article(in_article, out_article):
     write_header(out_article, page_title.strip('\n '))
     # Writ body header to file
     write_body(out_article, in_article)
+
 
 # Writes the head tag of the article.
 def write_header(out_article, page_title):
@@ -119,6 +125,7 @@ def write_header(out_article, page_title):
     out_article.write('\n\t<title>' + page_title + '</title>\n')
     # Write html head footer
     out_article.write(head_end)
+
 
 # Writes the body tag of the article
 def write_body(out_article, in_article):
@@ -190,10 +197,10 @@ def write_body(out_article, in_article):
     out_article.write(article_end)
     out_article.write(body_end)
 
+
 # Writes the entire content of the article.
 def write_content(out_article, in_article, indentation_level):
     section_list.append('<outline>')
-    sections = []
     section_in_progress = False
     while True:
         line_start = in_article.tell()
@@ -248,12 +255,13 @@ def write_content(out_article, in_article, indentation_level):
             filemanager.write_text_block(out_article, paragraph, indentation_level)
     section_list.append('</outline>')
 
+
 # Gets the HTML text for a section title.
 def get_section_title(title):
     title = title.strip('\n ')
     id = title.replace(' ', '')
     id = extract_alphanumeric(id)
-    result = []
+    result = list()
     # Print opening tag for section
     result.append('<section id="' + id + '">\n')
     # Print opening tag for header
@@ -269,11 +277,13 @@ def get_section_title(title):
 
     return result
 
+
 # Gets the HTML text for an image
 def get_image(image):
-    result = []
+    result = list()
     result.append('<img src="' + image.strip('\n ') + '">\n')
     return result
+
 
 # Gets the HTML text for code
 def get_code(code):
@@ -288,7 +298,8 @@ def get_code(code):
     result.append('<pre data-highlight="' + lines + '"><?php include("' + path + '"); ?></pre>\n')
     return result
 
-# Gets the HTML text for a pragraph
+
+# Gets the HTML text for a paragraph
 def get_paragraph(par, notes_class):
     result = []
     if notes_class:
@@ -300,9 +311,10 @@ def get_paragraph(par, notes_class):
     result.append('</p>\n')
     return result
 
+
 # Writes the footer HTML code
 def write_footer(out_article, writen_by, last_updated, indentation_level):
-    text = []
+    text = list()
     text.append('<footer>\n')
     text.append('\t<p>\n')
     text.append('\t\t' + writen_by.strip('\n ') + '<br>\n')
@@ -312,9 +324,10 @@ def write_footer(out_article, writen_by, last_updated, indentation_level):
     text.append('</footer\n')
     filemanager.write_text_block(out_article, text, indentation_level)
 
+
 # Writes the outline navigation HTML code
 def write_outline(out_article, indentation_level):
-    output = []
+    output = list()
     output.append('<nav class="outline float">\n')
     output.append('\t<section>\n')
     output.append('\t\t<a class="toTop" href="#"><h3>Back to top</h3></a>\n')
@@ -328,9 +341,9 @@ def write_outline(out_article, indentation_level):
             tabs = tabs[:len(tabs)-1]
             output.append(tabs + '</ul>\n')
         else:
-            id = section.strip('\n ').replace(' ', '')
-            id = extract_alphanumeric(id)
-            output.append(tabs + '<a href="#' + id + '"><li>' + section + '</li></a>\n')
+            section_id = section.strip('\n ').replace(' ', '')
+            section_id = extract_alphanumeric(section_id)
+            output.append(tabs + '<a href="#' + section_id + '"><li>' + section + '</li></a>\n')
     output.append('\t</section>\n')
     output.append('</nav>\n')
 

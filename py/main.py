@@ -19,6 +19,7 @@ home_css = 'snippets/home_css.html'
 # Home page
 home_page = '../index.html'
 
+
 def main():
     args = []
     for a in sys.argv:
@@ -42,13 +43,12 @@ def main():
     article.generate_articles(articles)
 
 
-
 def compile_home():
     # Open the home file
     home = open(home_page, 'w')
     
     # Create html header
-    output = []
+    output = list()
     output.append('<!DOCTYPE html>\n<html>\n<head>\n')
     filemanager.write_text_block(home, output, 0);
     
@@ -69,7 +69,7 @@ def compile_home():
     with open(navigation, 'r') as nav:
         filemanager.write_text_block(home, nav, 1);
     
-    # Write main seciton and links
+    # Write main section and links
     del output[:]
     output.append('<div class="main">\n\t\t<section>\n')
     filemanager.write_text_block(home, output, 1);
