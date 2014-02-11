@@ -8,3 +8,4 @@ articles/*
 index.html
 py/__pycache__/*
 .idea/*
+py/.idea/*
