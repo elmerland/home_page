@@ -12,7 +12,12 @@ int main(void)
 
   // Creates the pipe using the integer array of size two.
   int fd[2];
-  pipe(fd);
+  int error = pipe(fd);
+  // Determine if pipe command returned an error.
+  if (error == -1) {
+    perror("pipe");
+    exit(1);
+  }
 
   // Fork new process
   if(fork() == 0)

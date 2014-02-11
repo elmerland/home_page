@@ -5,7 +5,7 @@ Pipes and Processes
 CS: Pipes and Processes
 2014-02-04
 Written by: Elmer Landaverde (<a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a>)
-Last updated: February 05, 2014
+Last updated: February 11, 2014
 
 <section>Intro
 
@@ -18,7 +18,7 @@ A <strong>file descriptor</strong> is an indicator that points to an input/outpu
 
 For example, when a new process is created by default it contains three file descriptors: <em>stdin</em>, <em>stdout</em>, <em>stderr</em>. <em>Stdout</em> and <em>stderr</em> are write only file descriptors while <em>stdin</em> is read only. These three file descriptors all point to the terminal, meaning that any input or output will come from or be written to the terminal. What exactly are these file descriptors? They are represented by integers. By default <em>stdin</em> is equal to <em>0</em>, <em>stdout</em> to <em>1</em>, and <em>stderr</em> to <em>2</em>. We are not however, limited to these three. The next section will explain how to create new ones using pipes.
 
-Now that we know what a file descriptor is, lets examine where it’s stored. Each process has a table called the <strong>File Table</strong>. This table stores all of the available <strong>file descriptors</strong> and the <strong>pointer</strong> to the input/output device. When a process wants to access one of these devices all it needs to do is reference the <strong>file descriptor</strong>. The kernel will then look at the <strong>file table</strong> inside of the process and get the pointer to the input/output device that is associated with the <strong>file descriptor</strong>.
+Now that we know what a file descriptor is, lets examine where it?s stored. Each process has a table called the <strong>File Table</strong>. This table stores all of the available <strong>file descriptors</strong> and the <strong>pointer</strong> to the input/output device. When a process wants to access one of these devices all it needs to do is reference the <strong>file descriptor</strong>. The kernel will then look at the <strong>file table</strong> inside of the process and get the pointer to the input/output device that is associated with the <strong>file descriptor</strong>.
 
 <image>../_images/article_src/fd_dgm.png
 
@@ -67,7 +67,7 @@ This is why we need the <em>close()</em> function. After the parent has forked t
 
 As a general practice any file descriptor that will not longer be used should be closed. For a more detailed description of what the close function does visit this <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/close.html">site</a>. To fix the code example in the previous section we must add two calls to the <strong>close</strong> function as demonstrated below:
 
-<code>21,29$../_code/cs_pipes_2.c
+<code>26,34$../_code/cs_pipes_2.c
 
 <notes>Sources: <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/close.html">http://pubs.opengroup.org/onlinepubs/009695399/functions/close.html</a>, <a href="http://www.tldp.org/LDP/lpg/node10.html">http://www.tldp.org/LDP/lpg/node10.html</a>
 
@@ -84,7 +84,7 @@ The dup2 function takes two parameters: <em>dup2(fd_old, fd_new)</em>. The point
 
 For example, lets take the code from the previous example and insert the highlighted lines:
 
-<code>20$../_code/cs_pipes_3.c
+<code>26$../_code/cs_pipes_3.c
 
 Right after the fork there is a call to the <strong>dup2</strong> function. This call will take the pointer of the write end of the pipe and copy it over to the pointer of the standard out. From now on every time the process writes to standard out the output will go to the pipe instead of the terminal. This is what the file table of both the parent and child process will look like after the call to dup2:
 
@@ -102,5 +102,7 @@ The difference between <strong>dup2</strong> and <strong>dup</strong> are the fo
 <section>Notes
 
 To reiterate what was said in the introduction, this article is not meant to provide a comprehensive coverage of pipes. The aim is to provide the foundations that will later aid in the understanding of more advance techniques. If you find any mistakes (grammar wise or factual) please leave me a comment or contact me by email to <a href="mailto:elmer@vt.edu">elmer@vt.edu</a>.. Hope this article was helpful!
+
+<notes><strong>[Update]</strong> Added error detection after each call to the <em>pipe()</em> function in the code examples.
 
 </section>
