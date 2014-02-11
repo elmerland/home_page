@@ -7,3 +7,4 @@ sftp-config.json
 articles/*
 index.html
 py/__pycache__/*
+.idea/*
