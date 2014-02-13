@@ -1,4 +1,5 @@
 #include &lt;stdio.h&gt;
+#include &lt;sring.h&gt;
 #include &lt;unistd.h&gt;
 #include &lt;sys/types.h&gt;
 

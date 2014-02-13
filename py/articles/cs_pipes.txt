@@ -38,7 +38,7 @@ Notice that the pipe has two sides, one where the process writes to and the othe
 
 Keep in mind that a file descriptor to a pipe can be treated like a file pointer. Which means that you can use the <em>write()</em> and <em>read()</em> methods on it. The following example shows how to initialize and test a pipe:
 
-<code>13,14,15$../_code/cs_pipes_1.c
+<code>14,15,16$../_code/cs_pipes_1.c
 
 As mentioned earlier a file descriptor is stored in the way of an integer. So when a pipe is created an integer array of size two is needed. By convention the integer element at index 0 is the read side and the integer element at index 1 is the write side. It is useful to declare the constants <em>IN</em> and <em>OUT</em> (alternatively <em>STD_IN</em> and <em>STD_OUT</em>) to make reading the code more human readable.
 
@@ -67,7 +67,7 @@ This is why we need the <em>close()</em> function. After the parent has forked t
 
 As a general practice any file descriptor that will not longer be used should be closed. For a more detailed description of what the close function does visit this <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/close.html">site</a>. To fix the code example in the previous section we must add two calls to the <strong>close</strong> function as demonstrated below:
 
-<code>26,34$../_code/cs_pipes_2.c
+<code>27,35$../_code/cs_pipes_2.c
 
 <notes>Sources: <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/close.html">http://pubs.opengroup.org/onlinepubs/009695399/functions/close.html</a>, <a href="http://www.tldp.org/LDP/lpg/node10.html">http://www.tldp.org/LDP/lpg/node10.html</a>
 
@@ -84,7 +84,7 @@ The dup2 function takes two parameters: <em>dup2(fd_old, fd_new)</em>. The point
 
 For example, lets take the code from the previous example and insert the highlighted lines:
 
-<code>26$../_code/cs_pipes_3.c
+<code>27$../_code/cs_pipes_3.c
 
 Right after the fork there is a call to the <strong>dup2</strong> function. This call will take the pointer of the write end of the pipe and copy it over to the pointer of the standard out. From now on every time the process writes to standard out the output will go to the pipe instead of the terminal. This is what the file table of both the parent and child process will look like after the call to dup2:
 
