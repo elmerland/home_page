@@ -1,0 +1,24 @@
+Threads and Synchronization
+
+../_images/patterns/canvas-orange.jpg
+
+CS: Threads and Synchronization
+2014-02-27
+Written by: Elmer Landaverde (<a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a>)
+Last updated: February 27, 2014
+
+<section> Intro
+
+</section>
+
+<section> Problem
+
+</section>
+
+<section> Solution
+
+</section>
+
+<section> Why does this work?
+
+</section>
