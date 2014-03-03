@@ -13,12 +13,201 @@ Last updated: February 27, 2014
 
 <section> Problem
 
+The producer consumer problem is often used to illustrate the challenges of thread synchronization. It also offers an introduction on the issues that need to be considered when dealing with threads. The problem itself is described as follows:
+
+<blockquote cite="http://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem">The problem describes two processes, the producer and the consumer, who share a common, fixed-size buffer used as a queue. The producer's job is to generate a piece of data, put it into the buffer and start again. At the same time, the consumer is consuming the data (i.e., removing it from the buffer) one piece at a time. The problem is to make sure that the producer won't try to add data into the buffer if it's full and that the consumer won't try to remove data from an empty buffer.</blockquote>
+
+In addition to worrying about threads writing to a full buffer or reading from an empty buffer; the problem of two threads trying to modifying the buffer at the same time must also be considered. There are therefore, two synchronization issues in the producer-consumer problem.
+
+This article will present a solution to the producer-consumer problem by implementing a pipe. Built in pipes in C are able to handle several threads writing to and reading from them. The goal of this article is to recreate this behavior and be able to construct a pipe that can handle multiple producers and multiple consumer threads simultaneously.
+
+<notes>Source for problem description: <a href="http://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem">http://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem</a>
+
 </section>
 
-<section> Solution
+<section> Setters and Getters
+
+The solution for this problem will be implemented using C. The first step is therefore to create a header file to declare the functions that will need to be implemented. This header file will also include the declaration of a pipe structure that will store information related to the buffer, pipe status, and all the necessary locks and conditional variables.
+
+<code>$../_code/cs_threads_2.c
+
+The only two functions that pose real difficulties are the write and read functions. The implementation for these will be filled in later in the article. Meanwhile, the simpler functions have being already filled out below to offer some context for how everything is initialized and closed.
+
+<code>$../_code/cs_threads_1.c
+
+With the basic functionality out of the way lets start implementing the <em>int_pipe_write</em> and <em>int_pipe_read</em> functions.
 
 </section>
 
-<section> Why does this work?
+<section> Read/Write Basics
+
+A naïve programmer might come up with the following solution to the implementation of the <em>int_pipe_write</em> and <em>int_pipe_read</em> functions:
+
+<code>$../_code/cs_threads_3.c
+
+The above implementation first goes into a while loop that checks if the buffer is empty/full and if the pipe is closed, when the conditions are satisfied the loop will exit. Upon exiting the status of the pipe is checked again. This is necessary because otherwise it would not be possible to determine if the while loop exited due to the pipe closing or because the buffer was not empty/full. Next a sanity check is performed again on the buffer and pipe status. Finally reading or writing to the pipe and returning the appropriate result.
+
+Consider now the possibility of two threads trying to read/write from the buffer concurrently. If this where to happen, the program would behave in a non-deterministic fashion. Take for example the following scenario where two threads are trying to read from the end of the buffer and then removing the last element:
+
+<raw>
+<style type="text/css">
+	.threads {
+		border-collapse: collapse;
+		table-layout: fixed;
+		margin: 0 auto;
+	}
+	.threads td {
+		font-size: .9em;
+	}
+	.threads td, .threads th {
+		border: 1px solid #000;
+		padding: 5px;
+		overflow: hidden;
+    	width: 50%;
+	}
+</style>
+<table class="threads">
+	<thead>
+		<tr>
+			<th>Thread 1</th>
+			<th>Thread 2</th>
+		</tr>
+	</thead>
+	<tr>
+		<td>Get pointer to end of buffer</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>Read the integer at pointer</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>Get pointer to end of buffer (Same as thread 1)</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>Read the integer at pointer (Same as thread 1)</td>
+	</tr>
+	<tr>
+		<td>Remove last element in buffer</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>Remove last element in buffer</td>
+	</tr>
+</table>
+</raw>
+
+This will result in the two threads reading the same value from the buffer and removing two elements from the end of the buffer. This area is then considered a <strong>critical section</strong>. The best way to prevent two or more threads from accessing a critical section is to use a lock. An inspection of the header file will reveal that tThis will result in the two threads reading the same value from the buffer and removing two elements from the end of the buffer. This area is then considered a <strong>critical section</strong>. The best way to prevent two or more threads from accessing a critical section is to use a lock. To accomplish this a lock variable needs to be added to the <em>int_pipe</em> structure as illustrated bellow:
+
+<code>4$../_code/cs_threads_5.c
+
+Lets use this <em>mutex</em> lock to make sure that no threads are concurrently accessing the buffer at the same time by adding the following lines to the read and write functions:
+
+<code>5,8,16,19$../_code/cs_threads_4.c
+
+This solves the problem of concurrent threads trying to modify the buffer. If we were to run the pipe as it is it would still behave non-deterministically. Consider the following scenario where two threads call the <em>int_pipe_read</em> function at the same time and there is only one element remaining in the buffer:
+
+<raw>
+<table class="threads">
+	<thead>
+		<tr>
+			<th>Thread 1</th>
+			<th>Thread 2</th>
+		</tr>
+	</thead>
+	<tr>
+		<td>Enter while loop</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>Exit while loop: Buffer has one element</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>Check if pipe is closed</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>Enter while loop</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>Exit while loop: Buffer has one element</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>Check if pipe is closed</td>
+	</tr>
+	<tr>
+		<td>Get lock on <em>mutex</em></td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>Remove last element of buffer</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>Release lock on <em>mutex</em> (Buffer is empty now)</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>Get lock on <em>mutex</em></td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>Remove last element of buffer</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td>ERROR: tried to remove element from empty list</td>
+	</tr>
+</table>
+</raw>
+
+If this where to happen the first thread would remove the only element in the buffer list. Then, since the second thread has already exited from the <em>while</em> loop it would also attempt to remove the last element of the buffer which will cause an error (or segmentation fault depending on how the buffer is implemented). Again a naïve programmer might suggest to move the <em>mutex</em> lock before the while loop. The problem with this is that if the lock is placed before the while loop then no other thread will be able to access the buffer. Therefore if one thread executes and it goes inside of the while loop because the buffer is empty, the thread will never exit out of the while loop. This is because the first thread has a lock on the <em>mutex</em> and therefore no other threads will be able to write or read from the buffer, causing the first thread to loop infinitely.
+
+To solve this problem another lock will need to be added to the <em>int_pipe</em> structure and the while loop inside of the <em>int_pipe_read</em> function will need to be modified. Lets first look at the solution before explaining why this solution works. First the new lock needs to be added to the structure declaration:
+
+<code>5$../_code/cs_threads_6.c
+
+Next, lets use the newly created <em>avail_data</em> and the <em>mutex</em> locks to get the desired behavior from the pipe program:
+
+<code>5,6,16,22,24,25,26,$../_code/cs_threads_7.c
+
+This might seem confusing to many and you would be right to be confused (I know I certainly was). Lets first run through all the changes that were made. First a new lock is initialized in the <em>int_pipe_init</em> function and it is then locked. Next an unlock statement inside of the <em>int_pipe_write</em> was added for the <em>avail_data</em> lock. Inside of the <em>int_pipe_read</em> function several changes where made. First the <em>mutex</em> lock was moved to top of the function and before the while loop. Inside the while loop three statements were added. The first statement unlocks the <em>mutex</em> lock, the second tries to get a lock on the <em>avail_date</em> lock, and finally the third statement tries to get a lock on the <em>mutex</em> lock again.
+
+To understand how the locks and unlocks interact with each other lets run through a quick scenario where one thread is trying to read to the buffer and the other is trying to write to it. Lets also assume that the buffer is empty when the two threads start executing:
+
+<raw>
+<table class="threads">
+	<thead>
+		<tr>
+			<th>Thread 1 (READ)</th>
+			<th>Thread 2 (WRITE)</th>
+		</tr>
+	</thead>
+	<tr>
+		<td>Get lock on <em>mutex</em></td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>Enter while loop: Buffer is empty</td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>[blocked]</td>
+	</tr>
+	<tr>
+		<td>[blocked]</td>
+		<td></td>
+	</tr>
+</table>
+</raw>
 
 </section>
