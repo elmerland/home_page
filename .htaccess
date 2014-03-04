@@ -1,0 +1,14 @@
+# Use PHP5 as default
+AddHandler application/x-httpd-php5 .php
+Redirect 301 /articles/cs_threads.php /articles/cs_threads.html
+Redirect 301 /articles/cs_pipes.php /articles/cs_pipes.html
+Redirect 301 /articles/odsa_getting_started.php /articles/odsa_getting_started.html
+Redirect 301 /articles/project_dynaic_table.php /articles/project_dynaic_table.html
+Redirect 301 /articles/project_snake_game.php /articles/project_snake_game.html
+Redirect 301 /articles/page_resume.php /articles/page_resume.html
+Redirect 301 /articles/page_about.php /articles/page_about.html
+ErrorDocument 400 /error/400.shtml
+ErrorDocument 401 /error/401.shtml
+ErrorDocument 403 /error/403.shtml
+ErrorDocument 404 /error/404.shtml
+ErrorDocument 500 /error/500.shtml
