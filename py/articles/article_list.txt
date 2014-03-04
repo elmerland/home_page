@@ -1,4 +1,3 @@
-template.txt
 cs_pipes.txt
 cs_threads.txt
 odsa_jsav.txt

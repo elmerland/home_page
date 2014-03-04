@@ -15,6 +15,6 @@ Regular paragraph
 
 <image>../_images/article_src/PATH OF IMAGE
 
-<code>Highlited line go here$../_code/PATH OF CODE
+<code>Highlited line go here$PATH OF CODE
 
 <sectionend>

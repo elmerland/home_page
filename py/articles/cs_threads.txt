@@ -31,11 +31,11 @@ This article will present a solution to the producer-consumer problem by impleme
 
 The solution for this problem will be implemented using C. The first step is therefore to create a header file to declare the functions that will need to be implemented. This header file will also include the declaration of a pipe structure that will store information related to the buffer, pipe status, and all the necessary locks and conditional variables.
 
-<code>$../_code/cs_threads_2.c
+<code>$cs_threads_2.c
 
 The only two functions that pose real difficulties are the write and read functions. The implementation for these will be filled in later in the article. Meanwhile, the simpler functions have being already filled out below to offer some context for how everything is initialized and closed.
 
-<code>$../_code/cs_threads_1.c
+<code>$cs_threads_1.c
 
 With the basic functionality out of the way lets start implementing the <em>int_pipe_write</em> and <em>int_pipe_read</em> functions.
 
@@ -45,7 +45,7 @@ With the basic functionality out of the way lets start implementing the <em>int_
 
 A naïve programmer might come up with the following solution to the implementation of the <em>int_pipe_write</em> and <em>int_pipe_read</em> functions:
 
-<code>$../_code/cs_threads_3.c
+<code>$cs_threads_3.c
 
 The above implementation first goes into a <em>while</em> loop that checks if the buffer is empty/full and if the pipe is closed, when the conditions are satisfied the loop will exit. Upon exiting the status of the pipe is checked again. This is necessary because otherwise it would not be possible to determine if the <em>while</em> loop exited due to the pipe closing or because the buffer was not empty/full. Next a sanity check is performed again on the buffer and pipe status. Finally reading or writing to the pipe and returning the appropriate result.
 
@@ -104,11 +104,11 @@ Consider now the possibility of two threads trying to read/write from the buffer
 
 This will result in the two threads reading the same value from the buffer and removing two elements from the end of the buffer. This area is then considered a <strong>critical section</strong>. The best way to prevent two or more threads from accessing a critical section is to use a lock. An inspection of the header file will reveal that tThis will result in the two threads reading the same value from the buffer and removing two elements from the end of the buffer. This area is then considered a <strong>critical section</strong>. The best way to prevent two or more threads from accessing a critical section is to use a lock. To accomplish this a lock variable needs to be added to the <em>int_pipe</em> structure as illustrated bellow:
 
-<code>4$../_code/cs_threads_5.c
+<code>4$cs_threads_5.c
 
 Lets use this <em>mutex</em> lock to make sure that no threads are concurrently accessing the buffer at the same time by adding the following lines to the read and write functions:
 
-<code>5,8,16,19$../_code/cs_threads_4.c
+<code>5,8,16,19$cs_threads_4.c
 
 This solves the problem of concurrent threads trying to modify the buffer. If we were to run the pipe as it is it would still behave non-deterministically. Consider the following scenario where two threads call the <em>int_pipe_read</em> function at the same time and there is only one element remaining in the buffer:
 
@@ -175,11 +175,11 @@ If this where to happen the first thread would remove the only element in the bu
 
 To solve this problem another lock will need to be added to the <em>int_pipe</em> structure and the <em>while</em> loop inside of the <em>int_pipe_read</em> function will need to be modified. Lets first look at the solution before explaining why this solution works. First the new lock needs to be added to the structure declaration:
 
-<code>5$../_code/cs_threads_6.c
+<code>5$cs_threads_6.c
 
 Next, lets use the newly created <em>avail_data</em> and the <em>mutex</em> locks to get the desired behavior from the pipe program:
 
-<code>5,6,16,22,24,25,26$../_code/cs_threads_7.c
+<code>5,6,16,22,24,25,26$cs_threads_7.c
 
 This might seem confusing to many and you would be right to be confused (I know I certainly was). Lets first run through all the changes that were made. First a new lock is initialized in the <em>int_pipe_init</em> function and it is then locked. Next an unlock statement inside of the <em>int_pipe_write</em> was added for the <em>avail_data</em> lock. Inside of the <em>int_pipe_read</em> function several changes where made. First the <em>mutex</em> lock was moved to top of the function before the <em>while</em> loop. Inside the <em>while</em> loop three statements were added. The first statement unlocks the <em>mutex</em> lock, the second tries to get a lock on the <em>avail_date</em> lock, and finally the third statement tries to get a lock on the <em>mutex</em> lock again.
 
@@ -276,21 +276,21 @@ Notice how when thread one starts executing the buffer is empty. Because of this
 
 The code shown in the previous section will work just fine for our purposes. However we can improve on it using a feature of C called <strong>conditional variables</strong>. These conditionals variables will serve to the replace the three statements inside of the <em>while</em> loop in the <em>int_pipe_read</em> function with one statement. The reason for doing this is to simplify the code and make it a little easier to understand. Below the modifications to the code are shown. First the header file has to be modified to change the variable type for the <em>avail_data</em> lock:
 
-<code>5$../_code/cs_threads_9.c
+<code>5$cs_threads_9.c
 
 Here we show how the main C file will change as a consequence of introducing the <strong>conditional variable</strong>:
 
-<code>5,15,23$../_code/cs_threads_8.c
+<code>5,15,23$cs_threads_8.c
 
 A fair question to ask at this point is “Do we still need the <em>while</em> loop? Why not make it an <em>if</em> statement?” The answer to this is yes we still need the <em>while</em> loop. Why? Because threads a tricky. If there is more than one thread reading from the buffer it is entirely possible that right after the wait function receives a signal that something was written to the buffer but before it is able to regain a lock on the <em>mutex</em> another thread will start executing. When this thread tries to read from the buffer it will find that the <em>mutex</em> is unlock and the buffer is not empty, so it will proceed to read and pop the only element in the buffer. Therefore when the original thread resumes the buffer will now be empty. By leaving the <em>while</em> loop in place the thread is guaranteed not to try to read from the buffer without first having a lock on the <em>mutex</em> and checking that the buffer is not empty.
 
 At this point the pipe will work as intended for one or more readers and only one writer. What if we want to expand the pipe to handle multiple writers as well as readers? Then we must duplicate the reader functionality to the writer side. This is best done by creating a new <strong>conditional variable</strong> that we will name <em>avail_space</em>. This conditional variable will act as the opposite of the <em>avail_data</em> conditional, and will notify the write function that another thread removed an element from the buffer and there is space available to write to the it. Below are the changes that are needed for the expanded functionality. First in the header file:
 
-<code>6$../_code/cs_threads_10.c
+<code>6$cs_threads_10.c
 
 And next in the main C file:
 
-<code>6,10,12,30$../_code/cs_threads_11.c
+<code>6,10,12,30$cs_threads_11.c
 
 </section>
 
@@ -298,7 +298,7 @@ And next in the main C file:
 
 The pipe program can now successfully execute as many writer and reader threads as desired and there will be no deadlocks or non-deterministic behavior. However there are a few things missing that have to be considered because the pipe will eventually be closed. When the pipe is closed the thread that is currently being executed will simply return. This creates a problem if there are other threads waiting for the current thread to signal changes to either of the <strong>conditional variables</strong>. Furthermore if the current thread just ends the <em>mutex</em> lock will never be released and so any other threads waiting on the lock might be left hanging. Because of these reasons we have to add the following statements to the code:
 
-<code>3,4,13,29$../_code/cs_threads_12.c
+<code>3,4,13,29$cs_threads_12.c
 
 To facilitate the perusal of the code above a copies of the complete code is located at here for the <a href="../projects/threads/pipe.h">header file</a> and here for the <a href="../projects/threads/pipe.c">main C file</a>. It has more comments and better formatting that could not be include in this article because of space concerns.
 

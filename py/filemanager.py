@@ -12,7 +12,7 @@ def get_article_output_path(article):
     article = article.strip('\n ')
     article = article[:len(article)-4]
     base_path = os.path.dirname(__file__)
-    return os.path.abspath(os.path.join(base_path, '..', 'articles', article + '.php'))
+    return os.path.abspath(os.path.join(base_path, '..', 'articles', article + '.html'))
 
 
 def get_folder_path(folder_name, file_name):
@@ -36,7 +36,7 @@ def write_text_block(out_file, text_array, indentation_level):
         out_file.write(tabs + line)
 
 
-# Gets the next non-empty line of text from the specfied file
+# Gets the next non-empty line of text from the specified file
 def get_next_line(in_file):
     while True:
         line = in_file.readline()
@@ -44,3 +44,10 @@ def get_next_line(in_file):
             continue
         else:
             return line
+
+
+# Gets the entire contents in the specified file
+def get_file_text(import_file):
+    with open(import_file, "r") as file:
+        lines = file.readlines()
+    return lines

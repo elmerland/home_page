@@ -1,20 +1,26 @@
+import os
 import filemanager
 
 # Header and footer html code for all sections of article.
-head_start = "<!DOCTYPE html>\n<html>\n<head>\n"
-head_end = "</head>\n"
+head_tags = ["<!DOCTYPE html>\n<html>\n<head>\n", "</head>\n"]
+# head_start = "<!DOCTYPE html>\n<html>\n<head>\n"
+# head_end = "</head>\n"
 
-body_start = "<body>\n"
-body_end = "</body>\n</html>\n"
+body_tags = ["<body>\n", "</body>\n</html>\n"]
+# body_start = "<body>\n"
+# body_end = "</body>\n</html>\n"
 
-banner_start = '\t<div class="banner" style="background-image: url('
-banner_end = ');"></div>\n'
+banner_tags = ['\t<div class="banner" style="background-image: url(', ');"></div>\n']
+# banner_start = '\t<div class="banner" style="background-image: url('
+# banner_end = ');"></div>\n'
 
-article_start = '\t<article class="main">\n'
-article_end = '\t</article>\n'
+article_tags = ['\t<article class="main">\n', '\t</article>\n']
+# article_start = '\t<article class="main">\n'
+# article_end = '\t</article>\n'
 
-content_start = '\t\t<div class="content">\n'
-content_end = '\t\t</div>\n'
+content_tags = ['\t\t<div class="content">\n', '\t\t</div>\n']
+# content_start = '\t\t<div class="content">\n'
+# content_end = '\t\t</div>\n'
 
 # File paths
 header = 'snippets/header.html'
@@ -23,6 +29,7 @@ header_nav_css = 'snippets/header_nav_css.html'
 article_css_js = 'snippets/article_css_js.html'
 social_links = 'snippets/social.html'
 comment_system = 'snippets/comments.html'
+code = 'code'
 
 tags = ['<section>', '<image>', '<code>', '<notes>', '</section>', '<raw>', '</raw>']
 
@@ -93,9 +100,9 @@ def get_date(date):
 
 
 # Get alphanumeric characters
-def extract_alphanumeric(InputString):
+def extract_alphanumeric(input_string):
     from string import ascii_letters, digits
-    return "".join([ch for ch in InputString if ch in (ascii_letters + digits)])
+    return "".join([ch for ch in input_string if ch in (ascii_letters + digits)])
 
 
 # Reads text file with article contents and write the digest HTML content to the output file
@@ -111,7 +118,7 @@ def digest_article(in_article, out_article):
 # Writes the head tag of the article.
 def write_header(out_article, page_title):
     # Write html header to file
-    out_article.write(head_start)
+    out_article.write(head_tags[0])
 
     # Write css links for header and nav to file
     with open(header_nav_css, 'r') as css:
@@ -124,7 +131,7 @@ def write_header(out_article, page_title):
     # Write page title
     out_article.write('\n\t<title>' + page_title + '</title>\n')
     # Write html head footer
-    out_article.write(head_end)
+    out_article.write(head_tags[1])
 
 
 # Writes the body tag of the article
@@ -138,7 +145,7 @@ def write_body(out_article, in_article):
     last_updated = filemanager.get_next_line(in_article)
 
     # Write body start
-    out_article.write(body_start)
+    out_article.write(body_tags[0])
 
     # Write page header
     with open(header, 'r') as head:
@@ -149,13 +156,13 @@ def write_body(out_article, in_article):
         filemanager.write_text_block(out_article, nav.readlines(), 1)
 
     # Write banner image
-    out_article.write(banner_start + banner_img.strip('\n ') + banner_end)
+    out_article.write(banner_tags[0] + banner_img.strip('\n ') + banner_tags[1])
 
     # Write article opening tags
-    out_article.write(article_start)
+    out_article.write(article_tags[0])
 
     # Write article content opening tags
-    out_article.write(content_start)
+    out_article.write(content_tags[0])
 
     # Write article header
     out_article.write('\t\t\t<header>\n\t\t\t\t<h1>')
@@ -187,15 +194,15 @@ def write_body(out_article, in_article):
         filemanager.write_text_block(out_article, comments.readlines(), 3)
 
     # Close content div
-    out_article.write(content_end)
+    out_article.write(content_tags[1])
 
     # Write outline
     section_list.insert(len(section_list)-1, "Comments")
     write_outline(out_article, 2)
 
     # Close article and body tag
-    out_article.write(article_end)
-    out_article.write(body_end)
+    out_article.write(article_tags[1])
+    out_article.write(body_tags[1])
 
 
 # Writes the entire content of the article.
@@ -224,7 +231,7 @@ def write_content(out_article, in_article, indentation_level):
 
         elif line.startswith(tags[2]): # Code
             code = get_code(line[tag_length[tags[2]]:])
-            filemanager.write_text_block(out_article, code, indentation_level)
+            filemanager.write_text_block(out_article, code, 0)
 
         elif line.startswith(tags[3]): # Notes class
             paragraph = get_paragraph(line[tag_length[tags[3]]:], True)
@@ -239,7 +246,7 @@ def write_content(out_article, in_article, indentation_level):
             section = ['</section>\n']
             filemanager.write_text_block(out_article, section, indentation_level)
 
-        elif line.startswith(tags[5]): # Raw html
+        elif line.startswith(tags[5]):  # Raw html
             output = []
             while True:
                 raw_line = in_article.readline()
@@ -286,16 +293,21 @@ def get_image(image):
 
 
 # Gets the HTML text for code
-def get_code(code):
+def get_code(code_import):
     result = []
-    code = code.split('$')
-    if len(code) == 1:
+    code_import = code_import.split('$')
+    if len(code_import) == 1:
         lines = ''
-        path = code[0].strip('\n ')
+        path = code_import[0].strip('\n ')
     else:
-        lines = code[0].strip('\n ')
-        path = code[1].strip('\n ')
-    result.append('<pre data-highlight="' + lines + '"><?php include("' + path + '"); ?></pre>\n')
+        lines = code_import[0].strip('\n ')
+        path = code_import[1].strip('\n ')
+    result.append('<pre data-highlight="' + lines + '">')
+    path = filemanager.get_folder_path(code, path)
+    code_data = filemanager.get_file_text(path)
+    for line in code_data:
+        result.append(line)
+    result.append('</pre>\n')
     return result
 
 
