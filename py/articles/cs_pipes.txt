@@ -46,9 +46,7 @@ The <em>pipe()</em> function is where all the magic happens. This function first
 
 There is something very important left out of this example that will be discussed in the next section. That being said, the above code shows how to go about creating a pipe between two processes and demonstrates that a pipe acts as any other input/output method, so it can be treated the same way a file pointer or an output to the terminal would be treated.
 
-<notes>Code example was adapted from this site: <a href="http://www.tldp.org/LDP/lpg/node11.html">http://www.tldp.org/LDP/lpg/node11.html</a>
-
-Sources: <a href="http://linux.die.net/man/2/pipe">http://linux.die.net/man/2/pipe</a>, <a href="http://linux.die.net/man/7/pipe">http://linux.die.net/man/7/pipe</a>
+<notes>Code example was adapted from this site: <a href="http://www.tldp.org/LDP/lpg/node11.html">http://www.tldp.org/LDP/lpg/node11.html</a><br>Sources: <a href="http://linux.die.net/man/2/pipe">http://linux.die.net/man/2/pipe</a>, <a href="http://linux.die.net/man/7/pipe">http://linux.die.net/man/7/pipe</a>
 
 </section>
 <section>Close Command
@@ -103,6 +101,6 @@ The difference between <strong>dup2</strong> and <strong>dup</strong> are the fo
 
 To reiterate what was said in the introduction, this article is not meant to provide a comprehensive coverage of pipes. The aim is to provide the foundations that will later aid in the understanding of more advance techniques. If you find any mistakes (grammar wise or factual) please leave me a comment or contact me by email to <a href="mailto:elmer@vt.edu">elmer@vt.edu</a>.. Hope this article was helpful!
 
-<notes><strong>[Update]</strong> Added error detection after each call to the <em>pipe()</em> function in the code examples.
+<notes><strong>[Update]</strong> Added error detection after each call to the <em>pipe()</em> function in the code examples.<br><strong>[Update]</strong> Added string.h library to code examples.
 
 </section>
