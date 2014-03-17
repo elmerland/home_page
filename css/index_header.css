@@ -1,0 +1,62 @@
+/* Apply page wide font styling and base size */
+html, body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12pt;
+}
+
+/* -------------------------------------- */
+/* Styling for page header and navigation */
+/* -------------------------------------- */
+
+/*Styling for header block*/
+/* ------------------------------------------------------------------------- */
+.pageHeader {
+    position: absolute;
+	top: 0;
+    width: 100%;
+	background-color: #FFF;
+}
+
+.pageHeader div {
+    position: relative;
+    top: 10px;
+    margin: 0 auto;
+    width: 718px;
+}
+
+/*Styling for logo image*/
+/* ------------------------------------------------------------------------- */
+.pageHeader img {
+    top: 0;
+    left: 0;
+}
+
+/*Styling for page title*/
+/* ------------------------------------------------------------------------- */
+.pageHeader h1 {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #43464D;
+    position: absolute;
+    top: 0;
+    left: 80px;
+    margin: 0;
+    margin-top: -6px;
+    padding: 0;
+    font-size: 4.7em;
+}
+
+.pageHeader h2 {
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #F2AD3F;
+    color: #000;
+    -webkit-border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0px 15px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    margin: 0;
+    padding: 10px;
+    font-size: 1.5em;
+}

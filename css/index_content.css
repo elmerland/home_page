@@ -1,0 +1,82 @@
+.main header {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main {
+    font-family: Georgia, serif;
+}
+
+/*Position the main element*/
+/* ------------------------------------------------------------------------- */
+.main {
+    position: relative;
+    top: 250px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+/*Position the article excerpts*/
+/* ------------------------------------------------------------------------- */
+.main section article {
+    margin-bottom: 15px;
+    border: 1px solid #E5E5E5;
+    -webkit-border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0px 5px rgba(0,0,0,0.1);
+}
+
+/*Style the article excerpts titles*/
+/* ------------------------------------------------------------------------- */
+.main section header a {
+    text-decoration: none;
+}
+
+.main section header h3 {
+    -webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    margin: 0;
+    padding: 30px 5px 10px 5px;
+    text-align: center;
+    background-color: #04A3C6;
+    color: #FFF;
+    font-size: 1.8em;
+}
+
+.main section header h3:hover {
+    text-shadow: 0 0 20px rgba(255,255,255,.8);
+}
+
+.main section header h4 {
+    margin: 0;
+/*    padding: 30px 5px 10px 5px;*/
+    padding: 5px 0;
+    text-align: center;
+    background-color: #F5F5F5;
+    color: #43464D;
+    font-size: 1.5em;
+}
+
+/*Style the article excerpts text*/
+/* ------------------------------------------------------------------------- */
+
+.main section .summary {
+    width: 580px;
+    height: 100%;
+    padding: 10px 20px;
+    text-align: justify;
+    float: left;
+    border-right: 1px solid #E5E5E5;
+}
+
+.main section .author {
+    bottom: 0;
+    padding: 10px 20px;
+    text-align: right;
+    float: right;
+}
+
+.main section .clear {
+    clear: both;
+}

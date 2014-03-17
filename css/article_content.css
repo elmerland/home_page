@@ -1,0 +1,198 @@
+/*Default font for article headers*/
+/* ------------------------------------------------------------------------- */
+.content header {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*Default font for article text*/
+/* ------------------------------------------------------------------------- */
+.content {
+    font-family: Georgia, serif;
+}
+
+/*Position of article content*/
+/* ------------------------------------------------------------------------- */
+.content {
+	position: absolute;
+	top: 350px;
+    left: 280px;
+    max-width: 880px;
+    min-width: 480px;
+    padding: 0 10px;
+}
+
+.content.center {
+    left: 0;
+}
+
+/*Styling for article title*/
+/* ------------------------------------------------------------------------- */
+
+.content > header h1 {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 2.5em;
+}
+
+.content > header p {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/*Styling for section headers*/
+/* ------------------------------------------------------------------------- */
+.content section header {
+    padding: 20px 0 0px 0;
+    margin-bottom: 10px;
+}
+
+.content section h2 {
+    display: inline;
+    padding: 0;
+}
+
+.content .self_link {
+    opacity: 0;
+    color: #04A3C6;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 0 5px;
+    display: inline-block;
+    vertical-align: top;
+    transition: background-color 100ms ease-in;
+}
+
+.content .self_link:hover {
+    color: #FFF;
+    background-color: #04A3C6;
+}
+
+.content > section > header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.content > section > header  h2 {
+    font-size: 2em;
+}
+
+.content > section > header .self_link {
+    font-size: 1.8em;
+}
+
+.content > section section {
+    margin-left: 20px;
+}
+
+.content > section section > header {
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+/*Styling for section text*/
+/* ------------------------------------------------------------------------- */
+.content p {
+    margin: 0;
+    padding: 10px 0;
+    text-align: justify;
+}
+
+.content section p:first-child {
+    text-indent: 15px;
+}
+
+.content p.notes {
+    text-indent: 0;
+    background-color: #F5F5F5;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #E5E5E5;
+    -webkit-border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0px 5px rgba(0,0,0,0.08);
+}
+
+.content em {
+    font-family: monospace, serif;
+    border: 1px solid #04A3C6;
+    background-color: #EDF8FC;
+    padding: 0 2px 1px 2px;
+    font-size: .9em;
+    font-style: normal;
+}
+
+.content strong {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.9em;
+    color: #006880;
+}
+
+.content blockquote {
+    background-color: #FAFAFA;
+    border-left: 5px solid #04A3C6;
+    margin: 5px 10px;
+    padding: 10px 10px;
+}
+
+.content img {
+    display: block;
+    margin: 0 auto;
+}
+
+/*Styling for footer*/
+/* ------------------------------------------------------------------------- */
+.content footer {
+    background-color: #DCF4FC;
+    margin: 20px 0;
+    border: 1px solid #E5E5E5;
+    -webkit-border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0px 5px rgba(0,0,0,0.08);
+}
+
+.content footer p {
+    color: #000;
+    text-align: center;
+}
+
+/*Styling for code*/
+/* ------------------------------------------------------------------------- */
+.content .code {
+    padding: 2px;
+    border: 2px solid #04A3C6;
+    -webkit-border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.06);
+}
+
+.content .code .first {
+    border-right: 1px solid #04A3C6;
+}
+
+.content .code .numbered {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.content .code .text {
+    width: 100%;
+    padding-left: 4px;
+}
+
+.content .code tr {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.content .code tr:last-child {
+    border-bottom: 0;
+}
+
+.content .code .highlight {
+    background-color: #DCF4FC;
+}
+
+.content .code .comment_line {
+    color: #69BF74;
+}

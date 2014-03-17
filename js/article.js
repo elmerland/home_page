@@ -1,155 +1,163 @@
-var display = false;
-var className = "fixed";
-var windowSize;
-var leftOffset;
+/*jslint browser: true, devel: true, indent: 4 */
+/*global $ */
 
-$(document).ready(function () {
-	// Get window size and set foating objects offset.
-	windowSize = $(document).width();
-	leftOffset = Math.floor((windowSize - 980) / 2);
-	$(".fixed").css("left", leftOffset + "px");
-	scrollNav();
-	// Hide the "Back to top" buttons and link images when the page loads.
-	$(".content .toTop").css("visibility", "hidden");
-	$("section header img").css("visibility", "hidden");
-	// Initialize all animations.
-	addAnimation();
-	formatCode();
-});
+var page_header_div;
+var page_header;
+var page_nav;
+var article_sidebar;
+var article_content;
+var section_list;
+var outline_list;
+var active_section = -1;
+var sidebar_threshold = 300;
+var window_threshold = 780;
+var section_offset = 50;
+var shadow_class = 'shadow';
+var fixed_class = 'fixed';
+var active_class = 'active';
+var fade_duration = 250;
 
-function addAnimation() {
-	// Updates the left ofset of the floating element every time the window is resized.
-	$(window).resize(function () {
-		windowSize = $(document).width();
-		leftOffset = Math.floor((windowSize - 980) / 2);
-		$(".fixed").css("left", leftOffset + "px");
-	});
-
-	// Create animation for "Back to top" fadein and fadeout, and also add animation for floating elment.
-	$(window).scroll(scrollNav);
-	
-	// Intercept click to the "Back to top" links.
-	$(".toTop").click(function(event) {
-		$('body,html').animate({scrollTop:0},"slow");
-		event.preventDefault();
-	});
-	
-	// Intercept clicks to the outline panel.
-	$(".outline ul").on("click", "a", function(event) {
-		event.preventDefault();
-		var href = $(this).attr("href");
-		scrollToAnchor(href);
-	});
-
-	// Add on hover event for section links (fade in and fade out)
-	$("section header").mouseenter(function () {
-		$(this).find("img").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 100);
-		$(this).find(".toTop").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 100);
-	})
-	.mouseleave(function () {
-		$(this).find("img").css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 100);
-		$(this).find(".toTop").css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 100);
-	});
+function updateActive(scroll_pos) {
+    "use strict";
+    var i = 0, section_top, section_bottom;
+    // Determine if active section has changed
+    for (i; i < section_list.length; i += 1) {
+        section_top = $(section_list[i]).offset().top - section_offset;
+        section_bottom = section_top + $(section_list[i]).height();
+        if (scroll_pos >= section_top && scroll_pos < section_bottom) {
+            $(outline_list[i]).addClass(active_class);
+            $(outline_list[i]).children('ul').children('li').show(fade_duration);
+        } else {
+            $(outline_list[i]).removeClass(active_class);
+            $(outline_list[i]).children('ul').children('li').hide(fade_duration);
+        }
+    }
 }
 
 // Scrolls until it reaches the element with the specified id.
-function scrollToAnchor(aid){
-    var aTag = $(aid);
-    $("html,body").animate({scrollTop: aTag.offset().top},"slow");
+function scrollToAnchor(aid) {
+    "use strict";
+    var aTag = $(aid), scroll_pos = aTag.offset().top - section_offset + 2;
+    $("html,body").scrollTop(scroll_pos);
+    updateActive(scroll_pos);
 }
 
-// Scrolls the navigation pane into view.
-function scrollNav() {
-	var scroll = $(this).scrollTop() - 500;
-	var nav = $(".float");
-	if(scroll >= 0) {
-		if (!nav.hasClass(className)) {
-			nav.addClass(className);
-			nav.css("left", leftOffset + "px");
-		}
-	} else {
-		if (nav.hasClass(className)) {
-			nav.removeClass(className);
-			nav.css("left", "0");
-		}
-	}
+function scrollHandler(event) {
+    "use strict";
+    // Get scroll distance from top
+    var scroll_pos = $('body').scrollTop();
+    
+    // Set shadow class to article header
+    if (scroll_pos === 0) {
+        if (page_header_div.hasClass(shadow_class)) {
+            page_header_div.removeClass(shadow_class);
+        }
+    } else if (scroll_pos !== 0 && !page_header_div.hasClass(shadow_class)) {
+        page_header_div.addClass(shadow_class);
+    }
+    
+    // Set fixed class to article sidebar (outline)
+    if (scroll_pos >= sidebar_threshold) {
+        if (!article_sidebar.hasClass(fixed_class)) {
+            article_sidebar.addClass(fixed_class);
+        }
+    } else {
+        if (article_sidebar.hasClass(fixed_class)) {
+            article_sidebar.removeClass(fixed_class);
+        }
+    }
+    
+    updateActive(scroll_pos);
 }
 
-function formatCode() {
-	// Get all pre tags of document.
-	var code = $("pre");
-	// Create a table for each one of the pre tags.
-	for (var j = 0; j < code.length; j++) {
-		// Get all the inner html of the pre tag.
-		var lines = code[j].innerHTML.split("\n");
-		
-
-		// Create table variable where the table will be stored.
-		var table = "<table>\n";
-		// Get the column groups tag.
-		table += getColumnGroups();
-		// Initailize table body.
-		table += "\t<tbody>\n";
-
-		// Generate a table row for each line.
-		for (var i = 0; i < lines.length; i++) {
-			// Get the row syntax.
-			table += getTableRow(i, lines[i]);
-		}
-
-		// Close the table body tag.
-		table += "\t<tbody>\n";
-		// Close the table tag.
-		table += "</table>";
-		// Set the table as the new inner html of the pre tag.
-		code[j].innerHTML = table;
-
-		// Get the data payload of the pre tag.
-		var highlight_data = code[j].getAttribute("data-highlight");
-		// Add highlight class to the appropriate rows.
-		addHighlightClass(code[j], highlight_data);
-	}
-
+function click_handler(event) {
+    "use strict";
+    event.preventDefault();
+    var href = $(event.target).attr("href");
+    scrollToAnchor(href);
+    console.log("Click");
 }
 
-// Creates the colgroup tag.
-function getColumnGroups() {
-	var colgroup = "";
-	colgroup += "\t<colgroup>\n";
-	colgroup += "\t\t<col class='first'>\n";
-	colgroup += "\t\t<col class='second'\n>";
-	colgroup += "\t</colgroup>\n";
-	return colgroup;
+function resize_handler(event) {
+    "use strict";
+    var viewport_width = $(window).width();
+    if (viewport_width < window_threshold && article_sidebar.css('display') === 'block') {
+        article_sidebar.hide();
+        page_nav.hide();
+        article_content.addClass("center");
+    } else if (viewport_width >= window_threshold && article_sidebar.css('display') === 'none') {
+        article_sidebar.show();
+        page_nav.show();
+        article_content.removeClass("center");
+    }
 }
 
-// Creates a new row with the line number on the 
-// first cell and the line contents on the second cell.
-function getTableRow(i, line) {
-	var row = "";
-	row += "\t\t<tr>\n";
-	// Column one, has the line number.
-	row += "\t\t\t<td>" + (i + 1) + "</td>\n";
-	// Column two, has the contents of the line of code.
-	row += "\t\t\t<td>" + line + "</td>\n";
-	row += "\t\t</tr>\n";
-	return row;
+function self_link_hover_in(event) {
+    "use strict";
+    $(event.currentTarget).children('.self_link').fadeTo(100, 1);
 }
 
-function addHighlightClass(pre, data) {
-	if (data == null) {
-		return;
-	}
-	// Turn pre element into jQuery object.
-	var pre_j = $(pre);
-	// Split highlight data into number array.
-	var h_lines = data.split(",");
-	// Iterate through every line number that needs to be highlighted.
-	for (var i = 0; i < h_lines.length; i++) {
-		// Get index of line that needs to be higlighted.
-		var index = parseInt(h_lines[i]);
-		// Get tr element at the index to be highlighted.
-		var row = pre_j.find("tr")[index - 1];
-		// Turn row element to jQuery object and add "highlight" class to it.
-		$(row).addClass("highlight");
-	}
+function self_link_hover_out(event) {
+    "use strict";
+    $(event.currentTarget).children('.self_link').fadeTo(100, 0);
 }
+
+function sidebar_hover_in(event) {
+    "use strict";
+    var target = $(event.currentTarget);
+    if (!target.hasClass(active_class)) {
+        target.children('ul').children('li').show(fade_duration);
+    }
+}
+
+function sidebar_hover_out(event) {
+    "use strict";
+    var sub_sections = $('.outline li'), i = 0, temp;
+    for (i; i < sub_sections.length; i += 1) {
+        temp = $(sub_sections[i]);
+        if (!temp.hasClass(active_class)) {
+            temp.children('ul').children('li').hide(fade_duration);
+        }
+    }
+}
+
+$(document).ready(function () {
+    "use strict";
+    // Get page elements
+    // ------------------------------------------------------------------------
+    // Get page header elements
+    page_header_div = $('.pageHeader > div');
+    page_header = $('.pageHeader');
+    // Get page navgation
+    page_nav = $('.pageNav');
+    // Get article sidebard
+    article_sidebar = $('.outline');
+    // Get article sidebar element list
+    outline_list = $('.outline li');
+    // Get article content
+    article_content = $('.content');
+    // Get article section list.
+    section_list = $('.content > section, .content > section section');
+    
+    // Set initial conditions
+    // ------------------------------------------------------------------------
+    // Initialy hide all sidebar subsections
+    $('.outline li li').hide();
+    // Add hover handlers for sidebar elements
+    outline_list.mouseenter(sidebar_hover_in);
+    $('.outline > ul').mouseleave(sidebar_hover_out);
+    // Add hover handler for article section titles
+    $('.section_title').hover(self_link_hover_in, self_link_hover_out);
+    
+    // Set event handlers
+    // ------------------------------------------------------------------------
+	// Add a scroll event to trigger actions for sidebar and page header
+	$(window).on("scroll", scrollHandler);
+    // Add click handler for sidebar
+    $('.outline ul li').on("click", "a", click_handler);
+    // Add click handler for self links
+    $('.content .self_link').on("click", click_handler);
+    // Add resize event handler.
+    resize_handler();
+    $(window).resize(resize_handler);
+});

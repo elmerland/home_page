@@ -20,7 +20,7 @@ For example, when a new process is created by default it contains three file des
 
 Now that we know what a file descriptor is, lets examine where it?s stored. Each process has a table called the <strong>File Table</strong>. This table stores all of the available <strong>file descriptors</strong> and the <strong>pointer</strong> to the input/output device. When a process wants to access one of these devices all it needs to do is reference the <strong>file descriptor</strong>. The kernel will then look at the <strong>file table</strong> inside of the process and get the pointer to the input/output device that is associated with the <strong>file descriptor</strong>.
 
-<image>../_images/article_src/fd_dgm.png
+<image>../projects/pipes/fd_dgm.png
 
 The image above shows how a process might have more than three <strong>files descriptors</strong>. In this case the <strong>file descriptors</strong> <em>3</em> and <em>4</em> are pointing to text files. Every time that the <em>fopen()</em> function is used this is what happens, a new file descriptor is created that is pointing to the file that is being written to or read from.
 
@@ -32,7 +32,7 @@ The image above shows how a process might have more than three <strong>files des
 
 The concept of a <strong>pipe</strong> builds on the <strong>file descriptors</strong>. Sometimes it is necessary to create a channel (pipe) of communication between two processes. The way this is done is by creating two new file descriptors that point to a pipe. The figure below gives a visual representation of what a pipe would look like in the context of file descriptors.
 
-<image>../_images/article_src/pipe_dgm.png
+<image>../projects/pipes/pipe_dgm.png
 
 Notice that the pipe has two sides, one where the process writes to and the other where the process reads from. Therefore a pipe is just a way to move information from one point to another without having to involve files or other devices. This makes it easier for two processes to communicate each other.
 
@@ -55,13 +55,13 @@ In the previous section the code example that was shown was missing something ve
 
 When the <em>fork()</em> function is called a new process is created by copying the state of the current process. The <i>child</i> process therefore inherits everything from the <i>parent</i>, including any <strong>file descriptors</strong>. Also worth noting is that the kernel keeps track of which file descriptors have an open connection to <i>all devices</i>. Meaning that if the parent process creates a new pipe and then forks a child process the kernel will know that both the child and parent have an open connection to the pipe. The following image represents the file table of the parent and child processes after the fork in the code example from the previous section:
 
-<image>../_images/article_src/fork_dgm.png
+<image>../projects/pipes/fork_dgm.png
 
 After the fork, the <strong>file table</strong> is duplicated in the new child node along with the <strong>file descriptors</strong> and their pointers. Now, suppose that the child node was only interested in writing to the pipe and the parent process was only interested in reading from the pipe.The child process will therefore have no need for the read end (<em>fd3</em>) of the pipe, and the parent process will have no need for the write end of the pipe (<em>fd4</em>). In addition to the parent process not needing access to <em>fd4</em> there will also be another problem. Suppose that the child node creates some message and writes it to the pipe. Upon doing this it closes all of the file descriptors and exits. The parent process can now read from the pipe. The problem however is that the kernel will never send an <em>EOF</em> character through the pipe until all pointers to the write end of the pipe have being closed. Since the kernel is aware that the parent process still has a connection to the write end of the pipe it will not send an <em>EOF</em> character and the parent process will not know when the message has ended.
 
 This is why we need the <em>close()</em> function. After the parent has forked the child process it should close the write end of the pipe. Doing this will ensure that as soon as the child process ends the kernel will send an <em>EOF</em> character through the pipe letting the parent process know that nothing more will be sent through the pipe. Similarly, the child process should close the read end of the pipe. The following image shows what the <strong>file descriptors</strong> will look after closing the unnecessary pointers:
 
-<image>../_images/article_src/fork_close_dgm.png
+<image>../projects/pipes/fork_close_dgm.png
 
 As a general practice any file descriptor that will not longer be used should be closed. For a more detailed description of what the close function does visit this <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/close.html">site</a>. To fix the code example in the previous section we must add two calls to the <strong>close</strong> function as demonstrated below:
 
@@ -86,11 +86,11 @@ For example, lets take the code from the previous example and insert the highlig
 
 Right after the fork there is a call to the <strong>dup2</strong> function. This call will take the pointer of the write end of the pipe and copy it over to the pointer of the standard out. From now on every time the process writes to standard out the output will go to the pipe instead of the terminal. This is what the file table of both the parent and child process will look like after the call to dup2:
 
-<image>../_images/article_src/dup_dgm.png
+<image>../projects/pipes/dup_dgm.png
 
 After the call to <strong>dup2</strong> there are two calls to close, one on the write end of the pipe and another on the read end. Why would we close both end of the pipe? The reason for this is that after the call to <strong>dup2</strong>, standard out is pointing to the write end of the pipe. Since the child process is only interested in the standard out, any other pointers will no longer be needed. On the side of the parent process things have not changed. The only call to close is to close the write end of the pipe. This is what the file tables will look like after all the calls to close:
 
-<image>../_images/article_src/dup_close_dgm.png
+<image>../projects/pipes/dup_close_dgm.png
 
 The difference between <strong>dup2</strong> and <strong>dup</strong> are the following. For the file descriptor <em>fd_new</em> to be reassigned to the device pointed to by <em>fd_old</em> the file descriptor <em>fd_new</em> first has to be closed. Once <em>fd_new</em> has being closed it can be reassigned to <em>fd_old</em>. The function <strong>dup2</strong> does all of this automatically, whereas the function <strong>dup</strong> only assigns fd_old to the lowest available file descriptor. Therefore if we were to use <strong>dup</strong> we would need to make a call to <em>close(fd_new)</em> before the call to <strong>dup</strong>. This is a problem because the two operations (close and the dup) are not atomic, and another system call could take place at that same moment disrupting our intended changes. This is why <strong>dup2</strong> is preferred to <strong>dup</strong>, because it is atomic.
 

@@ -1,35 +1,25 @@
-import os
+
 import filemanager
 
 # Header and footer html code for all sections of article.
 head_tags = ["<!DOCTYPE html>\n<html>\n<head>\n", "</head>\n"]
-# head_start = "<!DOCTYPE html>\n<html>\n<head>\n"
-# head_end = "</head>\n"
 
 body_tags = ["<body>\n", "</body>\n</html>\n"]
-# body_start = "<body>\n"
-# body_end = "</body>\n</html>\n"
 
 banner_tags = ['\t<div class="banner" style="background-image: url(', ');"></div>\n']
-# banner_start = '\t<div class="banner" style="background-image: url('
-# banner_end = ');"></div>\n'
 
 article_tags = ['\t<article class="main">\n', '\t</article>\n']
-# article_start = '\t<article class="main">\n'
-# article_end = '\t</article>\n'
 
 content_tags = ['\t\t<div class="content">\n', '\t\t</div>\n']
-# content_start = '\t\t<div class="content">\n'
-# content_end = '\t\t</div>\n'
 
 # File paths
-header = 'snippets/header.html'
-navigation = 'snippets/nav.html'
-header_nav_css = 'snippets/header_nav_css.html'
-article_css_js = 'snippets/article_css_js.html'
-social_links = 'snippets/social.html'
-comment_system = 'snippets/comments.html'
-code = 'code'
+article_header = 'snippets/page/article_header.html'
+article_css = 'snippets/css/article.html'
+article_js = 'snippets/js/article.html'
+google_analytics = 'snippets/services/google_analytics.html'
+social_links = 'snippets/services/social.html'
+comment_system = 'snippets/services/comments.html'
+code_dir = 'code'
 
 tags = ['<section>', '<image>', '<code>', '<notes>', '</section>', '<raw>', '</raw>']
 
@@ -120,13 +110,17 @@ def write_header(out_article, page_title):
     # Write html header to file
     out_article.write(head_tags[0])
 
-    # Write css links for header and nav to file
-    with open(header_nav_css, 'r') as css:
+    # Write css stylesheets for article
+    with open(article_css, 'r') as css:
         filemanager.write_text_block(out_article, css.readlines(), 1)
 
-    # Write css and js links for article content to file.
-    with open(article_css_js, 'r') as css:
-        filemanager.write_text_block(out_article, css.readlines(), 1)
+    # Write java script files for articles
+    with open(article_js, 'r') as js:
+        filemanager.write_text_block(out_article, js.readlines(), 1)
+
+    # Write google analytics file
+    with open(google_analytics, 'r') as ga:
+        filemanager.write_text_block(out_article, ga.readlines(), 1)
 
     # Write page title
     out_article.write('\n\t<title>' + page_title + '</title>\n')
@@ -148,12 +142,8 @@ def write_body(out_article, in_article):
     out_article.write(body_tags[0])
 
     # Write page header
-    with open(header, 'r') as head:
+    with open(article_header, 'r') as head:
         filemanager.write_text_block(out_article, head.readlines(), 1)
-
-    # Write page nav
-    with open(navigation, 'r') as nav:
-        filemanager.write_text_block(out_article, nav.readlines(), 1)
 
     # Write banner image
     out_article.write(banner_tags[0] + banner_img.strip('\n ') + banner_tags[1])
@@ -197,7 +187,7 @@ def write_body(out_article, in_article):
     out_article.write(content_tags[1])
 
     # Write outline
-    section_list.insert(len(section_list)-1, "Comments")
+    # section_list.insert(len(section_list)-1, "Comments")
     write_outline(out_article, 2)
 
     # Close article and body tag
@@ -214,7 +204,7 @@ def write_content(out_article, in_article, indentation_level):
         line = in_article.readline()
         if line == '':
             break
-        elif line.startswith(tags[0]): # Section title
+        elif line.startswith(tags[0]):  # Section title
             if section_in_progress:
                 in_article.seek(line_start)
                 write_content(out_article, in_article, indentation_level)
@@ -225,22 +215,22 @@ def write_content(out_article, in_article, indentation_level):
             section_in_progress = True
             indentation_level += 1
 
-        elif line.startswith(tags[1]): # Image
+        elif line.startswith(tags[1]):  # Image
             image = get_image(line[tag_length[tags[1]]:])
             filemanager.write_text_block(out_article, image, indentation_level)
 
-        elif line.startswith(tags[2]): # Code
-            code = get_code(line[tag_length[tags[2]]:])
-            filemanager.write_text_block(out_article, code, 0)
+        elif line.startswith(tags[2]):  # Code
+            code_tag = get_code(line[tag_length[tags[2]]:])
+            filemanager.write_text_block(out_article, code_tag, 0)
 
-        elif line.startswith(tags[3]): # Notes class
+        elif line.startswith(tags[3]):  # Notes class
             paragraph = get_paragraph(line[tag_length[tags[3]]:], True)
             filemanager.write_text_block(out_article, paragraph, indentation_level)
 
-        elif line.startswith(tags[4]): # Section end
+        elif line.startswith(tags[4]):  # Section end
             if not section_in_progress:
                 in_article.seek(line_start)
-                break;
+                break
             section_in_progress = False
             indentation_level -= 1
             section = ['</section>\n']
@@ -266,19 +256,20 @@ def write_content(out_article, in_article, indentation_level):
 # Gets the HTML text for a section title.
 def get_section_title(title):
     title = title.strip('\n ')
-    id = title.replace(' ', '')
-    id = extract_alphanumeric(id)
+    id_tag = title.replace(' ', '')
+    id_tag = extract_alphanumeric(id_tag)
     result = list()
+    
     # Print opening tag for section
-    result.append('<section id="' + id + '">\n')
+    result.append('<section id="' + id_tag + '">\n')
     # Print opening tag for header
-    result.append('\t<header>\n')
+    result.append('\t<header class="section_title">\n')
     # Print header title
     result.append('\t\t<h2>' + title + '</h2>\n')
     # Print header anchor link
-    result.append('\t\t<a href="#' + id + '"><img src="../_images/link20.png"></a>\n')
+    result.append('\t\t<a class="self_link" href="#' + id_tag + '">&para;</a>\n')
     # Print header back to top link
-    result.append('\t\t<a class="toTop" href="#"><img src="../_images/toTop.png"></a>\n')
+    # result.append('\t\t<a class="to_top" href="#"><img src="../_images/toTop.png"></a>\n')
     # Print closing header tags
     result.append('\t</header>\n')
 
@@ -302,8 +293,8 @@ def get_code(code_import):
     else:
         lines = code_import[0].strip('\n ')
         path = code_import[1].strip('\n ')
-    result.append('<pre data-highlight="' + lines + '">')
-    path = filemanager.get_folder_path(code, path)
+    result.append('<pre class="code" data-highlight="' + lines + '">')
+    path = filemanager.get_folder_path(code_dir, path)
     code_data = filemanager.get_file_text(path)
     for line in code_data:
         result.append(line)
@@ -341,22 +332,39 @@ def write_footer(out_article, writen_by, last_updated, indentation_level):
 def write_outline(out_article, indentation_level):
     output = list()
     output.append('<nav class="outline float">\n')
-    output.append('\t<section>\n')
-    output.append('\t\t<a class="toTop" href="#"><h3>Back to top</h3></a>\n')
-    output.append('\t\t<h2>Outline</h2>\n')
-    tabs = '\t\t'
-    for section in section_list:
+    tabs = '\t'
+    list_start = False
+    list_end = False
+    list_level = 0
+    title_offset = ''
+    for idx, section in enumerate(section_list):
         if section == '<outline>':
-            output.append(tabs + '<ul>\n')
+            list_level += 1
+            if list_level != 1:
+                title_offset += "|&nbsp;&nbsp;&nbsp;&nbsp;"
             tabs += '\t'
+            output.append(tabs + '<ul>\n')
+            list_start = True
         elif section == '</outline>':
-            tabs = tabs[:len(tabs)-1]
+            list_level -= 1
+            title_offset = title_offset[:len(title_offset) - 25]
+            output[len(output) - 1] += '</li>\n'
+            # Close inner list
             output.append(tabs + '</ul>\n')
+            tabs = tabs[:len(tabs)-1]
+            list_end = True
         else:
+            if not list_start and not list_end:
+                output[len(output) - 1] += '</li>\n'
+            elif list_end:
+                output.append(tabs + '</li>\n')
+                list_end = False
+            list_start = False
             section_id = section.strip('\n ').replace(' ', '')
             section_id = extract_alphanumeric(section_id)
-            output.append(tabs + '<a href="#' + section_id + '"><li>' + section + '</li></a>\n')
-    output.append('\t</section>\n')
+            output.append(tabs + '<li class="level_' + str(list_level) + '"><a href="#' + section_id +
+                          '"><i class="arrow_icon"></i><span class="tab_indicator">' + 
+                          title_offset + '</span>' + section + '</a>')
     output.append('</nav>\n')
 
     filemanager.write_text_block(out_article, output, indentation_level)

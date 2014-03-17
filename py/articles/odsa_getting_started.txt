@@ -165,6 +165,4 @@ This article was written after I went through the initial learning curve to star
 
 Please be sure to checkout the <a href="http://algoviz.org/OpenDSA/Doc/manual/">OpenDSA getting started</a> page, along with the <a href="http://algoviz.org/algoviz-wiki/index.php/The_OpenDSA_Developer%27s_Getting_Started_Guide">OpenDSA System Documentation</a>. Most of the concepts explained here were extracted from these pages.
 
-<notes>This article deals mostly with how to set everything up, there is another article on the way that deals specifically on how to get started creating content with JSAV. It is still not finished yet but will be available through this <a href="../articles/odsa_jsav.php">link</a> when it is done.
-
 </section>
