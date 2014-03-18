@@ -10,73 +10,79 @@
 /* ------------------------------------------------------------------------- */
 .main {
     position: relative;
-    top: 250px;
-    width: 900px;
+    top: 230px;
     margin: 0 auto;
 }
 
 /*Position the article excerpts*/
 /* ------------------------------------------------------------------------- */
-.main section article {
-    margin-bottom: 15px;
-    border: 1px solid #E5E5E5;
-    -webkit-border-radius: 6px 6px 6px 6px;
-	-moz-border-radius: 6px 6px 6px 6px;
-    border-radius: 6px 6px 6px 6px;
-    box-shadow: 0 0px 5px rgba(0,0,0,0.1);
+.main .excerpt {
+    width: 100%;
+    background-repeat: repeat;
+    padding: 20px 0;
+    margin: 20px 0;
+/*    border-bottom: 10px solid #E5E5E5;*/
+}
+.excerpt .wrapper {
+    width: 760px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    background-color: rgba(255, 255, 255, 1);
+    
+    -webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
 }
 
-/*Style the article excerpts titles*/
-/* ------------------------------------------------------------------------- */
-.main section header a {
+.excerpt a:link, .main .excerpt a:visited {
     text-decoration: none;
 }
 
-.main section header h3 {
-    -webkit-border-radius: 6px 6px 0 0;
-	-moz-border-radius: 6px 6px 0 0;
-    border-radius: 6px 6px 0 0;
+.excerpt h3 {
     margin: 0;
-    padding: 30px 5px 10px 5px;
     text-align: center;
-    background-color: #04A3C6;
+    font-size: 2em;
+    padding: 40px 0 10px 0;
+    background-color: rgba(4, 163, 198, 1);
     color: #FFF;
-    font-size: 1.8em;
+    -webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+/*    transition: text-shadow 100ms ease-in;*/
 }
 
-.main section header h3:hover {
-    text-shadow: 0 0 20px rgba(255,255,255,.8);
+.excerpt h3:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, .8);
 }
 
-.main section header h4 {
-    margin: 0;
-/*    padding: 30px 5px 10px 5px;*/
-    padding: 5px 0;
+.excerpt h4 {
     text-align: center;
-    background-color: #F5F5F5;
-    color: #43464D;
     font-size: 1.5em;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #F2AD3F;
+    color: #FFF;
 }
 
-/*Style the article excerpts text*/
-/* ------------------------------------------------------------------------- */
-
-.main section .summary {
-    width: 580px;
-    height: 100%;
-    padding: 10px 20px;
+.excerpt .text {
+/*    background-color: #F5F5F5;*/
+    padding: 20px 80px;
     text-align: justify;
-    float: left;
-    border-right: 1px solid #E5E5E5;
 }
 
-.main section .author {
-    bottom: 0;
-    padding: 10px 20px;
-    text-align: right;
-    float: right;
+.excerpt .author {
+    background-color: #F5F5F5;
+    text-align: center;
+    padding: 10px 0 20px 0;
+    
+    border-top: 1px solid #E5E5E5;
+    
+    -webkit-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
 }
 
-.main section .clear {
-    clear: both;
+.main .excerpt p {
+    margin: 0;
+    font-size: 1.1em;
 }

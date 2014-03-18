@@ -1,6 +1,6 @@
 Resume
 
-../_images/patterns/escape-flight.png
+../_images/patterns/ahoy.jpg
 
 My R&eacute;sum&eacute;
 2014-01-08
@@ -9,9 +9,7 @@ Last updated: January 8, 2014
 			
 <section>My R&eacute;sum&eacute;
 
-<p>
-The resumes here might be a little out of date. If you are interested please email me at <a href="mailto:elmer@vt.edu">elmer@vt.edu</a> and I will be more than happy to provide you with the latest version of my resume.
-</p>
+The resumes here might be a little out of date. If you are interested please email me at <a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a> and I will be more than happy to provide you with the latest version of my resume.
 
 <section>High Resolution
 

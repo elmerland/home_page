@@ -49,11 +49,11 @@ function scrollHandler(event) {
     
     // Set shadow class to article header
     if (scroll_pos === 0) {
-        if (page_header_div.hasClass(shadow_class)) {
-            page_header_div.removeClass(shadow_class);
+        if (page_header.hasClass(shadow_class)) {
+            page_header.removeClass(shadow_class);
         }
-    } else if (scroll_pos !== 0 && !page_header_div.hasClass(shadow_class)) {
-        page_header_div.addClass(shadow_class);
+    } else if (scroll_pos !== 0 && !page_header.hasClass(shadow_class)) {
+        page_header.addClass(shadow_class);
     }
     
     // Set fixed class to article sidebar (outline)

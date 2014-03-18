@@ -1,8 +1,8 @@
-<article>
+<article>_images/patterns/isometropolis.jpg
 
 <title>CS: Threads and Synchronization$articles/cs_threads.html
 
-<subtitle>Beta
+<subtitle>Draft
 
 An explanation of how threads are synchronized for producer-consumer problems. Understanding all the implications of threads and the dangers of accesing data structures within threads is complicated. This articles attempts to provide an approachable explanation for this problem.
 
@@ -10,7 +10,7 @@ An explanation of how threads are synchronized for producer-consumer problems. U
 
 </article>
 
-<article>
+<article>_images/patterns/pipes.png
 
 <title>CS: Pipes and Processes$articles/cs_pipes.html
 
@@ -20,7 +20,7 @@ This article provides the basics concepts and accompanying C functions about cre
 
 </article>
 
-<article>
+<article>_images/patterns/leather-nunchuck.png
 
 <title>OpenDSA: Getting Started$articles/odsa_getting_started.html
 
@@ -30,7 +30,7 @@ Starting on a new project can be a daunting task, especially if the project has 
 
 </article>
 
-<article>
+<article>_images/patterns/subway-lines.png
 
 <title>Project: A Dynamically Sized Table$articles/project_dynamic_table.html
 
@@ -40,7 +40,7 @@ In this article we will go step by step to create a dynamically sized table with
 
 </article>
 
-<article>
+<article>_images/patterns/subway-lines.png
 
 <title>Project: A Little Snake Game$articles/project_snake_game.html
 
@@ -49,3 +49,5 @@ The creation of a web browser Snake game. This is a basic Snake game created usi
 <author>Elmer Landaverde$January 4th, 2014
 
 </article>
+
+</file>
