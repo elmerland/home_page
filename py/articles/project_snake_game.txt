@@ -17,11 +17,13 @@ After spending two weeks learning all I could about HTML, CSS and JavaScript I d
 
 These are the features that I came up with for the game:
 
+<raw>
 <ul>
 <li>A simple snake game with all the classic rules (No going through walls or more than one food item at a time).</li>
 <li>Multiple difficulty levels (How fast each step is made).</li>
 <li>Variable game size (User is able to change the size of the game table).</li>
 </ul>
+</raw>
 
 With all this in mind I started working on it, and after a day and a half of work it was done. In the end the project has a little bit under 500 lines of JavaScript code, about 40 lines of CSS and 30 lines of HTML. After completing the project I found that the most challenging part of completing the project was how often I had to look up thing on google. Even though I went through a lot of tutorials and videos about JavaScript you forget a lot of the details. However, because I watched so many tutorials as soon as I found the solution on-line everything came back and I did not have any problems understanding either the syntax or the logic of JavaScript.
 
