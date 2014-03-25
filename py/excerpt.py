@@ -10,13 +10,20 @@ tags = ['</file>', '<article>', '</article>', '<title>', '<subtitle>', '<author>
 def compile_excerpts(out_file):
     output = []
     with open(raw_excerpts, 'r') as raw:
+        background_alternate = True
         while True:
             line = filemanager.get_next_line(raw).strip('\n ')
             if line.startswith(tags[0]):
                 break
             elif line.startswith(tags[1]):
                 img = line[len(tags[1]):]
-                output.append('<article class="excerpt" style="background-image: url(' + img + ');">\n')
+                color = 'background_bright'
+                if background_alternate:
+                    color = 'background_dark'
+                    background_alternate = False
+                else:
+                    background_alternate = True
+                output.append('<article class="excerpt ' + color + '">\n')
                 output.append('<div class="wrapper">\n')
             elif line.startswith(tags[2]):
                 output.append('</div>\n')

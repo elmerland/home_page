@@ -35,7 +35,6 @@ def main():
     elif args[1] == '-home':
         compile_home()
         return
-        return
     else:
         for i in range(1, len(args)):
             articles.append(args[i])

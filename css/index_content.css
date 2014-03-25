@@ -18,13 +18,14 @@
 /* ------------------------------------------------------------------------- */
 .main .excerpt {
     width: 100%;
-    background-repeat: repeat;
     padding: 20px 0;
-    margin: 20px 0;
+    margin: 0;
 /*    border-bottom: 10px solid #E5E5E5;*/
 }
+
 .excerpt .wrapper {
-    width: 760px;
+    min-width: 500px;
+    max-width: 900px;
     margin: 0 auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
     background-color: rgba(255, 255, 255, 1);
