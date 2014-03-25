@@ -4,7 +4,7 @@ php.ini
 development/*
 sftp-config.json
 articles/*
-index.html
+/index.html
 py/__pycache__/*
 .idea/*
 py/.idea/*
