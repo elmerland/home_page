@@ -2,11 +2,11 @@
 
 <title>CS: Threads and Synchronization$articles/cs_threads.html
 
-<subtitle>Draft
-
 An explanation of how threads are synchronized for producer-consumer problems. Understanding all the implications of threads and the dangers of accesing data structures within threads is complicated. This articles attempts to provide an approachable explanation for this problem.
 
 <author>Elmer Landaverde$February 27, 2014
+
+<tags>Computer Science, programming, C, Threads, Synchronization
 
 </article>
 
@@ -18,6 +18,8 @@ This article provides the basics concepts and accompanying C functions about cre
 
 <author>Elmer Landaverde$February 4th, 2014
 
+<tags>Computer Science, programming, C, Pipes, I/O Redirection, Processes
+
 </article>
 
 <article>_images/patterns/leather-nunchuck.png
@@ -28,15 +30,19 @@ Starting on a new project can be a daunting task, especially if the project has 
 
 <author>Elmer Landaverde$January 31st, 2014
 
+<tags>OpenDSA, JavaScript, RST, JSON
+
 </article>
 
-<article>_images/patterns/subway-lines.png
+<article>_images/patterns/white-wood.jpg
 
 <title>Project: A Dynamically Sized Table$articles/project_dynamic_table.html
 
 In this article we will go step by step to create a dynamically sized table with JavaScript. We will use some simple HTML and CSS to give the table structure and styling and then we will proceed to create our JavaScript code that will fetch information from the user and create a table of variable size.
 
 <author>Elmer Landaverde$January 9th, 2014
+
+<tags>Project, Programming, JavaScript, HTML, CSS
 
 </article>
 
@@ -47,6 +53,8 @@ In this article we will go step by step to create a dynamically sized table with
 The creation of a web browser Snake game. This is a basic Snake game created using HTML, CSS, and JavaScript. The main focus of this project is on the JavaScript part so the HTML and CSS files are fairly small. I go through all the steps of how I came to start this project and the details of how the JavaScript makes it work.
 
 <author>Elmer Landaverde$January 4th, 2014
+
+<tags>Project, Programming, JavaScript, HTML, CSS
 
 </article>
 

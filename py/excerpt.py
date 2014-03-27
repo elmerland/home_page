@@ -4,29 +4,21 @@ import filemanager
 raw_excerpts = 'excerpts/excerpts.txt'
 
 # Tags of file.
-tags = ['</file>', '<article>', '</article>', '<title>', '<subtitle>', '<author>']
+tags = ['</file>', '<article>', '</article>', '<title>', '<subtitle>', '<author>', '<tags>']
 
 
 def compile_excerpts(out_file):
     output = []
     with open(raw_excerpts, 'r') as raw:
-        background_alternate = True
         while True:
             line = filemanager.get_next_line(raw).strip('\n ')
             if line.startswith(tags[0]):
                 break
             elif line.startswith(tags[1]):
                 img = line[len(tags[1]):]
-                color = 'background_bright'
-                if background_alternate:
-                    color = 'background_dark'
-                    background_alternate = False
-                else:
-                    background_alternate = True
-                output.append('<article class="excerpt ' + color + '">\n')
-                output.append('<div class="wrapper">\n')
+                output.append('<article class="excerpt">\n')
+                output.append('<div class="image" style="background-image: url(' + img + ');"></div>\n')
             elif line.startswith(tags[2]):
-                output.append('</div>\n')
                 output.append('</article>\n')
             elif line.startswith(tags[3]):
                 title, link = line[len(tags[3]):].split('$')
@@ -39,18 +31,31 @@ def compile_excerpts(out_file):
                 subtitle = line[len(tags[4]):]
                 output.append('\t<h4>' + subtitle + '</h4>\n')
             elif line.startswith(tags[5]):
-                name, date = line[len(tags[5]):].strip('\n ').split('$')
-                output.append('\t<div class="author">\n')
-                output.append('\t\t<p>\n')
-                output.append('\t\t\tBy: ' + name + '<br>\n')
-                output.append('\t\t\t' + date + '\n')
-                output.append('\t\t</p>\n')
-                output.append('\t</div>\n')
+                name, date = line[len(tags[5]):].split('$')
+                build = [
+                    '\t\t<td class="metadata">\n',
+                    '\t\t\t<ul>\n',
+                    '\t\t\t\t<li class="author">By: ' + name + '</li>\n',
+                    '\t\t\t\t<li class="date">' + date + '</li>\n',
+
+                ]
+                output += build
+            elif line.startswith(tags[6]):
+                tags_list = line[len(tags[6]):]
+                build = [
+                    '\t\t\t\t<li class="tags">Tags: ' + tags_list + '</li>\n',
+                    '\t\t\t</ul>\n',
+                    '\t\t</td>\n',
+                    '\t</tr>\n',
+                    '</table>\n'
+                ]
+                output += build
             else:
-                output.append('\t<div class="text">\n')
-                output.append('\t\t<p>\n')
-                output.append('\t\t\t' + line + '\n')
-                output.append('\t\t</p>\n')
-                output.append('\t</div>\n')
+                build = [
+                    '<table class="content"\n',
+                    '\t<tr>\n',
+                    '\t\t<td class="text">' + line + '</td>\n'
+                ]
+                output += build
     with open(out_file, 'w') as out:
         filemanager.write_text_block(out, output, 0)

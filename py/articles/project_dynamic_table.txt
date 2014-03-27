@@ -1,6 +1,6 @@
 Dynamic Table
 
-../_images/patterns/subway-lines.png
+../_images/patterns/white-wood.jpg
 
 Project: A Dynamically Sized Table
 2014-01-09
