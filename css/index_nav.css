@@ -39,9 +39,10 @@
     line-height: 80px;
     text-decoration: none;
     float: left;
-    font-weight: 600;
+    font-weight: bold;
     width: 200px;
 	text-align: center;
+    transition: background-color 200ms ease-in;
 }
 
 .pageNav a:hover {
