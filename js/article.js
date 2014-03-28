@@ -45,8 +45,8 @@ function scrollToAnchor(aid) {
 function scrollHandler(event) {
     "use strict";
     // Get scroll distance from top
-    var scroll_pos = $('body').scrollTop();
-    
+    var scroll_pos = $(document).scrollTop();
+
     // Set shadow class to article header
     if (scroll_pos === 0) {
         if (page_header.hasClass(shadow_class)) {
@@ -55,7 +55,7 @@ function scrollHandler(event) {
     } else if (scroll_pos !== 0 && !page_header.hasClass(shadow_class)) {
         page_header.addClass(shadow_class);
     }
-    
+
     // Set fixed class to article sidebar (outline)
     if (scroll_pos >= sidebar_threshold) {
         if (!article_sidebar.hasClass(fixed_class)) {
@@ -66,7 +66,7 @@ function scrollHandler(event) {
             article_sidebar.removeClass(fixed_class);
         }
     }
-    
+
     updateActive(scroll_pos);
 }
 
@@ -122,6 +122,7 @@ function sidebar_hover_out(event) {
 }
 
 $(document).ready(function () {
+    console.log("Start");
     "use strict";
     // Get page elements
     // ------------------------------------------------------------------------
@@ -138,7 +139,7 @@ $(document).ready(function () {
     article_content = $('.content');
     // Get article section list.
     section_list = $('.content > section, .content > section section');
-    
+
     // Set initial conditions
     // ------------------------------------------------------------------------
     // Initialy hide all sidebar subsections
@@ -148,7 +149,7 @@ $(document).ready(function () {
     $('.outline > ul').mouseleave(sidebar_hover_out);
     // Add hover handler for article section titles
     $('.section_title').hover(self_link_hover_in, self_link_hover_out);
-    
+
     // Set event handlers
     // ------------------------------------------------------------------------
 	// Add a scroll event to trigger actions for sidebar and page header
@@ -160,4 +161,5 @@ $(document).ready(function () {
     // Add resize event handler.
     resize_handler();
     $(window).resize(resize_handler);
+    console.log("End");
 });
