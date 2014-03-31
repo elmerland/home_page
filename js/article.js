@@ -8,9 +8,7 @@ var article_sidebar;
 var article_content;
 var section_list;
 var outline_list;
-var active_section = -1;
 var sidebar_threshold = 300;
-var window_threshold = 780;
 var section_offset = 50;
 var shadow_class = 'shadow';
 var fixed_class = 'fixed';
@@ -78,20 +76,6 @@ function click_handler(event) {
     console.log("Click");
 }
 
-function resize_handler(event) {
-    "use strict";
-    var viewport_width = $(window).width();
-    if (viewport_width < window_threshold && article_sidebar.css('display') === 'block') {
-        article_sidebar.hide();
-        page_nav.hide();
-        article_content.addClass("center");
-    } else if (viewport_width >= window_threshold && article_sidebar.css('display') === 'none') {
-        article_sidebar.show();
-        page_nav.show();
-        article_content.removeClass("center");
-    }
-}
-
 function self_link_hover_in(event) {
     "use strict";
     $(event.currentTarget).children('.self_link').fadeTo(100, 1);
@@ -122,7 +106,6 @@ function sidebar_hover_out(event) {
 }
 
 $(document).ready(function () {
-    console.log("Start");
     "use strict";
     // Get page elements
     // ------------------------------------------------------------------------
@@ -152,14 +135,10 @@ $(document).ready(function () {
 
     // Set event handlers
     // ------------------------------------------------------------------------
-	// Add a scroll event to trigger actions for sidebar and page header
-	$(window).on("scroll", scrollHandler);
+    // Add a scroll event to trigger actions for sidebar and page header
+    $(window).on("scroll", scrollHandler);
     // Add click handler for sidebar
     $('.outline ul li').on("click", "a", click_handler);
     // Add click handler for self links
     $('.content .self_link').on("click", click_handler);
-    // Add resize event handler.
-    resize_handler();
-    $(window).resize(resize_handler);
-    console.log("End");
 });

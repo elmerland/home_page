@@ -1,0 +1,323 @@
+/* Apply page wide font styling and base size */
+/******************************************************************************/
+html, body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12pt;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Styling for page header and banner */
+/* -------------------------------------------------------------------------- */
+
+/*Styling for header block*/
+/******************************************************************************/
+.pageHeader {
+	background-color: #FFF;
+}
+
+.shadow {
+	box-shadow: 0 1px 5px rgba(0,0,0,.3);
+}
+
+/*Styling for page title*/
+/******************************************************************************/
+.pageHeader h1 {
+	font-family: Verdana, Geneva, sans-serif;
+	color: #43464D;
+	font-size: 2.5em;
+}
+
+/*Styling for article banner*/
+/******************************************************************************/
+.banner {
+	background: #666B75 repeat 50% 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Styling for page navigation */
+/* -------------------------------------------------------------------------- */
+
+/* Style links */
+/******************************************************************************/
+.pageNav a:link, .pageNav a:visited {
+	background-color: #FFF;
+	color: #43464D;
+	padding: 14px 20px 0 20px;
+	border-top: 4px solid #FFF;
+	font-size: 1.6em;
+	text-decoration: none;
+	float: left;
+	width: auto;
+	font-weight: 600;
+	transition: border-top 50ms ease-in, background-color 50ms ease-in;
+}
+
+.pageNav a:hover {
+	background-color: #F5F5F5;
+	border-top: 4px solid #04A3C6;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Styling for page sidebar */
+/* -------------------------------------------------------------------------- */
+
+/* Style for list */
+/******************************************************************************/
+.outline ul {
+	background-color: #FFF;
+	font-size: 12pt;
+}
+
+.outline ul li {
+	list-style-type: none;
+}
+
+/* Border style for lists */
+/******************************************************************************/
+.outline > ul {
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+
+/* Add rounded border to first element of table */
+.outline > ul > li:first-child > a {
+	border-top: 1px solid #e5e5e5;
+	border-radius: 6px 6px 0 0;
+}
+
+/* Add rounded border to last element of table */
+.outline > ul > li:last-child > a {
+	border-radius: 0 0 6px 6px;
+}
+
+/* Style for links */
+/******************************************************************************/
+.outline ul a:link, .outline ul a:visited {
+	list-style-type: none;
+	color: #04A3C6;
+	text-decoration: none;
+	border: 1px solid #e5e5e5;
+	border-top: 0;
+}
+
+.outline a .tab_indicator {
+	font-size: 1.2em;
+	transform:scale(1,2); /* W3C */
+	-webkit-transform:scale(1,2); /* Safari and Chrome */
+	-moz-transform:scale(1,2); /* Firefox */
+	-ms-transform:scale(1,2); /* IE 9 */
+	-o-transform:scale(1,2); /* Opera */
+}
+
+.outline ul ul a:link, .outline ul ul a:visited {
+	border: 1px dashed #e5e5e5;
+	border-top: 0;
+}
+
+.outline ul li .arrow_icon {
+	opacity: .5;
+	background-image: url("../_images/arrow.png");
+}
+
+/* Style for active links */
+/******************************************************************************/
+.outline .level_1.active > a, .level_1.active > a:hover {
+	background-color: #04A3C6;
+	color: #FFF;
+}
+
+.outline .level_2.active > a, .level_2.active > a:hover {
+	background-color: #04B5DB;
+	color: #FFF;
+}
+
+.outline .level_3.active > a, .level_3.active > a:hover {
+	background-color: #05CCF7;
+	color: #FFF;
+}
+
+.outline .level_4.active > a, .level_4.active > a:hover {
+	background-color: #2FDDFF;
+	color: #FFF;
+}
+
+.outline .active > a > .arrow_icon {
+	opacity: 1;
+	background-image: url("../_images/arrow_alt.png");
+}
+
+
+/* Style for hover effects */
+/******************************************************************************/
+.outline ul li a:hover {
+	background-color: #F5F5F5;
+	color: #023F4D;
+}
+
+.outline ul li a:hover .arrow_icon {
+	opacity: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Styling for page content */
+/* -------------------------------------------------------------------------- */
+
+/*Default font for article headers*/
+/* ------------------------------------------------------------------------- */
+.content header {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*Default font for article text*/
+/* ------------------------------------------------------------------------- */
+.content {
+	font-family: Georgia, serif;
+}
+
+/*Styling for article title*/
+/* ------------------------------------------------------------------------- */
+
+.content > header h1 {
+	text-align: center;
+	font-size: 2.5em;
+}
+
+.content > header p {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+/*Styling for section headers*/
+/* ------------------------------------------------------------------------- */
+.content .self_link {
+	opacity: 0;
+	color: #04A3C6;
+	font-size: 1.5em;
+	text-decoration: none;
+	transition: background-color 100ms ease-in;
+}
+
+.content .self_link:hover {
+	color: #FFF;
+	background-color: #04A3C6;
+}
+
+.content > section > header {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.content > section > header  h2 {
+	font-size: 2em;
+}
+
+.content > section > header .self_link {
+	font-size: 1.8em;
+}
+
+.content > section section > header {
+	border-bottom: 1px dashed #e5e5e5;
+}
+
+/*Styling for section text*/
+/* ------------------------------------------------------------------------- */
+.content p {
+	text-align: justify;
+	margin: 0;
+	padding: 10px 0;
+}
+
+.content section p:first-child {
+	text-indent: 15px;
+}
+
+.content p.notes {
+	padding: 10px;
+	text-indent: 0;
+	background-color: #F5F5F5;
+	text-align: left;
+	border: 1px solid #E5E5E5;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 0px 5px rgba(0,0,0,0.08);
+}
+
+.content em {
+	font-family: monospace, serif;
+	border: 1px solid #04A3C6;
+	background-color: #EDF8FC;
+	padding: 0 2px 1px 2px;
+	font-size: .9em;
+	font-style: normal;
+}
+
+.content strong {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 0.9em;
+	color: #006880;
+}
+
+.content blockquote {
+	margin: 5px 10px;
+	padding: 10px 10px;
+	background-color: #FAFAFA;
+	border-left: 5px solid #04A3C6;
+}
+
+.content img {
+	display: block;
+	margin: 0 auto;
+}
+
+/*Styling for footer*/
+/* ------------------------------------------------------------------------- */
+.content footer {
+	background-color: #DCF4FC;
+	border: 1px solid #E5E5E5;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 0px 5px rgba(0,0,0,0.08);
+}
+
+.content footer p {
+	margin: 20px 0;
+	color: #000;
+	text-align: center;
+}
+
+/*Styling for code*/
+/* ------------------------------------------------------------------------- */
+.content .code {
+	padding: 2px;
+	border: 2px solid #04A3C6;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 0px 10px rgba(0,0,0,0.06);
+}
+
+.content .code .first {
+	border-right: 1px solid #04A3C6;
+}
+
+.content .code .numbered {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.content .code .text {
+	width: 100%;
+	padding-left: 4px;
+}
+
+.content .code tr {
+	border-bottom: 1px solid #E5E5E5;
+}
+
+.content .code tr:last-child {
+	border-bottom: 0;
+}
+
+.content .code .highlight {
+	background-color: #DCF4FC;
+}
+
+.content .code .comment_line {
+	color: #69BF74;
+}
+

@@ -1,0 +1,181 @@
+/* -------------------------------------------------------------------------- */
+/* Positioning for page header and banner */
+/* -------------------------------------------------------------------------- */
+
+/* Positioning for header block */
+/******************************************************************************/
+.pageHeader {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	min-width: 455px;
+	z-index: 500;
+}
+
+/* Positioning for logo image */
+/******************************************************************************/
+.pageHeader img {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+	padding: 5px 0;
+}
+
+/* Positioning for page title */
+/******************************************************************************/
+.pageHeader h1 {
+	position: absolute;
+	top: 0;
+	left: 55px;
+	width: 410px;
+	line-height: 58px;
+	margin: 0;
+}
+
+/* Positioning for article banner */
+/******************************************************************************/
+.banner {
+	height: 300px;
+	position: absolute;
+	top: 50px;
+	right: 0;
+	left: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Positioning for page navigation */
+/* -------------------------------------------------------------------------- */
+
+/* Position nav element */
+/******************************************************************************/
+.pageNav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	max-width: 1180px;
+	z-index: 600;
+}
+
+/* Position list */
+/******************************************************************************/
+.pageNav ul {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* Position list elements */
+/******************************************************************************/
+.pageNav ul li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Positioning for page sidebar */
+/* -------------------------------------------------------------------------- */
+
+/* Position the navigation element */
+/******************************************************************************/
+.outline {
+	position: absolute;
+	top: 370px;
+	left: 0;
+	width: 260px;
+	padding: 0 10px;
+}
+
+.fixed {
+	position: fixed;
+	top: 70px;
+	left: 0;
+}
+
+/* Positioning for list */
+/******************************************************************************/
+.outline ul {
+	margin: 0;
+	padding: 0;
+}
+
+.outline ul li {
+	line-height: 20px;
+}
+
+/*Style for links*/
+/******************************************************************************/
+.outline ul a:link, .outline ul a:visited {
+	margin: 0;
+	padding: 9px 15px;
+	display: block;
+}
+
+.outline a .tab_indicator {
+	display: inline-block;
+	line-height: 18px;
+}
+
+.outline ul li .arrow_icon {
+	float: right;
+	display: inline-block;
+	vertical-align: text-top;
+	width: 9px;
+	height: 13px;
+	margin-top: 3px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Positioning for page content */
+/* -------------------------------------------------------------------------- */
+
+/*Position of article content*/
+/* ------------------------------------------------------------------------- */
+.content {
+	position: absolute;
+	top: 350px;
+	left: 280px;
+	max-width: 880px;
+	padding: 0 10px;
+}
+
+.content.center {
+	left: 0;
+}
+
+/*Styling for article title*/
+/* ------------------------------------------------------------------------- */
+
+.content > header h1 {
+	margin-bottom: 0;
+}
+
+/*Styling for section headers*/
+/* ------------------------------------------------------------------------- */
+.content section header {
+	padding: 20px 0 0px 0;
+	margin-bottom: 10px;
+}
+
+.content section h2 {
+	display: inline;
+	padding: 0;
+}
+
+.content .self_link {
+	margin: 0 20px;
+	padding: 0 5px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.content > section section {
+	margin-left: 20px;
+}
