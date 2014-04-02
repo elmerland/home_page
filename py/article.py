@@ -21,7 +21,7 @@ social_links = 'snippets/services/social.html'
 comment_system = 'snippets/services/comments.html'
 code_dir = 'code'
 
-tags = ['<section>', '<image>', '<code>', '<notes>', '</section>', '<raw>', '</raw>']
+tags = ['<section>', '<image>', '<code>', '<notes>', '</section>', '<raw>', '</raw>', '<include>']
 
 tag_length = {tags[0]: len(tags[0]),
     tags[1]: len(tags[1]),
@@ -29,7 +29,8 @@ tag_length = {tags[0]: len(tags[0]),
     tags[3]: len(tags[3]),
     tags[4]: len(tags[4]),
     tags[5]: len(tags[5]),
-    tags[6]: len(tags[6])}
+    tags[6]: len(tags[6]),
+    tags[7]: len(tags[7])}
 
 # Articles to digest
 articles = []
@@ -245,6 +246,10 @@ def write_content(out_article, in_article, indentation_level):
                 output.append(raw_line)
             filemanager.write_text_block(out_article, output, indentation_level)
 
+        elif line.startswith(tags[7]):  # Include
+            include_block = get_include_block(line[tag_length[tags[7]]:])
+            filemanager.write_text_block(out_article, include_block, indentation_level)
+
         else:
             if line == '\n':
                 continue
@@ -300,6 +305,14 @@ def get_code(code_import):
         result.append(line)
     result.append('</pre>\n')
     return result
+
+
+# Gets the text inside of the include file
+def get_include_block(file_name):
+    abs_path = filemanager.get_parent_folder_path('projects', file_name).strip()
+    with open(abs_path, 'r') as read_file:
+        lines = read_file.readlines()
+    return lines
 
 
 # Gets the HTML text for a paragraph

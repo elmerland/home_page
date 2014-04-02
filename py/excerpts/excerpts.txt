@@ -1,3 +1,15 @@
+<article>_images/patterns/science.png
+
+<title>Project: Computer Converter and Calculator$articles/project_conv_calc.html
+
+Finally a Binary/Hex/Octal/Decimal calculator/converter that just works! No muss, no fuzz. This article contains both a converter and a calculator that can handle numbers of all bases (radix).  It can also handle different representations of numbers (i.e. one’s complement, and two’s complement).
+
+<author>Elmer Landaverde$April 2, 2014
+
+<tags>Computer Science, programming, JavaScript, HTML, Calculator, Converter, Binary, Hexadecimal, Octal, Decimal
+
+</article>
+
 <article>_images/patterns/isometropolis.jpg
 
 <title>CS: Threads and Synchronization$articles/cs_threads.html

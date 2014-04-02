@@ -1,0 +1,88 @@
+<link rel="stylesheet" type="text/css" href="../projects/conv_calc/table.css" />
+<script language="javascript" type="text/javascript" src="../projects/conv_calc/converter.js"></script>
+<form id="converter">
+	<table id="cv_table">
+		<colgroup id="column_one"></colgroup>
+		<colgroup id="column_two"></colgroup>
+		<tbody>
+
+		<tr class="input">
+			<td>
+				<label for="cv_input_id">Input</label>
+				<input type="text" name="cv_input_name" id="cv_input_id" value="">
+			</td>
+		</tr>
+		<tr id="cv_input_format_checkboxes">
+			<td>
+				Input type:
+				<input type="radio" name="cv_input_type_name" id="cv_type_in_bin_id" value="binary">
+				<label for="cv_type_in_bin_id">Binary</label>
+
+				<input type="radio" name="cv_input_type_name" id="cv_type_in_oct_id" value="octal">
+				<label for="cv_type_in_oct_id">Octal</label>
+
+				<input type="radio" name="cv_input_type_name" id="cv_type_in_dec_id" value="decimal">
+				<label for="cv_type_in_dec_id">Decimal</label>
+
+				<input type="radio" name="cv_input_type_name" id="cv_type_in_hex_id" value="hexadecimal">
+				<label for="cv_type_in_hex_id">Hexadecimal</label>
+			</td>
+		</tr>
+		<tr id="cv_input_binary_format">
+			<td>
+				Binary Representation:
+				<input type="radio" name="cv_bin_type_name" id="cv_bin_one_id" value="one">
+				<label for="cv_type_in_bin_id">One's Complement</label>
+
+				<input type="radio" name="cv_bin_type_name" id="cv_bin_two_id" value="two">
+				<label for="cv_type_in_oct_id">Two's Complement</label>
+			</td>
+		</tr>
+		<tr id="cv_convert_button">
+			<td>
+				<input type="submit" value="Convert">
+			</td>
+		</tr>
+		<tr id="cv_output_format_checkboxes">
+			<td>
+				Output type(s):
+				<input type="checkbox" name="cv_bin_name" id="cv_type_out_bin_id" value="binary">
+				<label for="cv_type_out_bin_id">Binary</label>
+
+				<input type="checkbox" name="cv_oct_name" id="cv_type_out_oct_id" value="octal">
+				<label for="cv_type_out_oct_id">Octal</label>
+
+				<input type="checkbox" name="cv_dec_name" id="cv_type_out_dec_id" value="decimal">
+				<label for="cv_type_out_dec_id">Decimal</label>
+
+				<input type="checkbox" name="cv_hex_name" id="cv_type_out_hex_id" value="hexadecimal">
+				<label for="cv_type_out_hex_id">Hexadecimal</label>
+			</td>
+		</tr>
+		<tr class="output">
+			<td>
+				<label for="cv_output_dec_id">Binary:</label>
+				<input type="text" name="cv_output_bin_name" id="cv_output_bin_id" value="">
+			</td>
+		</tr>
+		<tr class="output">
+			<td>
+				<label for="cv_output_oct_id">Octal:</label>
+				<input type="text" name="cv_output_oct_name" id="cv_output_oct_id" value="">
+			</td>
+		</tr>
+		<tr class="output">
+			<td>
+				<label for="cv_output_dec_id">Decimal:</label>
+				<input type="text" name="cv_output_dec_name" id="cv_output_dec_id" value="">
+			</td>
+		</tr>
+		<tr class="output">
+			<td>
+				<label for="cv_output_hex_id">Hexadecimal:</label>
+				<input type="text" name="cv_output_hex_name" id="cv_output_hex_id" value="">
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</form>

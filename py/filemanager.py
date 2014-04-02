@@ -15,11 +15,13 @@ def get_article_output_path(article):
     return os.path.abspath(os.path.join(base_path, '..', 'articles', article + '.html'))
 
 
+# Gets absolute path from python folder
 def get_folder_path(folder_name, file_name):
     base_path = os.path.dirname(__file__)
     return os.path.abspath(os.path.join(base_path, folder_name, file_name))
 
 
+# Gets absolute path from root folder.
 def get_parent_folder_path(folder_name, file_name):
     base_path = os.path.dirname(__file__)
     return os.path.abspath(os.path.join(base_path, '..', folder_name, file_name))

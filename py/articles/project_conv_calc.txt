@@ -1,0 +1,20 @@
+Converter and Calculator
+
+../_images/patterns/science.png
+
+Project: Computer Converter and Calculator
+2014-04-02
+Written by: Elmer Landaverde (<a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a>)
+Last updated: April 02, 2014
+
+<section> Computer Converter
+
+<include>conv_calc/converter.html
+
+</section>
+
+<section> Computer Calculator
+
+<include>conv_calc/calculator.html
+
+</section>
