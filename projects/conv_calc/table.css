@@ -1,13 +1,13 @@
 #converter {
-	min-width: 410px;
 	border: 2px solid #04A3C6;
 	padding: 10px;
 	border-radius: 6px;
 }
 
 #converter table {
-	min-width: 390px;
-	max-width: 500px;
+	width: 100%;
+	/*min-width: 390px;*/
+	/*max-width: 500px;*/
 	margin: 0 auto;
 }
 
@@ -25,5 +25,8 @@
 }
 
 #converter input[type=text] {
-	min-width: 385px;
+	min-width: 92%;
+	text-align: center;
+	/*font-family: "Courier New", Courier, monospace;*/
+	font-family: "Lucida Console", Monaco, monospace;
 }
