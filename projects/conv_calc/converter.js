@@ -4,14 +4,24 @@
 
 (function () {
   "use strict";
+  /**
+   * Converts a signed integer into a two's complement representation of binary.
+   * @param dec_num A signed integer
+   * @returns {*} A two's complement binary representation of the signed integer.
+   */
   function parserTwoComplement(dec_num) {
     var result, i;
     if (dec_num >= 0) {
       result = parserUnsigned(dec_num);
+      // Add zero in front if most significant bit is one.
+      if (result.charAt(0) === "1") {
+        result = "0" + result;
+      }
+      // Pad result to next 4 bit length.
+      result = padToStep(result, 4);
     } else {
-      // Get unsigned absolute value binary representation.
-      result = parserUnsigned(Math.abs(dec_num));
-      console.log("1: " + result);
+      // Get two's complement representation of absolute value.
+      result = parserTwoComplement(Math.abs(dec_num));
 
       // Flip bits
       var flipped = [];
@@ -22,12 +32,6 @@
           flipped.push("0");
         }
       }
-
-      result = "";
-      for (i = 0; i < flipped.length; i++) {
-        result += flipped[i];
-      }
-      console.log("2: " + result);
 
       // Add one
       if (flipped[flipped.length - 1] === "0") { // Last bit is zero.
@@ -49,32 +53,44 @@
       for (i = 0; i < flipped.length; i++) {
         result += flipped[i];
       }
-      if (result.charAt(0) === "0") {
-        result = "1" + result;
-      }
-      console.log("3: " + result);
     }
-
-    // Add padding to result
-    var length = result.length;
-    var padding = "";
-    var padding_char = "0";
-    if (dec_num < 0) {
-      if (result.length % 4 === 0) {
-        return result;
-      }
-      padding_char = "1";
-    }
-    for (i = 0; i < 4 - (length % 4); i++) {
-      padding += padding_char;
-    }
-    return padding + result;
+    return result;
   }
 
+  /**
+   * Converts a signed integers into a one's complement binary representation.
+   * @param dec_num A signed integer.
+   * @returns {*} A one's complement binary representation of the signed integer.
+   */
   function parserOneComplement(dec_num) {
+    var result;
+    if (dec_num >= 0) {
+      result = parserUnsigned(dec_num);
+      if (result.charAt(0) === "1") {
+        result = "0" + result;
+      }
+      return padToStep(result, 4);
+    } else {
+      var abs = parserOneComplement(Math.abs(dec_num));
 
+      // Flip bits
+      result = "";
+      for (var i = 0; i < abs.length; i++) {
+        if (abs.charAt(i) === "0") {
+          result += "1";
+        } else {
+          result += "0";
+        }
+      }
+    }
+    return result;
   }
 
+  /**
+   * Converts a unsigned integer into binary.
+   * @param dec_num An unsigned integer
+   * @returns {string} The binary representation of the unsigned integer.
+   */
   function parserUnsigned(dec_num) {
     var bin_num = "";
     while (dec_num !== 0) {
@@ -82,6 +98,26 @@
       dec_num = Math.floor(dec_num / 2);
     }
     return bin_num;
+  }
+
+  /**
+   * Adds padding zeroes to the given value so that the length of the string
+   * matches is such that length % step  = 0.
+   * @param value The value to be padded.
+   * @param step The offset to which the value will be padded.
+   * @returns {*} The original value plus that padding that was added if any.
+   */
+  function padToStep(value, step) {
+    if (value.length % step === 0) {
+      return value;
+    } else {
+      var padding_len = step - (value.length % step);
+      var padding = "";
+      for (var i = 0; i < padding_len; i++) {
+        padding += "0";
+      }
+      return padding + value;
+    }
   }
 
   var parser = {};
@@ -138,7 +174,8 @@
       result = window.parser.parseTwoComplement(number);
       return spaceOutput(result, 4);
     } else if (bin_output_type === LCA.one_complement) {
-      return "One's complement";
+      result = window.parser.parserOneComplement(number);
+      return spaceOutput(result, 4);
     }
 
   }
