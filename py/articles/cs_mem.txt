@@ -1,0 +1,125 @@
+Memory Manager
+
+../_images/patterns/cuadros.png
+
+CS: Memory Manager and Block Alignment
+2014-04-15
+Written by: Elmer Landaverde (<a href="mailto:elmerlandaverde@gmail.com">elmerlandaverde@gmail.com</a>)
+Last updated: April 15, 2014
+
+<section>Intro
+
+Memory managers are complex creatures that can be tricky to code. One of the biggest challenges in creating one is keeping track of how everything is laid out in memory. Specially when it comes to aligning the payloads inside of memory blocks to the required alignment. This is a challenge because of the difference of the payload alignment and the block header alignment which mean different things but one helps the other be aligned. This article deals with the challenges of understanding memory alignment in a memory manager. First it briefly covers the importance of memory alignment and why computers use it. Next this article talks about how is memory laid out what role do headers and footers play in a memory manager and why it is important to consider them when aligning block payloads. Finally the article covers to examples of how headers and footers can be placed in memory to both facilitate memory alignment and eliminate edge cases when coding a memory manager.
+
+</section>
+
+<section>Alignment
+
+For a memory manager storing payloads with an 8 byte alignment means that every memory block should start and end at an address that is a multiple of eight. Sometimes this means that some padding will be necessary. More broadly however data struct alignment is defined as follows by wikipedia:
+
+<blockquote>Data structure alignment is the way data is arranged and accessed in computer memory. It consists of two separate but related issues: data alignment and data structure padding. When a modern computer reads from or writes to a memory address, it will do this in word sized chunks (e.g. 4 byte chunks on a 32-bit system). Data alignment means putting the data at a memory offset equal to some multiple of the word size, which increases the system's performance due to the way the CPU handles memory. To align the data, it may be necessary to insert some meaningless bytes between the end of the last data structure and the start of the next, which is data structure padding.</blockquote>
+
+The main reason for having memory be aligned is to increase performance. What this means in practice for a memory manager is that it has to guarantee that the payload of all allocated memory blocks needs to be aligned. In the following sections the conflicts that arise from this restriction will be explored and solutions to it will be covered as well.
+
+<notes>Source: <a href="http://en.wikipedia.org/wiki/Data_structure_alignment">http://en.wikipedia.org/wiki/Data_structure_alignment</a>
+
+</section>
+
+<section>Block Layout
+
+<notes>Note: We are going to assume that the address of the heap always starts at an 8 byte aligned position, and that the payload of a memory block also has to be 8 byte aligned.
+
+A memory manager uses headers and footers around allocated memory blocks to be able to keep track of the status of each block. However, when the user requests a new memory block it is assumed that the pointer for the new memory block payload is 8 byte aligned. These two requirements create a conflict. The conflict arises from the fact that the header (as implied by its name) is positioned right before the memory block payload and depending on how the header is implemented this could mean that the payload will not be aligned. For the convenience of this article we are going to define a block header and footer to be a simple 32-bit (4 byte) unsigned integer that represents the size of the block in bytes.
+
+Lets imagine that when the memory manager gets initialized we start at address zero. Immediately afterwards a request for a memory block of 8 bytes is made. Because this block needs a header and a footer, 8 more bytes need to be added to the total size of the block (4 for the header and 4 for the footer). A naive implementation of a memory manager might store the header of the block at the first address, store the payload immediately afterward and the footer right after the payload finished. The figure below illustrates this layout in memory:
+
+<image>../projects/mem/mem_1.png
+
+The problem with this solution might not be immediately obvious because the block itself starts and ends at an 8 byte aligned address (0 and 16). However, this layout does not align the payload as is required. The payload starts at address 4 which is not a multiple of 8. One way to solve this is to offset the block by one byte to the right. This is possible because the block header/footer doesn’t have to be aligned, the alignment is only for the payload. The figure below shows how this would look in memory:
+
+<image>../projects/mem/mem_2.png
+
+This approach (although somewhat naive) offers a correct solution to the requirements of having the payload being 8 byte aligned and the need for each block to have a header and footer. Another improvement we can make to this model is to also add another empty block at the end of the heap. This will make the size of the heap itself to be 8 byte aligned as well.
+
+Lets consider now what happens when the user requests another block of size 8. A correct way of adding a new block (with its header and footer) would be be to place the header of the new block right after the footer of the old block. Because each of the headers/footers are only 4 bytes wide, when two of them are placed together they will be 8 bytes wide, which means that they are aligned. The figure below shows what this would look like:
+
+<image>../projects/mem/mem_3.png
+
+The importance of headers and footers in relation to the alignment of the payload can now be fully appreciated. The image above shows a complete (although naive) solution to the problem of aligning the payload of a block. By following this model, no matter how many blocks are allocated, and no matter how big the payload of each block is (as long as the size of the payload is 8 byte aligned) all payloads will be 8 byte aligned and each block will be able to have its own header and footer.
+
+The empty spaces at the start and end of the heap are wasted in this case because they will never be allocated or otherwise used. However, these empty blocks can be taken advantage off by using them as an epilogue and prologue to the heap. This helps eliminate a lot of edge cases when traversing through blocks in the heap. Similar to how it is easier for a linked list to have a head node and tail node, since this eliminates a lot of edge cases that no longer have to be dealt with. The next section will explain how prologues and epilogues can be used and how they are positioned in memory.
+
+</section>
+
+<section>Memory Layout
+
+<notes>Note: We are assuming a 32-bit operating system, using a big-endian byte order and again the payload needs to be double word aligned (8 byte aligned).
+
+There are several ways for a memory manager to store allocated memory blocks on the heap and keep track of which blocks are free and which are being used. This article will use a doubly-linked implicit list model. Meaning that each block will have a header and a footer that allows traversal in both directions of the heap. These header and footer blocks need to have the size of the block measured in bytes and also store wether the block is free or allocated. For the following examples we will assume that both the header and footer are 4 bytes long (32 bits). The length of the header/footer will be interpreted as an unsigned integer. Also note that because all sizes have to be 8 byte aligned the lower three bits of the header/footer will always be set to zero. Therefore we can use any of these bits to store the allocation state of the block. A block can be either free or used, so only the least significant bit will be used to store this state. The figure below illustrates how a header/footer would look like in memory, with the bit highlighted in red representing the allocation bit:
+
+<image>../projects/mem/mem_6.png
+
+The previous section talked about the use of prologue and epilogue blocks in the heap. The prologue and epilogue help when coding a memory manager because a lot of edge cases don’t have to handled any longer. The following examples use these types of <i>sudo</i> blocks to help the memory manager know when the end or the begging of the heap has being reached.
+
+<section>Full Prologue
+
+This method of memory layout consists of the following:
+
+<raw>
+<ul>
+	<li>
+		First an empty 4 byte block that is used as padding to achieve 8 byte alignment.
+	</li>
+	<li>
+		Second a prologue block that consists of a header and footer. Both the header and footer have a block size of 8 bytes and a allocated bit set to 1 (to indicate that the block is allocated)
+	</li>
+	<li>
+		Third, following the prologue there can be zero or more regular blocks that are created by malloc or free.
+	</li>
+	<li>
+		Finally at the end of the heap there is always an epilogue block that consists of only a header of size zero and allocated bit set to 1 (to indicate that the block is allocated)
+	</li>
+</ul>
+</raw>
+
+The prologue block will be created when the memory manager is initialized and is never freed. Similarly the epilogue is also created when the memory manager is initialized and is never freed. Below is an image of how this type of memory layout would look like:
+
+<image>../projects/mem/mem_4.png
+
+It might seem unusual that the epilogue only has a header when the prologue has both a header and a footer. This is this way because of how the heap is traversed. If the memory manager is at block B and wants to get a pointer to the start of the previous block A, it needs to traverse to the header of the previous block. To do this, the footer of block A has to be examined first to determine the size of the block A. With the size in hand the starting address of block A can be computer by subtracting the size of A from the starting point of B. On the other hand if the memory manger is at block B and it wants a pointer to the start of the next block C it only needs the size of block B and add it to the starting address of block B. This is why a footer in the epilogue is not necessary. Also note that a empty padding is no longer necessary as well.
+
+</section>
+
+<section>Partial Prologue/Epilogue
+
+In the previous example there was still a need for an empty padding block at the start of the heap. By using the partial prologue method this can be avoided. This method of memory layout consists of the following:
+
+<raw>
+<ul>
+	</li>
+		First a prologue block that consists of a footer only. The footer is set to have a size of zero and allocated bit set to 1.
+	</li>
+	<li>
+		Second, following the prologue there can be zero or more regular blocks that are created by malloc or free.
+	</li>
+	<li>
+		Finally at the end of the heap there is always an epilogue block that consists only of a header of size zero and allocated bit set to 1.
+	</li>
+</ul>
+</raw>
+
+Similar to the previous example the prologue and epilogue blocks are created when the memory manager is initialized and are never freed. Below is an image that illustrates how this layout look in memory:
+
+<image>../projects/mem/mem_5.png
+
+This example gets away without a header for the prologue block and also removes the need for empty padding blocks. The previous example said that the prologue block needed a header because of how the previous block pointer is obtained. Because now there is no longer a header for the prologue the memory manager needs to first check that the size of the previous block as indicated by its footer is not zero. This comes up mainly when the memory manager is attempting to coalesce two free blocks, or if the memory manager is traversing the heap in reverse order.
+
+</section>
+
+</section>
+
+<section>Notes
+
+This article came about from my confusion of pointer arithmetic when trying to build a memory manager. My intention was to give a more graphical/visual approach to the layout of blocks in the heap and with that provide a better understanding of how to manipulate pointers within the heap. One of the main difficulties I found when dealing with pointer arithmetic was to determine by how many bytes was each pointer increasing. This varies from pointer to pointer because the step size changes depending on the type of pointer that is being used. An <em>int</em> pointer will increase by 4 bytes in a 32-bit OS and by 8 bytes in a 64-bit OS. I found that the best way to do pointer arithmetic in a consistent way is to cast all pointers to type <em>void</em> before doing any math on them. This way the step size is guaranteed to be the same across all platforms (1 byte). In addition to this if the size of each block is stored in bytes then it becomes extremely easy to traverse across blocks. 
+
+</section>

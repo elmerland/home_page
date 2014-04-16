@@ -224,6 +224,7 @@ html, body {
 	text-align: justify;
 	margin: 0;
 	padding: 10px 0;
+    text-indent: 20px;
 }
 
 .content section p:first-child {
@@ -265,6 +266,10 @@ html, body {
 .content img {
 	display: block;
 	margin: 0 auto;
+}
+
+.content li {
+    padding-bottom: 7px;
 }
 
 /*Styling for footer*/

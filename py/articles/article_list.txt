@@ -1,3 +1,4 @@
+cs_mem.txt
 project_conv_calc.txt
 cs_threads.txt
 cs_pipes.txt

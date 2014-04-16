@@ -1,133 +1,6 @@
 /**
  * Created by Elmer on 4/2/14.
  */
-
-(function () {
-  "use strict";
-  /**
-   * Converts a signed integer into a two's complement representation of binary.
-   * @param dec_num A signed integer
-   * @returns {*} A two's complement binary representation of the signed integer.
-   */
-  function parserTwoComplement(dec_num) {
-    var result, i;
-    if (dec_num >= 0) {
-      result = parserUnsigned(dec_num);
-      // Add zero in front if most significant bit is one.
-      if (result.charAt(0) === "1") {
-        result = "0" + result;
-      }
-      // Pad result to next 4 bit length.
-      result = padToStep(result, 4);
-    } else {
-      // Get two's complement representation of absolute value.
-      result = parserTwoComplement(Math.abs(dec_num));
-
-      // Flip bits
-      var flipped = [];
-      for (i = 0; i < result.length; i++) {
-        if (result.charAt(i) === "0") {
-          flipped.push("1");
-        } else {
-          flipped.push("0");
-        }
-      }
-
-      // Add one
-      if (flipped[flipped.length - 1] === "0") { // Last bit is zero.
-        flipped[flipped.length - 1] = "1";
-      } else { // Last bit is not zero
-        flipped[flipped.length - 1] = "0";
-        for (i = flipped.length - 2; i >= 0; i--) {
-          if (flipped[i] === "0") {
-            flipped[i] = "1";
-            break;
-          } else {
-            flipped[i] = "0";
-          }
-        }
-      }
-
-      // Concatenate result.
-      result = "";
-      for (i = 0; i < flipped.length; i++) {
-        result += flipped[i];
-      }
-    }
-    return result;
-  }
-
-  /**
-   * Converts a signed integers into a one's complement binary representation.
-   * @param dec_num A signed integer.
-   * @returns {*} A one's complement binary representation of the signed integer.
-   */
-  function parserOneComplement(dec_num) {
-    var result;
-    if (dec_num >= 0) {
-      result = parserUnsigned(dec_num);
-      if (result.charAt(0) === "1") {
-        result = "0" + result;
-      }
-      return padToStep(result, 4);
-    } else {
-      var abs = parserOneComplement(Math.abs(dec_num));
-
-      // Flip bits
-      result = "";
-      for (var i = 0; i < abs.length; i++) {
-        if (abs.charAt(i) === "0") {
-          result += "1";
-        } else {
-          result += "0";
-        }
-      }
-    }
-    return result;
-  }
-
-  /**
-   * Converts a unsigned integer into binary.
-   * @param dec_num An unsigned integer
-   * @returns {string} The binary representation of the unsigned integer.
-   */
-  function parserUnsigned(dec_num) {
-    var bin_num = "";
-    while (dec_num !== 0) {
-      bin_num = (dec_num % 2) + bin_num;
-      dec_num = Math.floor(dec_num / 2);
-    }
-    return bin_num;
-  }
-
-  /**
-   * Adds padding zeroes to the given value so that the length of the string
-   * matches is such that length % step  = 0.
-   * @param value The value to be padded.
-   * @param step The offset to which the value will be padded.
-   * @returns {*} The original value plus that padding that was added if any.
-   */
-  function padToStep(value, step) {
-    if (value.length % step === 0) {
-      return value;
-    } else {
-      var padding_len = step - (value.length % step);
-      var padding = "";
-      for (var i = 0; i < padding_len; i++) {
-        padding += "0";
-      }
-      return padding + value;
-    }
-  }
-
-  var parser = {};
-  parser.parseTwoComplement = parserTwoComplement;
-  parser.parserOneComplement = parserOneComplement;
-  parser.parserUnsigned = parserUnsigned;
-
-  window.parser = parser;
-}());
-
 (function ($) {
   "use strict";
 
@@ -138,7 +11,7 @@
       console.log("Input: Octal");
     } else if (input_type.type === LCA.decimal) {
       if (output_type.binary) {
-        var result = decimalToBinary(input_value, output_type.binary_type);
+        var result = decimalToBinary(input_value, input_type.binary_type);
         window.output_targets.binary.val(result);
       }
     } else if (input_type.type === LCA.hexadecimal) {
@@ -146,36 +19,30 @@
     }
   }
 
-  function spaceOutput(str, step) {
-    var result = "";
-    var j = 0;
-    for (var i = str.length - 1; i >= 0; i--, j++) {
-      if (j !== 0 && j % step === 0) {
-        result = " " + result;
-      }
-      result = str.charAt(i) + result;
-    }
-    return result;
-  }
-
   function decimalToBinary(value, bin_output_type) {
-    // Parser input value into decimal.
     var number = parseInt($.trim(value));
-    // Check binary output type.
-    var result;
+    var negative = number < 0;
+    var binary = "";
     if (bin_output_type === LCA.unsigned) {
-      if (number < 0) {
-        return "Error: Negative number";
-      } else {
-        result = window.parser.parserUnsigned(number);
-        return spaceOutput(result, 4);
+      while (number !== 0) {
+        binary = (number % 2) + binary;
+        number = Math.floor(number / 2);
       }
+      return binary;
     } else if (bin_output_type === LCA.two_complement) {
-      result = window.parser.parseTwoComplement(number);
-      return spaceOutput(result, 4);
+      var binary = "";
+      while (number !== 0) {
+        binary = (number % 2) + binary;
+        number = Math.floor(number / 2);
+      }
+      return binary;
     } else if (bin_output_type === LCA.one_complement) {
-      result = window.parser.parserOneComplement(number);
-      return spaceOutput(result, 4);
+      var binary = "";
+      while (number !== 0) {
+        binary = (number % 2) + binary;
+        number = Math.floor(number / 2);
+      }
+      return binary;
     }
 
   }
@@ -249,12 +116,14 @@
     // Set two's complement as default output value for binary format.
     $('#cv_output_bin_two_id').prop('checked', true);
 
-    window.output_targets = {
+    var output_targets = {
       binary: $('#cv_output_bin_id'),
       octal: $('#cv_output_oct_id'),
       decimal: $('#cv_output_dec_id'),
       hexadecimal: $('#cv_output_hex_id')
     };
+
+    window.output_targets = output_targets;
   }
 
   function submitHandler(e) {

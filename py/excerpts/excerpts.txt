@@ -1,6 +1,20 @@
+<article>_images/patterns/cuadros.png
+
+<title>CS: Memory Manager and Block Alignment$articles/cs_mem.html
+
+This article explores the challenges of aligning the content of an allocated memory block on the heap. Along with an explanation of the problems and it is convenient to align memory two methods of storing memory blocks on the heap will be discussed.
+
+<author>Elmer Landaverde$April 15, 2014
+
+<tags>Computer Science, programming, C, Memory Management
+
+</article>
+
 <article>_images/patterns/science.png
 
 <title>Project: Computer Converter and Calculator$articles/project_conv_calc.html
+
+<subtitle>Under Construction
 
 Finally a Binary/Hex/Octal/Decimal calculator/converter that just works! No muss, no fuzz. This article contains both a converter and a calculator that can handle numbers of all bases (radix).  It can also handle different representations of numbers (i.e. one’s complement, and two’s complement).
 
