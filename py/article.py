@@ -1,5 +1,5 @@
 
-import filemanager
+import filemanager, socialmanager
 
 # Header and footer html code for all sections of article.
 head_tags = ["<!DOCTYPE html>\n<html>\n<head>\n", "</head>\n"]
@@ -52,7 +52,7 @@ def generate_articles(article_list):
         in_article = open(in_article_path, 'r')
         out_article = open(out_article_path, 'w')
         # digest content of input article and write to output article
-        digest_article(in_article, out_article)
+        digest_article(in_article, out_article, article)
         in_article.close()
         out_article.close()
 
@@ -97,13 +97,15 @@ def extract_alphanumeric(input_string):
 
 
 # Reads text file with article contents and write the digest HTML content to the output file
-def digest_article(in_article, out_article):
+def digest_article(in_article, out_article, file_name):
+    # Get page URL
+    url = 'http://learncodeart.com/articles/' + file_name[:len(file_name) - 4] + '.html'
     # Get page title
     page_title = filemanager.get_next_line(in_article)
     # Write html header to file
     write_header(out_article, page_title.strip('\n '))
     # Writ body header to file
-    write_body(out_article, in_article)
+    write_body(out_article, in_article, url)
 
 
 # Writes the head tag of the article.
@@ -130,7 +132,7 @@ def write_header(out_article, page_title):
 
 
 # Writes the body tag of the article
-def write_body(out_article, in_article):
+def write_body(out_article, in_article, url):
     # Get Banner image
     banner_img = filemanager.get_next_line(in_article)
     # Get article title and date
@@ -163,9 +165,11 @@ def write_body(out_article, in_article):
     out_article.write('\t\t\t\t<p><time pubdate datetime="' + date.strip('\n ') + '">')
     out_article.write(get_date(date))
     out_article.write('</time></p>\n')
+
     # Write social media links
-    with open(social_links, 'r') as social:
-        filemanager.write_text_block(out_article, social.readlines(), 4)
+    social_html = socialmanager.get_social_html(title, url)
+    filemanager.write_text_block(out_article, social_html, 4)
+
     # Close header
     out_article.write('\t\t\t</header>\n')
 
@@ -173,9 +177,9 @@ def write_body(out_article, in_article):
     del section_list[:]
     write_content(out_article, in_article, 3)
 
-    # Write social media for footer
-    with open(social_links, 'r') as social:
-        filemanager.write_text_block(out_article, social.readlines(), 3)
+    # Write social media links for footer
+    social_html = socialmanager.get_social_html(title, url)
+    filemanager.write_text_block(out_article, social_html, 4)
 
     # Write footer for article
     write_footer(out_article, writen_by, last_updated, 3)

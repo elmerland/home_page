@@ -288,6 +288,31 @@ html, body {
 	text-align: center;
 }
 
+/* Styling for social links */
+/* ------------------------------------------------------------------------- */
+
+.content .social_links {
+    width: 255px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.content .social_links a {
+    float: left;
+}
+
+.content .social_links a:first-child img {
+    padding-left: 25px;
+}
+
+.content .social_links img {
+    padding-left: 10px;
+}
+
+.content .social_links .clear {
+    clear: both;
+}
+
 /*Styling for code*/
 /* ------------------------------------------------------------------------- */
 .content .code {
